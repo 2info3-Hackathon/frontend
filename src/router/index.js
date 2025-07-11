@@ -4,7 +4,11 @@ const routes = [
     {
         path: '/',
         name: 'Grupo Estudos',
-        component: () => import('@/views/TeamView.vue'),
+        component: () => import('@/views/GrupoEstudos.vue'),
+    },
+    {
+      path: '/BotaoBiologia',
+      component: () => import('@/components/BotaoBiologia.vue'),
     }
 ]
 

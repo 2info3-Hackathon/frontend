@@ -1,16 +1,19 @@
 <script setup>
+import InicialGrupoEstudos from './components/InicialGrupoEstudos.vue';
 
 </script>
 
 <template>
-  <header></header>
-  <main><p>uibgrtydybnuhfgu6</p>
-    <h1>oii</h1>
+  <main>
+    <img src="" alt="">
+
+    <section>
+      <InicialGrupoEstudos />
+    </section>
   </main>
 </template>
 
 <style scoped>
-p{
-  color: black;
-}
+
+
 </style>
