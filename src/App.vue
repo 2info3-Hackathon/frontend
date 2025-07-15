@@ -9,6 +9,7 @@ import InicialGrupoEstudos from './components/InicialGrupoEstudos.vue';
 
     <section>
       <InicialGrupoEstudos />
+      <router-View />
     </section>
   </main>
 </template>

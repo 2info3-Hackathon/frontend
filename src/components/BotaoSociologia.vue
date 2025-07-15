@@ -10,7 +10,7 @@ function voltar() {
 
 <template>
   <div>
-    <h2>Grupo de Estudos de Biologia</h2>
+    <h2>Grupo de Estudos de Sociologia</h2>
     <button @click="voltar">Voltar</button>
   </div>
 </template>
