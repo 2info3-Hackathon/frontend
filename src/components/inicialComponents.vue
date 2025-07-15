@@ -19,8 +19,9 @@ import App from '@/App.vue';
           </ul>
         </nav>
         <div class="banner">
-            <img src="" alt="">
+            <img src="/public/imagem/image 3.png" alt="banner" width="1000" height="200">
         </div>
+      <section>
         <div>
           <ul>
             <li>Vendas terceirão </li>
@@ -33,14 +34,24 @@ import App from '@/App.vue';
             <li>Contatos Importantes </li>
           </ul>
         </div>
-      </header>
+      </section>
+</header>
 </template>
 
 <style scoped>
-header nav{
+header {
 display: flex;
+
+& nav {
+
+}
 & ul {
+  
   display: flex;
+}
+
+& div.banner img {
+  margin: auto;
 }
 }
 
