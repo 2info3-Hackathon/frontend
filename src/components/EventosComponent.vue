@@ -8,10 +8,10 @@ defineProps(['events'])
         <h1>
             Eventos
         </h1>
-        <article v-for="evento in events" :key="evento.id">
+        <article v-for="event in events" :key="event.id">
             <div>
                 <h2>
-                    {{ evento.nome }}
+                    {{ event.nome }}
                 </h2>
                 <ul>
                     <li>
