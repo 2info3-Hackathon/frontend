@@ -24,5 +24,5 @@ export const useEventStore = defineStore('event', () => {
         },
     ])
 
-    return events
+    return { useEventStore, events }
     })
