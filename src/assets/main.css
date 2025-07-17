@@ -1,0 +1,45 @@
+button{
+  background-color: white;
+  color: #2F6484;
+  border: none;
+  border-radius: 5px;
+}
+
+.fundo{
+  background-color: #5BA3CF;
+}
+
+.fundo button{
+  margin: 10px 180px 50px 180px;
+  padding: 10px 50px 10px 50px;
+  font-size: 20px;
+}
+
+.fundo h1{
+  color: white;
+  text-align: center;
+  padding: 30px 60px 30px 60px;
+  margin: 0 150px 50px 150px;
+  font-size: 55px;
+  font-weight: bolder;
+}
+
+.informacoes{
+  background-color: white;
+  margin: 50px 180px 10px 180px;
+  padding: 40px 60px 40px 60px;
+  border-radius: 20px;
+}
+
+.informacoes h2{
+  color: #5BA3CF;
+  font-size: 35px;
+  font-weight:bolder;
+}
+
+.informacoes p{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 15px 30px;
+}
+

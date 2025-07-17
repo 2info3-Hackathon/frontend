@@ -9,8 +9,28 @@ function voltar() {
 </script>
 
 <template>
-  <div>
-    <h2>Grupo de Estudos de Geografia</h2>
+  <div class="fundo">
+    <h1>Grupo de Estudos de Geografia</h1>
+
+    <div class="informacoes">
+        <h2>
+          Monitor Responsável:
+        </h2>
+        <p>Nome: ??</p>
+        <p>Sala: ??</p>
+        <p>Horário disponível:??</p>
+
+        <h2>
+          Horário:
+        </h2>
+        <p>??</p>
+
+        <h2>
+          Sala:
+        </h2>
+        <p>??</p>
+    </div>
+
     <button @click="voltar">Voltar</button>
   </div>
 </template>
