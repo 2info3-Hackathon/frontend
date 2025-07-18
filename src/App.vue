@@ -9,9 +9,5 @@
 </template>
 
 <style scoped>
-main
-{
-    background-color: #5BA3CF;
-    color: white;
-}
+
 </style>
