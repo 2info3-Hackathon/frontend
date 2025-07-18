@@ -1,61 +1,56 @@
-<script setup>
+<script>
 import App from '@/App.vue';
-
+export default {
+   data() {
+    return {
+        nucleos: {
+        title: "Núcleos",
+        content: " -NEABI\n -NAPNE\n -NAG\n -NEGES"
+      },
+        comissao:{
+         title: "Comissão",
+        content: " -Comissão de Eventos\n  -Comissão Interna de Supervisão–CIS\n-Comissão Própria de Avaliação–CPA" },
+        comite: {
+            title: "Cômite", 
+            content: " -Comitê de Ética em Pesquisas com Seres  Humanos-CEPSH,   -Comitê de Ética no Uso de Animais-CEUA "},
+      activeIndex: null, // Indica qual aba está aberta
+    };
+  },
+  methods: {
+    // Alterna o estado de abrir/fechar a aba
+    toggle(index) {
+      // Se a aba já estiver aberta, a fechamos. Caso contrário, abrimos ela.
+      this.activeIndex = this.activeIndex === index ? null : index;
+    },
+    // Verifica se a aba está aberta
+    isOpen(index) {
+      return this.activeIndex === index;
+    },
+    // Substitui \n por <br> para renderizar quebras de linha
+    convertNewlinesToBr(content) {
+      return content.replace(/\n/g, '<br>');
+    }
+  }
+};
 </script>
 
 <template>
-<img src="" alt="">
 <header>
 
 </header>
-<section class="imagem-livro">
-    <img src="/public/imagem/image 2.png" alt="livro" width="1000" height="500">
-</section>
-<section class="topicos">
-    <div class="tudo">
- <div class="nucleo">
-     <h1>Núcleos</h1>
-    <ul>
-        <li>
-            -NEABI
-        </li>
-        <li>
-            -NAPNE
-        </li>
-        <li>
-            -NAG
-        </li>
-        <li>
-            -NEGES
-        </li>
-    </ul>
- </div>
-    <div class="comissao">
-        <h1>Comissão</h1>
-    <ul>
-        <li>
-            -Comissão de Eventos 
-        </li>
-        <li>
-            -Comissão Interna de Supervisão–CIS
-        </li>
-        <li>
-            -Comissão Própria de Avaliação–CPA
-        </li>
-    </ul>
+<section class="corpo">
+    <img src="/public/imagem/study.jpg" alt="livro" width="1330" height="600">
+   <div class="accordion">
+    <!-- Renderiza cada aba (Núcleos, Comissão, Cômite) -->
+    <div v-for="(item, index) in [nucleos, comissao, comite]" :key="index" class="accordion-item">
+      <button @click="toggle(index)" class="accordion-header">
+        {{ item.title }}
+      </button>
+      <div v-show="isOpen(index)" class="accordion-content">
+        <p v-html="convertNewlinesToBr(item.content)"></p>
+      </div>
     </div>
-    <div class="comite">
-   <h1>Cômite</h1>
-    <ul>
-        <li>
-            -Comitê de Ética em Pesquisas com Seres  Humanos-CEPSH
-        </li>
-        <li>
-            -Comitê de Ética no Uso de Animais-CEUA
-        </li>
-    </ul>
-    </div>
-    </div>
+  </div>
     </section>
     <section class="informacao">
         <img src="" alt="">
@@ -70,20 +65,16 @@ import App from '@/App.vue';
             <li>
                 Sala : 
             </li>
+        
         </ul>
-    </section>
+        </section>
 </template>
 <style scoped>
-section.topicos{
-    background-color: rgba(91, 163, 207, 1);
+section.corpo{
+  background-color: rgba(91, 163, 207, 1);
 }
-& div.tudo{
-    border-radius: 20px;
-    background-color: white;
-    margin: 2vw 2vw 2vw 2vw;
-}
-& div.nucleos{
-    margin: 2vw 2vw 2vw 2vw;
+section.corpo img {
+     align-items: center;
 }
 
 </style>
