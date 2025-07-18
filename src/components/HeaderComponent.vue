@@ -1,6 +1,8 @@
 <template>
-<main>
-  <h1>oi</h1>
-</main>
+<header>
+  <h1>
+    topo
+  </h1>
+</header>
 </template>
 

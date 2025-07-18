@@ -39,11 +39,15 @@ function irParaQuimica(){
 function irParaSociologia(){
   router.push('/BotaoSociologia')
 }
+
+function adicionar(){
+  router.push('/AdicionarGrupo')
+}
 </script>
 
 <template>
   <main>
-  <img src="/public/banner.png" alt="banner" height="600" width="1834">
+    <img src="/public/banner.png" alt="banner" height="600" width="1834">
 
   <h1>
     Grupo de Estudos
@@ -66,6 +70,8 @@ function irParaSociologia(){
       <button class="fisica" @click="irParaFisica">Física</button>
       <button @click="irParaMatematica">Matemática</button>
       <button class="soci" @click="irParaSociologia">Sociologia</button>
+
+      <button class="adicionargp" @click="adicionar">Adicionar <br> Grupo</button>
     </div>
   </section>
   </main>
@@ -89,6 +95,7 @@ h1{
   margin: 50px 150px 50px 150px;
   padding: 0 150px 0 150px;
   display: flex;
+  border-radius: 5px;
 }
 
 button{
@@ -102,7 +109,7 @@ button{
 }
 
 .segundacoluna{
-  text-align: center;
+  text-align: center
 }
 
 .terceiracoluna{
@@ -119,5 +126,10 @@ button{
 
 .soci{
   padding: 10px 77px 10px 77px;
+}
+
+.adicionargp{
+  margin: 120px 80px 100px 0;
+  padding: 6px 79px 6px 81px;
 }
 </style>

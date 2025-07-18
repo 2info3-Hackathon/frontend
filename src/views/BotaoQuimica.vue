@@ -9,6 +9,8 @@ function voltar() {
 </script>
 
 <template>
+  <img src="/public/banner.png" alt="banner" height="600" width="1834">
+  
   <div class="fundo">
     <h1>Grupo de Estudos de Química</h1>
 

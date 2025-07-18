@@ -1,15 +1,12 @@
 <script setup>
-import InicialGrupoEstudos from './components/HeaderComponent.vue';
-
+import HeaderComponent from './components/HeaderComponent.vue';
 </script>
 
 <template>
   <main>
-    <img src="" alt="">
-
     <section>
-      <InicialGrupoEstudos />
-      <router-View />
+      <HeaderComponent />
+      <RouterView />
     </section>
   </main>
 </template>

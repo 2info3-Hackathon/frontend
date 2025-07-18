@@ -14,47 +14,52 @@ const routes = [
     {
       path: '/BotaoBiologia',
       name: 'Biologia',
-      component: () => import('@/components/BotaoBiologia.vue'),
+      component: () => import('@/views/BotaoBiologia.vue'),
     },
     {
       path: '/BotaoFilosofia',
       name: 'Filosofia',
-      component: () => import('@/components/BotaoFilosofia.vue'),
+      component: () => import('@/views/BotaoFilosofia.vue'),
     },
     {
       path: '/BotaoFisica',
       name: 'Fisica',
-      component: () => import('@/components/BotaoFisica.vue'),
+      component: () => import('@/views/BotaoFisica.vue'),
     },
     {
       path: '/BotaoGeografia',
       name: 'Geografia',
-      component: () => import('@/components/BotaoGeografia.vue'),
+      component: () => import('@/views/BotaoGeografia.vue'),
     },
     {
       path: '/BotaoHistoria',
       name: 'Historia',
-      component: () => import('@/components/BotaoHistoria.vue'),
+      component: () => import('@/views/BotaoHistoria.vue'),
     },
     {
       path: '/BotaoMatematica',
       name: 'Matematica',
-      component: () => import('@/components/BotaoMatematica.vue'),
+      component: () => import('@/views/BotaoMatematica.vue'),
     },
     {
       path: '/BotaoPortugues',
       name: 'Portugues',
-      component: () => import('@/components/BotaoPortugues.vue'),
+      component: () => import('@/views/BotaoPortugues.vue'),
     },
     {
       path: '/BotaoQuimica',
       name: 'Quimica',
-      component: () => import('@/components/BotaoQuimica.vue'),
+      component: () => import('@/views/BotaoQuimica.vue'),
     },
     {
       path: '/BotaoSociologia',
       name: 'Sociologia',
-      component: () => import('@/components/BotaoSociologia.vue'),
+      component: () => import('@/views/BotaoSociologia.vue'),
+    },
+    {
+      path: '/AdicionarGrupo',
+      name: 'Adicionar Grupo',
+      component: () => import('@/views/AdicionarGrupo.vue')
     },
 ]
 

@@ -9,10 +9,12 @@ function voltar() {
 </script>
 
 <template>
-  <div class="fundo">
-    <h1>Grupo de Estudos de História</h1>
+  <img src="/public/banner.png" alt="banner" height="600" width="1834">
 
-    <div class="informacoes">
+  <div class="fundo">
+    <h1>Grupo de Estudos de Sociologia</h1>
+
+      <div class="informacoes">
         <h2>
           Monitor Responsável:
         </h2>
