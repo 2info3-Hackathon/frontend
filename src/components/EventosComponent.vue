@@ -67,7 +67,6 @@ section {
         margin: 1vw 0;
         background-color: white;
         color: #5BA3CF;
-        text-align: center;
         padding: 1vw 2vw;
         display: inline-block;
         border-radius: 5px;
@@ -134,7 +133,5 @@ section {
             }
         }
     }
-
-
 }
 </style>
