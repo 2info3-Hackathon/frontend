@@ -43,28 +43,81 @@ function irParaSociologia(){
 
 <template>
   <main>
+  <img src="/public/banner.png" alt="banner" height="600" width="1834">
+
   <h1>
     Grupo de Estudos
   </h1>
 
   <section class="botoes">
-    <div class="primeiralinha">
-      <button @click="irParaBiologia">Biologia</button>
-      <button @click="irParaFilosofia">Filosofia</button>
-      <button @click="irParaFisica">Física</button>
-    </div>
-
-    <div class="segundalinha">
+    <div class="primeiracoluna">
+      <button class="biologia" @click="irParaBiologia">Biologia</button>
       <button @click="irParaGeografia">Geografia</button>
-      <button @click="irParaHistoria">História</button>
-      <button @click="irParaMatematica">Matemática</button>
+      <button @click="irParaPortugues">Português</button>
     </div>
 
-    <div class="terceiralinha">
-      <button @click="irParaPortugues">Português</button>
+    <div class="segundacoluna">
+      <button @click="irParaFilosofia">Filosofia</button>
+      <button @click="irParaHistoria">História</button>
       <button @click="irParaQuimica">Química</button>
-      <button @click="irParaSociologia">Sociologia</button>
+    </div>
+
+    <div class="terceiracoluna">
+      <button class="fisica" @click="irParaFisica">Física</button>
+      <button @click="irParaMatematica">Matemática</button>
+      <button class="soci" @click="irParaSociologia">Sociologia</button>
     </div>
   </section>
   </main>
 </template>
+
+<style scoped>
+main{
+  background-color: #5BA3CF;
+}
+
+h1{
+  color: white;
+  text-align: center;
+  padding: 30px 60px 30px 60px;
+  margin: 0 150px 50px 150px;
+  font-size: 45px;
+  font-weight: bolder;
+}
+
+.botoes{
+  margin: 50px 150px 50px 150px;
+  padding: 0 150px 0 150px;
+  display: flex;
+}
+
+button{
+  margin: 50px 80px 50px 80px;
+  padding: 10px 70px 10px 70px;
+  font-size: 20px;
+}
+
+.primeiracoluna{
+  text-align: left;
+}
+
+.segundacoluna{
+  text-align: center;
+}
+
+.terceiracoluna{
+  text-align: right;
+}
+
+.biologia{
+  padding: 10px 77px 10px 77px;
+}
+
+.fisica{
+  padding: 10px 100px 10px 100px;
+}
+
+.soci{
+  padding: 10px 77px 10px 77px;
+}
+</style>

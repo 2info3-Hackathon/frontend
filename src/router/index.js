@@ -7,9 +7,9 @@ const routes = [
         component: () => import('@/views/GrupoEstudos.vue'),
     },
     {
-      path: '/InicialGrupoEstudos',
-      name: 'Inicial Grupo Estudos',
-      component: () => import('@/components/InicialGrupoEstudos.vue'),
+      path: '/HeaderComponent',
+      name: 'Header',
+      component: () => import('@/components/HeaderComponent.vue'),
     },
     {
       path: '/BotaoBiologia',

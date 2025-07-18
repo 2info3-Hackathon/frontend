@@ -1,5 +1,5 @@
 <script setup>
-import InicialGrupoEstudos from './components/InicialGrupoEstudos.vue';
+import InicialGrupoEstudos from './components/HeaderComponent.vue';
 
 </script>
 
