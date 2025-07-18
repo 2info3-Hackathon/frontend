@@ -17,13 +17,17 @@ import App from '@/App.vue';
         </div>
         </nav>
         </header>
-      <section class="corpo">
-         <div class="banner">
-            <img src="/public/imagem/image 3.png" alt="banner" width="1000" height="250">
+     <section class="imagem-if">
+        <div class="banner">
+            <img src="/public/imagem/image 3.png" alt="banner" width="1700" height="300">
         </div>
+     </section>
+         <section class="corpo">
+          <div class="tudo-texto">
         <div class="texto">
-          <h1>Bem Vindo ao site do ifc </h1>
-          <p>Aqui nós temos informações sobre : </p>
+          <h1>Bem Vindo ao Site do IFC </h1>
+          <p>Aqui nós temos informações sobre :  </p>
+            </div>
         <div class="lista">
           <ul>
             <li>Vendas terceirão </li>
@@ -65,11 +69,28 @@ header nav div.topo{
 }
 section.corpo {
   background-color:rgba(91, 163, 207, 1) ;
+  padding: 1vw 1vw 1vw 1vw;
+}
+section.corpo div.tudo-texto {
+  background-color: white;
+  border-radius: 20px;
+  margin: 2vw 2vw 2vw 2vw;
 }
 section.corpo div.texto {
- border-radius: 20px;
+  font-size: 1.5vw;
+  text-align: center;
+}
+& h1{
+  padding: 2vw 0vw 0vw 0vw;
 }
 section.corpo div.lista {
   display: flex;
+  margin: 1vw 5vw 2vw 5vw;
+  justify-content: space-between;
+  font-size: 1.5vw;
+  color: rgba(47, 100, 132, 1);
+}
+& ul li {
+  padding: 10px 10px 10px 10px;
 }
 </style>
