@@ -4,7 +4,6 @@ import informacoesImportantes from './views/informacoesImportantes.vue';
 
 <template>
      <informacoesImportantes />
-     
 </template>
 
 <style scoped></style>
