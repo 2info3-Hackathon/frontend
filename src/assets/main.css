@@ -8,14 +8,10 @@
 }
 
 button{
-  background-color: white;
-  color: #2F6484;
+  background: linear-gradient(#2495FF, #1C72D3);
+  color: white;
   border: none;
-  border-radius: 5px;
-}
-
-.fundo{
-  background-color: #5BA3CF;
+  border-radius: 30px;
 }
 
 .fundo button{

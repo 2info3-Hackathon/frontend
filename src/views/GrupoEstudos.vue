@@ -53,6 +53,10 @@ function adicionar(){
     Grupo de Estudos
   </h1>
 
+  <section class="conteudo">
+    <p>aaa</p>
+  </section>
+
   <section class="botoes">
     <div class="primeiracoluna">
       <button class="biologia" @click="irParaBiologia">Biologia</button>
@@ -78,10 +82,6 @@ function adicionar(){
 </template>
 
 <style scoped>
-main{
-  background-color: #5BA3CF;
-}
-
 h1{
   color: white;
   text-align: center;
@@ -90,17 +90,23 @@ h1{
   font-size: 45px;
   font-weight: bolder;
 }
+.conteudo {
+  background-image: url("/public/Union.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .botoes{
   margin: 50px 150px 50px 150px;
   padding: 0 150px 0 150px;
   display: flex;
-  border-radius: 5px;
+  border-radius: 30px;
 }
 
 button{
   margin: 50px 80px 50px 80px;
-  padding: 10px 70px 10px 70px;
+  padding: 40px 60px 40px 60px;
   font-size: 20px;
 }
 
@@ -117,15 +123,15 @@ button{
 }
 
 .biologia{
-  padding: 10px 77px 10px 77px;
+  padding: 40px 67px 40px 67px;
 }
 
 .fisica{
-  padding: 10px 100px 10px 100px;
+  padding: 40px 90px 40px 90px;
 }
 
 .soci{
-  padding: 10px 77px 10px 77px;
+  padding: 40px 67px 40px 67px;
 }
 
 .adicionargp{
