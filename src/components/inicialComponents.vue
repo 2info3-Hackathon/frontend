@@ -20,24 +20,21 @@ import App from '@/App.vue';
         <p>
           Nesse site, apresentamos <br> informações como Horário dos professores, <br> Vendas Terceirão,Eventos ifc, e muito mais. 
         </p>
+        <div class="imagem"></div>
         </div>
-        <div>
-        <img src="/public/imagem/banner-header(1).png" alt="onda baixo" width="1850" height="90">
-        </div>
-        <p> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
       </section>
 </template>
 
 <style scoped>
 section.corpo{
   text-align: center;
-  margin: none;
 }
 & h1{
   font-size: 3rem;
 }
-& div.tudo-texto {
-  background-color:rgba(45, 136, 255, 1);
+& div.imagem {
+   min-height: 100vh;            /* o elemento precisa TER altura */
+  background: url('/public/imagem/Union.png') center / cover no-repeat;
   font-size: 2rem;
 }
 </style>
