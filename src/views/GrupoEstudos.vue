@@ -47,7 +47,7 @@ function adicionar(){
 
 <template>
   <main>
-    <img src="/public/banner.png" alt="banner" height="600" width="1834">
+    <img src="/public//imagem/banner.png" alt="banner" height="600" width="1834">
 
   <h1>
     Grupo de Estudos
@@ -83,7 +83,7 @@ function adicionar(){
 
 <style scoped>
 h1{
-  color: white;
+  color: #1C72D3;
   text-align: center;
   padding: 30px 60px 30px 60px;
   margin: 0 150px 50px 150px;
@@ -91,8 +91,10 @@ h1{
   font-weight: bolder;
 }
 .conteudo {
-  background-image: url("/public/Union.png");
-  background-size: cover;
+  background-image: url(/public//imagem/Group65.png);
+  min-width: 100vw;
+  min-height: 50vh;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
