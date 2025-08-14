@@ -20,7 +20,8 @@ import App from '@/App.vue';
         <p>
           Nesse site, apresentamos <br> informações como Horário dos professores, <br> Vendas Terceirão,Eventos ifc, e muito mais. 
         </p>
-        <div class="imagem"></div>
+        </div>
+        <div class="lista">
         </div>
       </section>
 </template>
@@ -32,9 +33,18 @@ section.corpo{
 & h1{
   font-size: 3rem;
 }
-& div.imagem {
-   min-height: 100vh;            /* o elemento precisa TER altura */
-  background: url('/public/imagem/Union.png') center / cover no-repeat;
-  font-size: 2rem;
+& div.tudo-texto {
+  background-image: url(/public/imagem/onda.png);
+  min-height: 50vh; /* Garante que o elemento tenha altura */
+  min-width: 100vw; /* Deve usar 100vw (largura da tela) ao invés de 100vb */
+  background-size: contain; /* Ajusta a imagem para caber dentro do div sem cortar */
+  background-position: center; /* Centraliza a imagem de fundo */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
 }
+& p {
+  padding-top: 50px;
+  font-size: 2.5rem;
+  color: aliceblue;
+}
+
 </style>
