@@ -16,12 +16,40 @@ import App from '@/App.vue';
          <section class="corpo">
           <h1>Bem Vindo ao IFC </h1>
      <div class="tudo-texto">
-        <p>Fizemos esse site, no intuito de <br>facilitar a vida do estudante do IFC. </p>
-        <p>
+        <p class="azul">Fizemos esse site, no intuito de <br>facilitar a vida do estudante do IFC. </p>
+        <p class="azul">
           Nesse site, apresentamos <br> informações como Horário dos professores, <br> Vendas Terceirão,Eventos ifc, e muito mais. 
         </p>
         </div>
         <div class="lista">
+          <ul class="cima">
+            <li>
+              <h1>nucleu</h1>
+              <p>lsls</p>
+            </li>
+             <li>
+              <h1>comissao</h1>
+              <p>dkdkkdk</p>
+            </li>
+             <li>
+              <h1>cokte</h1>
+              <p>lslskslk</p>
+            </li>
+          </ul>
+          <ul class="baixo">
+            <li>
+              <h1>nucleu</h1>
+              <p>lsls</p>
+            </li>
+            <li>
+              <h1>nucleu</h1>
+              <p>lsls</p>
+            </li>
+            <li>
+              <h1>nucleu</h1>
+              <p>lsls</p>
+            </li>
+          </ul>
         </div>
       </section>
 </template>
@@ -30,21 +58,34 @@ import App from '@/App.vue';
 section.corpo{
   text-align: center;
 }
-& h1{
+h1{
   font-size: 3rem;
 }
-& div.tudo-texto {
+div.tudo-texto {
   background-image: url(/public/imagem/onda.png);
-  min-height: 50vh; /* Garante que o elemento tenha altura */
+  min-height: 60vh; /* Garante que o elemento tenha altura */
   min-width: 100vw; /* Deve usar 100vw (largura da tela) ao invés de 100vb */
   background-size: contain; /* Ajusta a imagem para caber dentro do div sem cortar */
   background-position: center; /* Centraliza a imagem de fundo */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
 }
-& p {
+p.azul {
   padding-top: 50px;
   font-size: 2.5rem;
   color: aliceblue;
+}
+div.lista ul {
+  display: flex;
+   justify-content: space-between;
+   	list-style: none;
+  
+}
+li{
+border-radius: 20px;
+background: linear-gradient(#2495FF,#1C72D3);
+margin: 10px 10px 10px 10px;
+padding: 10px 10px 10px 10px;
+color: aliceblue;
 }
 
 </style>
