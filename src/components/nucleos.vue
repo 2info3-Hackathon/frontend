@@ -1,5 +1,13 @@
 <script setup>
 import App from '@/App.vue';
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+
+function irParaComissao(){
+  router.push('/comissao')
+}
 </script>
 
 <template>
@@ -9,16 +17,7 @@ import App from '@/App.vue';
   <section>
     <div>
       <h1>Conheça nosso Núcleos</h1>
-     <div class="azul">
-      <p>
-
-      </p>
-     </div>
-     <div class="branca">
-     <p>
-
-      </p>
-    </div>
+       <button class="comissao" @click="irParaComissao">Comissão</button>
     </div>
   </section>
 
