@@ -1,8 +1,5 @@
 <script setup>
 import App from '@/App.vue';
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
 </script>
 
 <template>
@@ -11,7 +8,6 @@ const router = useRouter()
     </section> 
     <div>
       <h1>Conheça nossas Comissões</h1>
-    
     </div>
 </template>
 
