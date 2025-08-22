@@ -1,10 +1,11 @@
+
 <script setup>
-import App from '@/App.vue';
 </script>
 
 <template>
+  <main>
   <section class="img">
-    <img src="/public/imagem/Rectangle 43.png" alt="imagem-if" height="900" width="1500">
+    <img src="/public/imagem/Rectangle 43.png" alt="imagem-if" height="1000" width="1850">
   </section>
   <section class="corpo">
       <h1>Conheça nosso Núcleos</h1>
@@ -35,7 +36,8 @@ import App from '@/App.vue';
 
             <li>Participar dos processos de construção dos Projetos Pedagógicos de Cursos (PPC) do IFC Araquari, a fim de garantir que a temática da inclusão de pessoas com deficiência e necessidades específicas seja contemplada.</li>
         </ul>
-      </div class="branco">
+      </div>
+      <div class="branco">
       <h2>Núcleo de Estudos Afro-brasileiros e Indígenas - NEABI</h2>
       <p>As principais atribuições do NEABI do IFC Campus Araquari são:</p>
       <ul>
@@ -53,6 +55,7 @@ import App from '@/App.vue';
 
         <li>Fazer intercâmbio com os demais campi e escolas da rede pública e privada, comunidades e povos tradicionais.</li>
       </ul>
+      </div>
       <div class="azul2">
         <h2>Núcleo de Estudos de Gênero e Sexualidade - NEGES</h2>
         <p>Realizar estudos e pesquisas sobre as relações sociais de sexualidade e gênero em suas inter-relações com as questões de classe social, processo de aprendizagem, formação de professores,<br> relações etnico-raciais, entre outros. </p>
@@ -62,32 +65,51 @@ import App from '@/App.vue';
         <p>Desde o início, o NGA possui inúmeras atribuições, buscando discutir, formular e implantar a Política Ambiental do IFC, vinculando o princípio da sustentabilidade socioambiental em nosso Instituto, tornando o valor fundamental para a comunidade escolar e buscando o cumprimento da legislação ambiental.</p>
       </div>
   </section>
+  </main>
 </template>
 
 <style scoped>
+main{
+  padding: 0;
+  margin: 0;
+}
 section.corpo h1{
  text-align: center;
  font-size: 2rem;
+ 
 }
 div.azul1{
   background-image: url(/public//imagem/Group65.png); 
-  min-width: 100vw;
-  min-height: 60vh;
-  background-size: contain;
+  width: 100%;
+  height: 60vh;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: block;
   color: aliceblue;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  padding: 1vw 2vw 1vw 2vw;
 }
 div.azul2{
-  background-image: url(/public//imagem/Group65.png);
-  min-width: 100vw;
-  min-height: 50vh;
-  background-size: contain;
+  background-image: url(/public//imagem/Group\ 66.png); 
+  width: 100%;
+  height: 30vh;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: block;
   color: aliceblue;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  padding: 1vw 2vw 1vw 2vw;
 }
+div.branco {
+  font-size: 1.3rem;
+  padding: 1vw 2vw 1vw 2vw;
+}
+
+
+</style>
+
+<style scoped>
 
 </style>

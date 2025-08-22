@@ -4,7 +4,7 @@ const routes = [
         {
             path: '/' ,
             name: 'nucleos' ,
-            component: () => import(`@/views/nucleo-infor.vue`),
+            component: () => import(`@/views/nucleoView.vue`),
           },
         ]
         const router= createRouter({

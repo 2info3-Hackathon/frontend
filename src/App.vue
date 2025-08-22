@@ -1,9 +1,11 @@
 <script setup>
-import nucleos from './components/nucleos.vue';
+import nucleoView from './views/nucleoView.vue';
+import comissaoView from './views/comissaoView.vue';
 </script>
 
 <template>
-    <nucleos/>
+    <nucleoView/>
+    <comissaoView/>
 </template>
 
 <style scoped>
