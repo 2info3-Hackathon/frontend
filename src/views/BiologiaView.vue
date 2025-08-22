@@ -10,7 +10,7 @@ function voltar() {
 
 <template>
   <img src="/public//imagem/banner.png" alt="banner" height="600" width="1834">
-  
+
   <div class="fundo">
     <h1>Grupo de Estudos de Biologia</h1>
 
