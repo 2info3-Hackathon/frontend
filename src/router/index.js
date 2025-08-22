@@ -5,7 +5,7 @@ const router = createRouter
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
-            path: '/', 
+            path: '/clifc', 
             name: 'CLIFC',
             component: () => import('@/view/ClifcView.vue'),
         }
@@ -13,5 +13,3 @@ const router = createRouter
 })
 
 export default router
-
-// "path: '/clifc'" (Último commit)
