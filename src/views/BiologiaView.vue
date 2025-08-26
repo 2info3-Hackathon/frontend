@@ -36,3 +36,49 @@ function voltar() {
     <button @click="voltar">Voltar</button>
   </div>
 </template>
+
+<style scoped>
+button{
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  color: white;
+  font-size: 22px;
+  padding: 30px 85px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.fundo button:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transform: scale(1.05);
+}
+
+.fundo h1{
+  color: #1C72D3;
+  text-align: center;
+  padding: 30px 60px 30px 60px;
+  margin: 0 150px 50px 150px;
+  font-size: 45px;
+  font-weight: bolder;
+}
+
+.informacoes{
+  margin: 50px 180px 10px 180px;
+  padding: 40px 60px 40px 60px;
+  border-radius: 20px;
+}
+
+.informacoes h2{
+  color: #5BA3CF;
+  font-size: 35px;
+  font-weight:bolder;
+}
+
+.informacoes p{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 15px 30px;
+}
+</style>

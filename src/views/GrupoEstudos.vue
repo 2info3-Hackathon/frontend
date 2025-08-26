@@ -40,6 +40,9 @@ function irParaSociologia(){
   router.push('/SociologiaView')
 }
 
+function adicionar(){
+  router.push('/AdicionarGrupo')
+}
 </script>
 
 <template>
@@ -55,7 +58,7 @@ function irParaSociologia(){
   <section class="conteudo">
     <p>Os Grupos de Estudos têm a intenção de praticar e auxiliar em matérias do ensino médio e técnico integrado para alunos com dificuldades.</p>
     <p>Em nossa sala de estudos sempre há um monitor responsável por ajudar os alunos interessados, seja em tirar dúvidas sobre as matérias ou até mesmo sobre os grupos.</p>
-    <p>Caso seja um professor ou um monitor cadastrado e deseja adicionar um novo grupo de estudos, <a @click="adicionar">clique aqui</a></p>
+    <p>Caso seja um professor ou um monitor cadastrado e deseja adicionar um novo grupo de estudos, <a @click="adicionar">clique aqui!</a></p>
   </section>
 
   <section class="botoes">
@@ -101,23 +104,34 @@ p{
   color: white;
   font-size: 2rem;
   text-align: center;
-  margin: 0 12vw 0 12vw;
+  margin: 0 17vw 0 17vw;
   padding: 3vw 0 2.5vw 0;
+}
+
+a{
+  color: #bfc5ff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+a:hover{
+  color: #245ea0;
+  text-decoration: underline;
 }
 
 .botoes {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
-  gap: 20px; /* espaço entre os botões */
-  max-width: 800px; /* opcional, controla a largura total */
-  margin: 0 auto; /* centraliza o grid */
+  gap: 100px; /* espaço entre os botões */
+  max-width: 1000px; /* opcional, controla a largura total */
+  margin: 80px auto; /* centraliza o grid */
 }
 
 .botoes button {
   background: linear-gradient(135deg, #1e88e5, #42a5f5);
   color: white;
-  font-size: 16px;
-  padding: 15px 20px;
+  font-size: 22px;
+  padding: 30px 85px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -125,6 +139,8 @@ p{
 }
 
 .botoes button:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
   transform: scale(1.05);
 }
 </style>
