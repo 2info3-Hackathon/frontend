@@ -144,8 +144,6 @@ a {
 -------------------------------------------------*/
 
 main {
-	background-color: #5BA3CF;
-	color: white;
 	min-height: 100vh; 
 	overflow-y: auto;
 }

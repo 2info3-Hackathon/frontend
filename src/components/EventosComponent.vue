@@ -65,30 +65,29 @@ section {
 
     & h1 {
         margin: 1vw 0;
-        background-color: white;
-        color: #5BA3CF;
+        color: #1B5299;
         padding: 1vw 2vw;
         display: inline-block;
         border-radius: 5px;
-        font-size: 2vw;
+        font-size: calc(4vw + 0.390625vw);
+        text-shadow: 0 0 1vw #2D88FF;
     }
 
     & article {
-        font-size: 1.5vw;
+        font-size: calc(1.75vw + 0.390625vw);
 
         & .events {
-            background-color: white;
             border-radius: 5px;
             margin: 4vw 5vw;
             padding: 1vw 5vw 3vw 5vw;
 
             & .name {
-                background-color: #5BA3CF;
-                color: white;
+                color: #1B5299;
                 padding: 1vw 4vw;
                 border-radius: 5px;
                 margin: 1.5vw 0;
                 display: inline-block;
+                text-shadow: 0 0 1vw #2D88FF;
             }
 
             & ul {
@@ -100,13 +99,13 @@ section {
 
                     & h2 {
                         display: inline-block;
-                        color: #5BA3CF;
+                        color: #1B5299;
                         margin: 1.5vw 2vw 1vw 0;
+                        text-shadow: 0 0 1vw #2D88FF;
                     }
 
                     & p {
-                        background-color: #5BA3CF;
-                        color: white;
+                        color: black;
                         margin: 1vw 0;
                         padding: 0.5vw 2vw;
                         border-radius: 5px;
@@ -119,13 +118,13 @@ section {
 
                 & h2 {
                     display: inline-block;
-                    color: #5BA3CF;
+                    color: #1B5299;
                     margin: 1.5vw 1vw 0 0;
+                    text-shadow: 0 0 1vw #2D88FF;
                 }
 
                 & p {
-                    background-color: #5BA3CF;
-                    color: white;
+                    color: black;
                     margin: 1vw 0;
                     padding: 0.5vw 2vw;
                     border-radius: 5px;
