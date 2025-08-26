@@ -5,7 +5,7 @@
 <template>
   <main>
   <section class="img">
-    <img src="/public/imagem/Rectangle 43.png" alt="imagem-if" height="1000" width="1850">
+    <img src="/public/imagem/Rectangle 43.png" alt="imagem-if" height="900" width="1850">
   </section>
   <section class="corpo">
       <h1>Conheça nosso Núcleos</h1>
@@ -20,7 +20,7 @@
 
             <li>Favorecer a eliminação de barreiras, sejam elas físicas ou atitudinais;</li>
 
-            <li>Possibilitar o diálogo permanente com fóruns, organizações, associações, representações da sociedade civil e movimentos sociais envolvidos com a inclusão;</li>
+            <li>Possibilitar o diálogo permanente com fóruns, organizações, associações, representações <br> da sociedade civil e movimentos sociais envolvidos com a inclusão;</li>
 
             <li>Assessorar instâncias e setores do IFC Araquari;</li>
 
@@ -69,14 +69,9 @@
 </template>
 
 <style scoped>
-main{
-  padding: 0;
-  margin: 0;
-}
+
 section.corpo h1{
  text-align: center;
- font-size: 2rem;
- 
 }
 div.azul1{
   background-image: url(/public//imagem/Group65.png); 
@@ -106,7 +101,12 @@ div.branco {
   font-size: 1.3rem;
   padding: 1vw 2vw 1vw 2vw;
 }
-
+div li{
+ margin: 0vw 5vw 0vw 5vw ;
+}
+div{
+  text-align: center;
+}
 
 </style>
 
