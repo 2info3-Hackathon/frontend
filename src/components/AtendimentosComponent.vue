@@ -5,9 +5,12 @@
 
     <section>
 
-        <h1>Atendimentos</h1>
 
-        <div>
+            <h1>Atendimentos</h1>
+
+
+
+        <div class="listas">
 
 <ul class="esquerda">
 
@@ -51,16 +54,19 @@
 
         </div>
 
+
     </section>
 
 </template>
 
 <style scoped>
 section {
-
+    max-width: 800px;
     background: linear-gradient(45deg, #358CFF, #2569C2);
-    margin: 7vw 5vw 7vw 5vw;
     border-radius: 1rem;
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 section h1{
@@ -75,10 +81,9 @@ div{
 
     color: white;
     display: flex;
-    justify-content: space-between;
-    width: 50%;
-    padding: 4vw 0 0 0;
-    
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
 }
 a{
 
@@ -90,6 +95,47 @@ a{
 section div ul.esquerda{
 
     border-right: solid 1px white;
+    width: 50%;
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 20px;
 }
+section div ul.direita{
+    width: 50%;
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/*
+.container {
+  background: linear-gradient(to bottom, #3498db, #1f5fa0);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.listas {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.lista {
+  list-style-type: disc;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.lista.esquerda {
+  border-right: 1px solid white;
+  padding-right: 40px;
+  margin-right: 40px;
+}
+*/
 
 </style>
