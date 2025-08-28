@@ -1,0 +1,11 @@
+@import './base.css';
+
+button.turmas{
+  background-color: #5BA3CF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 10vw 180px 50px 2vw;
+  padding: 10px 50px 10px 50px;
+  font-size: 20px;
+}

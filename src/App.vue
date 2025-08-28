@@ -1,11 +1,17 @@
 <script setup>
+import turmasComponent from './components/turmas.vue'
+//import exibicaoProdutosComponent from './components/exibicaoProdutos.vue'
 
 </script>
 
 <template>
-  
-    <h1>Olá Vue!</h1>
-    
+ <section>
+  <turmasComponent />
+  <RouterView />
+ </section>
+ 
+ 
+
 
 </template>
 
