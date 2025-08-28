@@ -55,10 +55,7 @@ function alternarTexto(){
 <template>
 
     <section class="info2">
-        <h1>
-            Vendas da 3Info2 (banner)
-        </h1>
-
+         <img src="/public/Banner3Info2.png" alt="" width="1324" height="">
          <div>
     <ul>
       <li v-for="produto in info2" :key="produto.id">

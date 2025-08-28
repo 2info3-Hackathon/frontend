@@ -55,9 +55,7 @@ function alternarTexto(){
 <template>
 
     <section class="agro3">
-        <h1>
-            Vendas da 3agro3 (banner)
-        </h1>
+         <img src="/public/Banner3Agro3.png" alt="" width="1324" height="">
 
          <div>
     <ul>
