@@ -58,9 +58,9 @@
       </div>
       <div class="azul2">
         <h2>Núcleo de Estudos de Gênero e Sexualidade - NEGES</h2>
-        <p>Realizar estudos e pesquisas sobre as relações sociais de sexualidade e gênero em suas inter-relações com as questões de classe social, processo de aprendizagem, formação de professores,<br> relações etnico-raciais, entre outros. </p>
+        <p>Realizar estudos e pesquisas sobre as relações sociais de sexualidade e gênero em suas inter-relações <br> com as questões de classe social, processo de aprendizagem, formação de professores, relações etnico-raciais, entre outros. </p>
       </div>
-      <div class="branco">
+      <div class="branco2">
         <h2>Núcleo de Gestão Ambiental - NGA</h2>
         <p>Desde o início, o NGA possui inúmeras atribuições, buscando discutir, formular e implantar a Política Ambiental do IFC, vinculando o princípio da sustentabilidade socioambiental em nosso Instituto, tornando o valor fundamental para a comunidade escolar e buscando o cumprimento da legislação ambiental.</p>
       </div>
@@ -73,10 +73,13 @@
 section.corpo h1{
  text-align: center;
 }
+h2{
+  text-align: center;
+}
 div.azul1{
   background-image: url(/public//imagem/Group65.png); 
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,16 +99,21 @@ div.azul2{
   color: aliceblue;
   font-size: 1.3rem;
   padding: 1vw 2vw 1vw 2vw;
+  text-align: center;
 }
 div.branco {
   font-size: 1.3rem;
+  padding: 1vw 4vw 1vw 4vw;
+}
+div.branco2{
+  font-size: 1.3rem;
+  text-align: center;
   padding: 1vw 2vw 1vw 2vw;
 }
 div li{
- margin: 0vw 5vw 0vw 5vw ;
-}
-div{
-  text-align: center;
+margin-left: 4vw;
+margin-right: 4vw;
+padding-top: 10px;
 }
 
 </style>
