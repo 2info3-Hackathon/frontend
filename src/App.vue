@@ -1,9 +1,9 @@
 <script setup>
-import inicial from './components/inicialComponents.vue';
+import inicialComponents from './components/inicialComponents.vue';
 </script>
 
 <template>
-     <inicial/>
+    <inicialComponents/>
 </template>
 
 <style scoped>

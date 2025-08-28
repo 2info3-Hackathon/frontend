@@ -62,16 +62,17 @@ h1{
   font-size: 3rem;
 }
 div.tudo-texto {
-  background-image: url(/public/imagem/onda.png);
-  min-height: 60vh; /* Garante que o elemento tenha altura */
-  min-width: 100vw; /* Deve usar 100vw (largura da tela) ao invés de 100vb */
-  background-size: contain; /* Ajusta a imagem para caber dentro do div sem cortar */
-  background-position: center; /* Centraliza a imagem de fundo */
-  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-image: url(/public/imagem/Group69.png);
+  width: 100%;
+  height: 40vh; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
 }
 p.azul {
   padding-top: 50px;
-  font-size: 2.5rem;
+  font-size: 1.3rem;
   color: aliceblue;
 }
 div.lista ul {
