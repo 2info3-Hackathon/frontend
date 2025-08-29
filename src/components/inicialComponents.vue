@@ -17,38 +17,42 @@ import App from '@/App.vue';
          <section class="corpo">
           <h1>Bem Vindo ao IFC </h1>
      <div class="tudo-texto">
-        <p class="azul">Fizemos esse site, no intuito de <br>facilitar a vida do estudante do IFC. </p>
-        <p class="azul">
+        <p>Fizemos esse site, no intuito de <br>facilitar a vida do estudante do IFC. </p>
+        <p>
           Nesse site, apresentamos <br> informações como Horário dos professores, <br> Vendas Terceirão,Eventos ifc, e muito mais. 
         </p>
         </div>
         <div class="lista">
-          <ul class="cima">
+          <ul>
             <li>
-              <h1>nucleu</h1>
+              <h2>Núcleu</h2>
               <p>lsls</p>
             </li>
+            <li>
+              <h2>Vendas Terceirão</h2>
+            </li>
              <li>
-              <h1>comissao</h1>
+              <h2>Comissão</h2>
               <p>dkdkkdk</p>
             </li>
              <li>
-              <h1>cokte</h1>
+              <h2>Cômite</h2>
               <p>lslskslk</p>
             </li>
-          </ul>
-          <ul class="baixo">
             <li>
-              <h1>nucleu</h1>
+              <h2>Grupo de Estudo</h2>
               <p>lsls</p>
             </li>
             <li>
-              <h1>nucleu</h1>
+              <h2>Eventos</h2>
               <p>lsls</p>
             </li>
             <li>
-              <h1>nucleu</h1>
+              <h2>Informações Importantes</h2>
               <p>lsls</p>
+            </li>
+            <li>
+              <h2>Atestado e Declarações</h2>
             </li>
           </ul>
         </div>
@@ -69,24 +73,37 @@ h1{
   background-position: bottom; /* Ajusta a posição da onda para o fundo */
   background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
   width: 100%;
-  height: 70vh; /* Ajuste conforme a necessidade */
+  height: 80vh; /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
 }
-p.azul {
+p{
   padding-top: 50px;
   font-size: 1.5rem;
   color: aliceblue;
 }
+div.lista{
+   margin-top: -10vw;
+}
 div.lista ul {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
+display: flex;
+justify-content: space-between;
+list-style: none;
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+gap: 100px; /* espaço entre os botões */
+max-width: 10000px; /* opcional, controla a largura total */
+margin: 80px auto; /* centraliza o grid */
+width: 100%;  /* Definindo a largura do contêiner */
 }
 li{
+cursor: pointer;
+transition: transform 0.2s;
 border-radius: 10px;
 background:  #1C72D3;
-margin: 5px 5px 5px 5px;
-padding: 5px 5px 5px 5px;
 color: aliceblue;
+}
+li:hover{
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transform: scale(1.05);
 }
 </style>
