@@ -98,6 +98,9 @@ h1{
   background-position: center;
   background-repeat: no-repeat;
   display: block;
+  color: aliceblue;
+  font-size: 1.3rem;
+  padding: 1vw 2vw 1vw 2vw;
 }
 
 p{
