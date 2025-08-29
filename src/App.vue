@@ -1,9 +1,11 @@
 <script setup>
-import inicialComponents from './components/inicialComponents.vue';
+
 </script>
 
 <template>
-    <inicialComponents/>
+    <main>
+        <RouterView />
+    </main>
 </template>
 
 <style scoped>

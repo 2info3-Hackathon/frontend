@@ -5,7 +5,3 @@ import inicialComponents from '@/components/inicialComponents.vue';
 <template>
     <inicialComponents />
 </template>
-
-<style scoped>
-
-</style>
