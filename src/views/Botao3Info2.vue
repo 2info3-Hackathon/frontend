@@ -11,3 +11,5 @@ function voltar() {
     <info2-component />
     <button class="turmas" @click="voltar">Voltar</button>
 </template>
+<style scoped>
+</style>

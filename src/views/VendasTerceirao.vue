@@ -86,7 +86,7 @@ h2 {
     font-size: 30px;
 }
 div.tudo {
-    background-color: #5BA3CF;
+    background:  linear-gradient(135deg, #1e88e5, #42a5f5);
     margin: 4vw;
     padding: 2vw 0 0 0;
     border-radius: 10vw;
@@ -99,11 +99,23 @@ section.turmas {
     
 }
 section.turmas button {
-    margin: 40px 80px 40px 80px;
     padding: 10px 60px 10px 60px;
-    font-size: 20px;
-    border-color: #5BA3CF;
-    border-radius: 10px;
+    margin: 40px 80px 40px 80px;
+    background-color: white;   
+    color: black;     
+    border: 2px solid #1e88e5; 
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+}
+section.turmas button:hover {
+    background-color: #1e88e5; /* muda a cor ao passar o mouse */
+    transform: scale(1.2); /* aumenta o tamanho */
+    border-color: #1e88e5; 
+    color: white;
+
 }
 section.turmas div.agro {
     background-color: white;
@@ -117,18 +129,28 @@ section.turmas div.info {
 }
 div.quimi {
     text-align: center;
-     background-color: white;
+    background-color: white;
     border-radius: 60px;
     font-size: 30px;
-     margin: 0 37vw 0 37vw;
+    margin: 0 37vw 0 37vw;
     
 }
 div.quimi button {
     padding: 10px 60px 10px 60px;
     margin: 20px 40px 20px 40px;
-    font-size: 20px;
-     border-color: #5BA3CF;
-     border-radius: 10px;
-     
+    background-color: white;   
+    color: black;     
+    border: 2px solid #1e88e5; 
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;     
+}
+div.quimi button:hover {
+    background-color: #1e88e5;  
+    transform: scale(1.2);
+    border-color: #1e88e5; 
+    color: white;
+
 }
 </style>

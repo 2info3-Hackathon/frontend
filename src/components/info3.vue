@@ -114,10 +114,6 @@ section.info3 div p.local {
   font-family: bold;
   font-size: 1.4vw;
 }
-section.info3 div p.preco {
-  font-family: bold;
-  font-size: 1.2vw;
-}
 section.info3 div button.comprar {
   font-size: 1vw;
   font-weight: bold;
@@ -127,6 +123,13 @@ section.info3 div button.comprar {
   background-color: #5BA3CF;
   border-color: #5BA3CF;
   border-radius: 0.4vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+section.info3 div button.comprar:hover {
+  background-color: #1e88e5; 
+    transform: scale(1.2); 
+    border-color: #1e88e5; 
 }
 hr {
   margin: 2vw 0 0 0;
