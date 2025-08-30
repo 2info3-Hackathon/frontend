@@ -71,11 +71,11 @@ function alternarTexto(){
         <p class="local"> {{ produto.local }}</p>
 
         <div v-if="carrinho.find(p => p.id === livro.id)">
-          <button class="botao"> <a class="fa-solid fa-square-plus"></a> Comprado</button>
+          <button class="botao"> <a class="fa-solid fa-square-plus"></a> Reservado</button>
         </div>
 
         <div v-else>
-          <button class="comprar" @click="adicionarProduto(livro)"><a class="fa-solid fa-square-plus"></a> Comprar</button>
+          <button class="comprar" @click="adicionarProduto(livro)"><a class="fa-solid fa-square-plus"></a> Reservar</button>
           
         </div>
         

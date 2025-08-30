@@ -8,32 +8,36 @@ import info1Component from '@/components/info1.vue';
 import info2Component from '@/components/info2.vue';
 import info3Component from '@/components/info3.vue';
 import quimiComponent from '@/components/quimi.vue';
+import carrinhoComponent from '@/components/carrinho.vue';
 
 const router = useRouter()
 
 function irPara3Agro1(){
-    router.push('/Botao3Agro1')
+    router.push('/3Agro1')
 }
 function irPara3Agro2(){
-    router.push('/Botao3Agro2')
+    router.push('/3Agro2')
 }
 function irPara3Agro3(){
-    router.push('/Botao3Agro3')
+    router.push('/3Agro3')
 }
 function irPara3Info1(){
-    router.push('/Botao3Info1')
+    router.push('/3Info1')
 }
 function irPara3Info2(){
-    router.push('/Botao3Info2')
+    router.push('/3Info2')
 }
 function irPara3Info3(){
-    router.push('/Botao3Info3')
+    router.push('/3Info3')
 }
 function irPara3Quimi(){
-    router.push('/Botao3Quimi')
+    router.push('/3Quimi')
 }
 function irParaProduto() {
     router.push('/BotaoAdicionarProduto')
+}
+function irParaCarrinhoView() {
+    router.push('/carrinho')
 }
 </script>
 
@@ -41,7 +45,7 @@ function irParaProduto() {
     <main>
         <div class="tudo">
 
-        
+        <button @click="irParaCarrinhoView">carrinho</button>
     <h2>
         Turmas
     </h2>
@@ -67,6 +71,13 @@ function irParaProduto() {
    </main>
    <button @click="irParaProduto">Adicionar Produto</button>
 
+   <carrinho-component
+    v-if="showCart"
+    :cart="cart"
+    @hide-cart="showCart = false"
+    @increment-produto="incrementProdutoToCarrinho"
+    @decrement-produto="decrementProdutoToCarrinho"
+   />
    <agro1-component />
    <agro2-component />
    <agro3-component />
@@ -111,8 +122,8 @@ section.turmas button {
 
 }
 section.turmas button:hover {
-    background-color: #1e88e5; /* muda a cor ao passar o mouse */
-    transform: scale(1.2); /* aumenta o tamanho */
+    background-color: #1e88e5; 
+    transform: scale(1.2); 
     border-color: #1e88e5; 
     color: white;
 

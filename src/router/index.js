@@ -12,43 +12,43 @@ const routes = [
         component: () => import('@/components/turmas.vue'),
     },
     {
-        path: '/Botao3Agro1',
+        path: '/3Agro1',
         name: '3Agro1',
-        componet: () => import('@/views/Botao3Agro1.vue'),
+        componet: () => import('@/views/3Agro1.vue'),
     },
     {
-        path: '/Botao3Agro2',
+        path: '/3Agro2',
         name: '3Agro2',
-        component: () => import('@/views/Botao3Agro2.vue'),
+        component: () => import('@/views/3Agro2.vue'),
     },
     {
-        path: '/Botao3Agro3',
+        path: '/3Agro3',
         name: '3Agro3',
-        component: () => import('@/views/Botao3Agro3.vue'),
+        component: () => import('@/views/3Agro3.vue'),
     },
     {
-        path: '/Botao3Info1',
+        path: '/3Info1',
         name: '3Info1',
-        component: () => import('@/views/Botao3Info1.vue'),
+        component: () => import('@/views/3Info1.vue'),
     },
     {
-        path: '/Botao3Info2',
+        path: '/3Info2',
         name: '3Info2',
-        component: () => import('@/views/Botao3Info2.vue'),
+        component: () => import('@/views/3Info2.vue'),
     },
     {
-        path: '/Botao3Info3',
+        path: '/3Info3',
         name: '3Info3',
-        component: () => import('@/views/Botao3Info3.vue'),
+        component: () => import('@/views/3Info3.vue'),
     },
     {
-        path: '/Botao3Quimi',
+        path: '/3Quimi',
         name: '3Quimi',
-        component: () => import('@/views/Botao3Quimi.vue'),
+        component: () => import('@/views/3Quimi.vue'),
     },
-    {   path: '/BotaoAdicionarProduto',
-        name: 'Produto',
-        //component: () => import('@/views/botaoAdicionarProduto.vue')
+    {   path: '/carrinho',
+        name: 'carrinho',
+        component: () => import('@/views/carrinhoView.vue'),
     }
 ]
 

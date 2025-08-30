@@ -31,6 +31,21 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 button.turmas {
-  
+  font-size: 1vw;
+  font-weight: bold;
+  color: white;
+  margin: 0.6vw 0 0 0;
+  padding: 1vw 4vw 1vw 4vw;
+  background-color: #5BA3CF;
+  border-color: #5BA3CF;
+  border-radius: 0.4vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button.turmas:hover {
+  background-color: #1e88e5;  
+    transform: scale(1.2);
+    border-color: #1e88e5; 
+    color: white;
 }
 
