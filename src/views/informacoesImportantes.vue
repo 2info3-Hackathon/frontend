@@ -16,6 +16,7 @@ watch(
 
 <template>
     <body>
+      <img src="/imagens/Group65.png" alt="ondas-header">
          <div>
     <main v-if="showSummary">
       <h1>Sumário</h1>
@@ -48,20 +49,26 @@ watch(
     </main>
     <router-view />
   </div>
+  <img src="/imagens/Group65.png" class="girada" alt="ondas-footer">
     </body>
 </template>
 
 <style scoped>
-main {
-  background-color: white;
-  padding: 4vw;
-  border-radius: 10px;
+
+body img {
+ width: 102.39%; /* largura visível */
+ height: 200px;
+ overflow: hidden; /* esconde o que passa */
+ margin-top: -50px; /* sobe a imagem para cortar a parte de cima */
+ margin-left: -20px;  /* empurra pra esquerda */
 }
 
 h1 {
   text-align: center;
-  color: #477A9A;
+  color: #2D86FB;
   font-weight: bold;
+  font-size: 2.5rem;
+  margin: 4vw 0 0 0;
 }
 
 .menu {
@@ -71,26 +78,38 @@ h1 {
 }
 
 ul {
-  color: #477A9A;
+  color: #2D86FB;
+  margin: 2vw 2vw 6vw 2vw;
+}
+
+ul ::marker{
+  font-size: 1.3em;
 }
 
 li {
   margin: 3vw;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
 .link {
-  color: #5BA3CF;
+  color: black;
   text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 .link:hover {
   text-decoration: underline;
+  color: #2c71c0;
+  text-decoration: underline;
 }
 
-body {
-  background: #5BA3CF;
-  padding: 7vw;
+.girada {
+ width: 102.39%;     /* largura visível */
+ height: 180px;
+ overflow: hidden; /* esconde o que passa */
+ margin-left: -20px;  /* empurra pra esquerda */
+ transform: rotate(180deg); /* gira 45 graus */
 }
 </style>

@@ -27,3 +27,12 @@ function voltarAoSumario() {
     </div>
   </main>
 </template>
+
+<style scoped>
+h1 {
+margin: 5vw;
+}
+div{
+  margin: 5vw;
+}
+</style>
