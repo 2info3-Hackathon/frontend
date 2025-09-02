@@ -41,8 +41,8 @@ function voltar() {
 button{
   background: linear-gradient(135deg, #1e88e5, #42a5f5);
   color: white;
-  font-size: 18px;
-  padding: 10px 25px;
+  font-size: 20px;
+  padding: 15px 30px;
   margin: 50px 150px 50px 150px;
   border: none;
   border-radius: 12px;

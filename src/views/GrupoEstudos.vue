@@ -92,8 +92,8 @@ h1{
 
 .conteudo {
   background-image: url(/public//imagem/Group65.png);
-  width: 100%;
-  height: 70vh;
+  width: 95.99%;
+  height: 60vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
