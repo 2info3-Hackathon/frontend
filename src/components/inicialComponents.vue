@@ -25,34 +25,22 @@ import App from '@/App.vue';
         <div class="lista">
           <ul>
             <li>
-              <h2>Núcleu</h2>
-              <p>lsls</p>
+              <h2>Núcleos </h2>
             </li>
             <li>
               <h2>Vendas Terceirão</h2>
             </li>
              <li>
-              <h2>Comissão</h2>
-              <p>dkdkkdk</p>
-            </li>
-             <li>
-              <h2>Cômite</h2>
-              <p>lslskslk</p>
+              <h2>Cômites e Comissões</h2>
             </li>
             <li>
               <h2>Grupo de Estudo</h2>
-              <p>lsls</p>
             </li>
             <li>
               <h2>Eventos</h2>
-              <p>lsls</p>
             </li>
             <li>
               <h2>Informações Importantes</h2>
-              <p>lsls</p>
-            </li>
-            <li>
-              <h2>Atestado e Declarações</h2>
             </li>
           </ul>
         </div>
@@ -82,16 +70,16 @@ p{
   color: aliceblue;
 }
 div.lista{
-   margin-top: -10vw;
+  margin-top: -10vw;
 }
 div.lista ul {
 display: flex;
 justify-content: space-between;
 list-style: none;
 display: grid;
-grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+grid-template-columns: repeat(2, 1fr); /* 4 colunas iguais */
 gap: 100px; /* espaço entre os botões */
-max-width: 10000px; /* opcional, controla a largura total */
+max-width: 1000px; /* opcional, controla a largura total */
 margin: 80px auto; /* centraliza o grid */
 width: 100%;  /* Definindo a largura do contêiner */
 }
@@ -104,6 +92,6 @@ color: aliceblue;
 }
 li:hover{
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-  transform: scale(1.05);
+  transform: scale(1.2);
 }
 </style>
