@@ -50,19 +50,19 @@ function irParaCarrinhoView() {
         Turmas
     </h2>
     <section class="turmas">
-      
+
         <div class="agro">
             <button @click="irPara3Agro1"> 3Agro1 </button>
             <button @click="irPara3Agro2"> 3Agro2 </button>
             <button @click="irPara3Agro3"> 3Agro3 </button>
-           
+
         </div>
         <div class="info">
             <button @click="irPara3Info1"> 3Info1 </button>
             <button @click="irPara3Info2"> 3Info2 </button>
             <button @click="irPara3Info3"> 3Info3 </button>
         </div>
-        
+
     </section>
      <div class="quimi">
              <button @click="irPara3Quimi"> 3Quimi </button>
@@ -91,30 +91,32 @@ function irParaCarrinhoView() {
 h2 {
     display: flex;
     justify-content: center;
-    margin: 0 40vw 0 40vw;
+    margin: 0 33vw 0 33vw;
     background-color: white;
+    padding: 10px 10px 10px 10px;
     border-radius: 60px;
     font-size: 30px;
+    color: black;
 }
 div.tudo {
     background:  linear-gradient(135deg, #1e88e5, #42a5f5);
-    margin: 4vw;
-    padding: 2vw 0 0 0;
-    border-radius: 10vw;
+    margin: 4vw 10vw 4vw 10vw;
+    padding: 2vw 0 3vw 0;
+    border-radius: 7vw;
 }
 section.turmas {
     margin: 50px 300px 50px 150px;
     padding: 0 150px 0 150px;
     display: flex;
-    
-    
+
+
 }
 section.turmas button {
-    padding: 10px 60px 10px 60px;
-    margin: 40px 80px 40px 80px;
-    background-color: white;   
-    color: black;     
-    border: 2px solid #1e88e5; 
+    padding: 14px 60px 14px 60px;
+    margin: 40px 120px 40px 120px;
+    background-color: white;
+    color: black;
+    border: 2px solid #1e88e5;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
@@ -122,20 +124,20 @@ section.turmas button {
 
 }
 section.turmas button:hover {
-    background-color: #1e88e5; 
-    transform: scale(1.2); 
-    border-color: #1e88e5; 
+    background-color: #1e88e5;
+    transform: scale(1.2);
+    border-color: #1e88e5;
     color: white;
 
 }
 section.turmas div.agro {
     background-color: white;
-    margin: 30px;
+    margin: 0 30px 0 0;
     border-radius: 60px;
 }
 section.turmas div.info {
     background-color: white;
-    margin: 30px;
+    margin: 0 0 0 30px;
     border-radius: 60px;
 }
 div.quimi {
@@ -143,24 +145,24 @@ div.quimi {
     background-color: white;
     border-radius: 60px;
     font-size: 30px;
-    margin: 0 37vw 0 37vw;
-    
+    margin: 0 30vw 0 30vw;
+
 }
 div.quimi button {
-    padding: 10px 60px 10px 60px;
+    padding: 14px 60px 14px 60px;
     margin: 20px 40px 20px 40px;
-    background-color: white;   
-    color: black;     
-    border: 2px solid #1e88e5; 
+    background-color: white;
+    color: black;
+    border: 2px solid #1e88e5;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    transition: all 0.3s ease;     
+    transition: all 0.3s ease;
 }
 div.quimi button:hover {
-    background-color: #1e88e5;  
+    background-color: #1e88e5;
     transform: scale(1.2);
-    border-color: #1e88e5; 
+    border-color: #1e88e5;
     color: white;
 
 }

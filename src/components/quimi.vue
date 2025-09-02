@@ -55,7 +55,7 @@ function alternarTexto(){
 <template>
 
     <section class="quimi">
-        <img src="/public/Banner3Quimi.png" alt="" width="1324" height="">
+        <img src="/public/3Quimi.png" alt="" width="1834" height="">
 
          <div>
     <ul>
@@ -76,17 +76,17 @@ function alternarTexto(){
 
         <div v-else>
           <button class="comprar" @click="adicionarProduto(livro)"><a class="fa-solid fa-square-plus"></a> Comprar</button>
-          
+
         </div>
-        
+
 
         </li>
     </ul>
    </div>
 
     </section>
-    <hr>
-    
+
+
 </template>
 
 <style scoped>
@@ -131,9 +131,9 @@ section.quimi div button.comprar {
   transition: all 0.3s ease;
 }
 section.quimi div button.comprar:hover {
-  background-color: #1e88e5; 
-    transform: scale(1.2); 
-    border-color: #1e88e5; 
+  background-color: #1e88e5;
+    transform: scale(1.2);
+    border-color: #1e88e5;
 }
 hr {
   margin: 2vw 0 0 0;

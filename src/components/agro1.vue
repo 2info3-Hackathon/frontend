@@ -55,7 +55,7 @@ function alternarTexto(){
 <template>
 
     <section class="agro1">
-        <img src="/public/Banner3Agro1.png" alt="" width="1324" height="">
+        <img src="/public/Banner3Agro1.png" alt="" width="1834" height="">
 
          <div>
     <ul>
@@ -76,17 +76,17 @@ function alternarTexto(){
 
         <div v-else>
           <button class="comprar" @click="adicionarProduto(livro)"><a class="fa-solid fa-square-plus"></a> Comprar</button>
-          
-        </div>  
-        
+
+        </div>
+
 
         </li>
     </ul>
    </div>
 
     </section>
-    <hr>
-    
+
+
 </template>
 
 <style scoped>
@@ -133,7 +133,7 @@ section.agro1 div button.comprar {
 section.agro1 div button.comprar:hover {
   background-color: #1e88e5; /* muda a cor ao passar o mouse */
     transform: scale(1.2); /* aumenta o tamanho */
-    border-color: #1e88e5; 
+    border-color: #1e88e5;
 }
 
 hr {
