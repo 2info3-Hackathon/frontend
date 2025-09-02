@@ -1,5 +1,15 @@
 
 <script setup>
+import { ref} from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+const showSummary = ref(true)
+const route = useRoute()
+const router = useRouter()
+
+function voltarAoinicio() {
+  router.push('/')
+}
 </script>
 
 <template>
@@ -64,6 +74,9 @@
         <h2>Núcleo de Gestão Ambiental - NGA</h2>
         <p>Desde o início, o NGA possui inúmeras atribuições, buscando discutir, formular e implantar a Política Ambiental do IFC, vinculando o princípio da sustentabilidade socioambiental em nosso Instituto, tornando o valor fundamental para a comunidade escolar e buscando o cumprimento da legislação ambiental.</p>
       </div>
+      <div v-if="!showSummary" class="voltar">
+      <button @click="voltarAoinicio">← Voltar ao Sumário</button>
+    </div>
   </section>
   </main>
 </template>

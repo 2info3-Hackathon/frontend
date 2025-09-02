@@ -1,13 +1,10 @@
 <script setup>
-import nucleoView from './views/nucleoView.vue';
-import comissaoView from './views/comissaoView.vue';
-import comiteView from './views/comiteView.vue';
+import inicioViews from './views/inicioViews.vue';
+import { useRoute } from 'vue-router';
 </script>
 
 <template>
-    <nucleoView/>
-    <comissaoView/>
-    <comiteView/>
+    <RouterView/>
 </template>
 
 <style scoped>
