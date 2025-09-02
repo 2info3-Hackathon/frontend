@@ -30,6 +30,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+main{
+  background-color: white;
+}
 button.turmas {
   font-size: 1vw;
   font-weight: bold;
@@ -43,9 +46,19 @@ button.turmas {
   transition: all 0.3s ease;
 }
 button.turmas:hover {
-  background-color: #1e88e5;  
+  background-color: #1e88e5;
     transform: scale(1.2);
-    border-color: #1e88e5; 
+    border-color: #1e88e5;
     color: white;
+}
+p.nome {
+  color: black;
+}
+p.local {
+  color: black;
+}
+p.preco {
+  color: black;
+
 }
 

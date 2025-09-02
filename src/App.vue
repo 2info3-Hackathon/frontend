@@ -6,11 +6,13 @@ import turmasComponent from './components/turmas.vue'
 
 <template>
  <section>
-  <turmasComponent />
-  <RouterView />
+    <main>
+        <turmasComponent />
+        <RouterView />
+    </main>
  </section>
- 
- 
+
+
 
 
 </template>

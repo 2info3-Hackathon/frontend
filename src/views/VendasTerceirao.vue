@@ -42,7 +42,6 @@ function irParaCarrinhoView() {
 </script>
 
 <template>
-    <main>
         <div class="tudo">
 
         <button @click="irParaCarrinhoView">carrinho</button>
@@ -68,7 +67,6 @@ function irParaCarrinhoView() {
              <button @click="irPara3Quimi"> 3Quimi </button>
         </div>
         </div>
-   </main>
    <button @click="irParaProduto">Adicionar Produto</button>
 
    <carrinho-component
