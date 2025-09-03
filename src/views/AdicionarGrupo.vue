@@ -17,23 +17,49 @@ function voltar() {
     <div class="informacoes">
 
       <form>
+        <h2>
+          Grupo de Estudos
+        </h2>
+
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
         <label for="materia">Matéria:</label>
         <input type="text" id="materia" name="mateira" required>
 
-        <label for="sala">Sala de Encontro:</label>
+        <label for="sala">Localização de Encontros:</label>
         <input type="text" name="sala" rows="5" required>
 
-        <label for="data"><Datalist></Datalist> de Encontro:</label>
-        <input type="date" name="data" required>
+        <fieldset>
+          <h3>Dias de Encontros</h3>
+          <label>
+            <input type="checkbox" name="segunda" value="1"> Segunda-Feira
+            <input type="checkbox" name="terca" value="2"> Terça-Feira
+            <input type="checkbox" name="segunda" value="3"> Quarta-Feira
+            <input type="checkbox" name="segunda" value="4"> Quinta-Feira
+            <input type="checkbox" name="segunda" value="5"> Sexta-Feira
+          </label>
+        </fieldset>
 
         <label for="horario">Horário de Encontro:</label>
         <input type="time" name="horario" required>
 
+        <h2>
+          Monitor Responsável
+        </h2>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="materia">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="sala">Horário Disponível:</label>
+        <input type="text" name="sala" rows="5" required>
+
         <button type="submit">Enviar</button>
       </form>
+
     </div>
 
     <button @click="voltar">Voltar</button>
@@ -88,6 +114,11 @@ form {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+h2{
+  font-size: 18px;
+  padding: 15px 5px 15px 0;
+}
+
 label {
   display: block;
   margin-top: 10px;
@@ -95,6 +126,7 @@ label {
 }
 
 input{
+  font-size: 15px;
   width: 100%;
   padding: 15px 5px 15px 0;
   margin-top: 5px;

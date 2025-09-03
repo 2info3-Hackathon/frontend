@@ -19,8 +19,13 @@ function voltar() {
           Monitor Responsável:
         </h2>
         <p>Nome: ??</p>
-        <p>Sala: ??</p>
+        <p>Email: ??</p>
         <p>Horário disponível: ??</p>
+
+        <h2>
+          Dia:
+        </h2>
+        <p>??</p>
 
         <h2>
           Horário:
@@ -28,7 +33,7 @@ function voltar() {
         <p>??</p>
 
         <h2>
-          Sala:
+          Localização:
         </h2>
         <p>??</p>
     </div>
