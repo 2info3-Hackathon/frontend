@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 main{
-  background-color: white;
+  /*background-color: white;*/
 }
 button.turmas {
   font-size: 1vw;

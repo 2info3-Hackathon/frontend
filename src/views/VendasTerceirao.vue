@@ -1,5 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { useAgro3Store } from '@/stores/agro3';
+import { useCartStore } from '@/stores/cart';
 
 import agro1Component from '@/components/agro1.vue';
 import agro2Component from '@/components/agro2.vue';
@@ -8,7 +10,7 @@ import info1Component from '@/components/info1.vue';
 import info2Component from '@/components/info2.vue';
 import info3Component from '@/components/info3.vue';
 import quimiComponent from '@/components/quimi.vue';
-import carrinhoComponent from '@/components/carrinho.vue';
+import CartComponent from '@/components/cart.vue';
 
 const router = useRouter()
 
@@ -33,12 +35,10 @@ function irPara3Info3(){
 function irPara3Quimi(){
     router.push('/3Quimi')
 }
-function irParaProduto() {
-    router.push('/BotaoAdicionarProduto')
-}
-function irParaCarrinhoView() {
-    router.push('/carrinho')
-}
+//import { useAgro3Store } from '@/stores/agro3';
+//import { useCartStore } from '@/stores/cart';
+//const ProdutosStore = useAgro3Store();
+//const cartStore = useCartStore();
 </script>
 
 <template>
@@ -69,14 +69,19 @@ function irParaCarrinhoView() {
         </div>
    <button @click="irParaProduto">Adicionar Produto</button>
 
-   <carrinho-component
-    v-if="showCart"
-    :cart="cart"
-    @hide-cart="showCart = false"
-    @increment-produto="incrementProdutoToCarrinho"
-    @decrement-produto="decrementProdutoToCarrinho"
-   />
-   <agro1-component />
+    <!--<Cart-component
+    v-if="cartStore.showCart"
+    :cart="cartStore.cart"
+    @hide-cart="cartStore.showCart = false"
+    @increment-produto="cartStore.incrementProdutoToCart"
+    @decrement-produto="cartStore.decrementProdutoToCart"
+     />-->
+
+
+       <!--:produto="produtosStore.produtos"
+    @add-to-cart="cartStore.addToCart"/>-->
+
+   <agro1-component/>
    <agro2-component />
    <agro3-component />
    <info1-component />
