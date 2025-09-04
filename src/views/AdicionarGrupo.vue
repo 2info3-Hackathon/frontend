@@ -30,20 +30,6 @@ function voltar() {
         <label for="sala">Localização de Encontros:</label>
         <input type="text" name="sala" rows="5" required>
 
-        <fieldset>
-          <h3>Dias de Encontros</h3>
-          <label>
-            <input type="checkbox" name="segunda" value="1"> Segunda-Feira
-            <input type="checkbox" name="terca" value="2"> Terça-Feira
-            <input type="checkbox" name="segunda" value="3"> Quarta-Feira
-            <input type="checkbox" name="segunda" value="4"> Quinta-Feira
-            <input type="checkbox" name="segunda" value="5"> Sexta-Feira
-          </label>
-        </fieldset>
-
-        <label for="horario">Horário de Encontro:</label>
-        <input type="time" name="horario" required>
-
         <h2>
           Monitor Responsável
         </h2>
@@ -115,7 +101,8 @@ form {
 }
 
 h2{
-  font-size: 18px;
+  font-weight: bolder;
+  font-size: 20px;
   padding: 15px 5px 15px 0;
 }
 
@@ -139,7 +126,7 @@ form button{
   color: white;
   font-size: 18px;
   padding: 10px 25px;
-  margin: 50px 150px 50px 220px;
+  margin: 50px 150px 50px 320px;
   border: none;
   border-radius: 12px;
   cursor: pointer;

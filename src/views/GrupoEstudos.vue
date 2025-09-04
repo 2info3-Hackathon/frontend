@@ -58,7 +58,7 @@ function adicionar(){
   <section class="conteudo">
     <p>Os Grupos de Estudos têm a intenção de praticar e auxiliar em matérias do ensino médio e técnico integrado para alunos com dificuldades.</p>
     <p>Em nossa sala de estudos sempre há um monitor responsável por ajudar os alunos interessados, seja em tirar dúvidas sobre as matérias ou até mesmo sobre os grupos.</p>
-    <p>Caso seja um professor ou um monitor cadastrado e deseja adicionar um novo grupo de estudos, <a @click="adicionar">clique aqui!</a></p>
+    <p><a @click="adicionar">clique aqui!</a></p>
   </section>
 
   <section class="botoes">

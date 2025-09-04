@@ -23,11 +23,6 @@ function voltar() {
         <p>Horário disponível:??</p>
 
         <h2>
-          Horário:
-        </h2>
-        <p>??</p>
-
-        <h2>
           Sala:
         </h2>
         <p>??</p>
@@ -76,13 +71,13 @@ button{
   color: #c5dafa;
   font-size: 35px;
   font-weight:bolder;
-  margin: 0 50px 0 150px;
+  margin: 0 50px 0 220px;
 }
 
 .informacoes p{
   font-size: 25px;
   font-weight: 500;
-  margin: 30px 0 30px 200px;
+  margin: 30px 0 30px 280px;
   color: white;
 }
 </style>
