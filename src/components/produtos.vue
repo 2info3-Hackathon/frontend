@@ -43,15 +43,32 @@ const info1 = ref([
   },
 ]);
 
-function adicionarProduto(prod) {
-  const existente = carrinho.value.find((p) => p.id === prod.id);
-  if (existente) {
-    existente.quantidade++;
+function decrementProdutoToCart(produto) {
+  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
+  if (existingProduto.quantity === 1) {
+    cart.value.items = cart.value.items.filter((item) => item.id !== produto.id)
   } else {
-    carrinho.value.push({ ...prod, quantidade: 1 });
+    existingProduto.quantity--
   }
+  cart.value.total -= Produto.preco
 }
 
+function incrementProdutoToCart(produto) {
+  const existingBook = cart.value.items.find((item) => item.id === produto.id)
+  existingBook.quantity++
+  cart.value.total += produto.price
+}
+
+function addToCart(produto) {
+  const existingBook = cart.value.items.find((item) => item.id === book.id)
+  if (existingBook) {
+    existingBook.quantity++
+  } else {
+    cart.value.items.push({ ...book, quantity: 1 })
+  }
+  cart.value.total += book.price
+  alert(`Adicionado ${book.title} ao carrinho!`)
+}
 
 </script>
 <template>
@@ -146,7 +163,7 @@ function adicionarProduto(prod) {
     </div>
   </section>
 </main>
-<main v-else>
+
 
 
 </template>
