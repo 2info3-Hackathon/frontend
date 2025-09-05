@@ -43,15 +43,13 @@ h1 {
     font-size: 2.5rem;
     margin: 4vw 0 0 0;
 }
-.menu {
-    justify-content: center;
-}
 ul {
     color:aliceblue;
     margin: 2vw 2vw 6vw 2vw;
     background-color:#2c71c0;
     border-radius: 10px;
     display: flex;
+    justify-content: space-between;
 }
 ul ::marker {
     font-size: 1.3em;
@@ -60,6 +58,7 @@ li {
     margin: 3vw;
     font-size: 1.5rem;
     cursor: pointer;
+    text-align: center;
 }
 .link {
     color:aliceblue;

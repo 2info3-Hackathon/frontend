@@ -1,5 +1,22 @@
 <script setup>
+import { ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
+const showSummary = ref(true)
+const route = useRoute()
+const router = useRouter()
+
+watch(
+  () => route.fullPath,
+  (newPath) => {
+    showSummary.value = newPath === '/'
+  },
+  { immediate: true }
+)
+
+function voltarAoinicio() {
+  router.push('/')
+}
 </script>
 
 <template>
@@ -27,6 +44,9 @@
                     A Comissão Interna de Supervisão do Plano de Carreira dos Cargos Técnico-administrativos em Educação (CIS),<br> vinculada a Comissão Nacional de Supervisão do Ministério da Educação, composta servidores integrantes do <br> Plano de Carreira dos Cargos Técnico-Administrativos em Educação – PCCTAE, com a finalidade de acompanhar,<br> orientar, fiscalizar e avaliar a sua implementação no âmbito do Instituto Federal Catarinense e propor à <br> Comissão Nacional de Supervisão as alterações necessárias para seu aprimoramento.
                 </p>
             </div>
+            <div v-if="!showSummary" class="voltar">
+      <button @click="voltarAoinicio">← Voltar ao Sumário</button>
+      </div>
         </section>
     </main>
 </template>
@@ -44,6 +64,7 @@ section.lista div.azul{
   color: aliceblue;
   font-size: 1.3rem;
   padding: 1vw 2vw 1vw 2vw;
+  margin-bottom: -10vw;
 }
 div.branco{
    margin-top: -12vw;
@@ -53,6 +74,7 @@ div.branco{
 }
 h1{
     text-align: center;
+    font-size: 2rem;
     margin-top: 3vw;
     margin-bottom: 3vw;
 }
@@ -65,6 +87,15 @@ div h2{
 div p {
    text-align: center;
   
+}
+button{
+    background-color: #1C72D3;
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: 2vw;
 }
 
 </style>
