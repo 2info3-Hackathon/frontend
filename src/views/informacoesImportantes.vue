@@ -6,118 +6,125 @@ const showSummary = ref(true)
 const route = useRoute()
 
 watch(
-    () => route.fullPath,
-    (newPath) => {
-        showSummary.value = newPath === '/'
-    },
-    { immediate: true }
+  () => route.fullPath,
+  (newPath) => {
+    showSummary.value = newPath === '/'
+  },
+  { immediate: true }
 )
 </script>
 
 <template>
 
-    <body>
-        <img src="/imagens/Group65.png" alt="ondas-header">
-        <div>
-            <main v-if="showSummary">
-                <h1>Sumário</h1>
-                <div class="menu">
-                    <ul>
-                        <li>
-                            <RouterLink to="/contatosImportantes" class="link">
-                                Contatos Importantes
-                            </RouterLink>
-                        </li>
-                        <li>
-                            <RouterLink to="/AtestadosDeclaracoes" class="link">
-                                Atestados e Declarações
-                            </RouterLink>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <RouterLink to="/atendimentos" class="link">
-                                Atendimentos
-                            </RouterLink>
-                        </li>
-                        <li>
-                            <RouterLink to="/clifc" class="link">
-                                CLIFC
-                            </RouterLink>
-                        </li>
-                    </ul>
-                </div>
-            </main>
-            <router-view />
+  <body>
+    <div class="ondas"></div>
+    <div>
+      <main v-if="showSummary">
+        <h1>Sumário</h1>
+        <div class="menu">
+          <ul>
+            <li>
+              <RouterLink to="/contatosImportantes" class="link">
+                Contatos Importantes
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/AtestadosDeclaracoes" class="link">
+                Atestados e Declarações
+              </RouterLink>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <RouterLink to="/atendimentos" class="link">
+                Atendimentos
+              </RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/clifc" class="link">
+                CLIFC
+              </RouterLink>
+            </li>
+          </ul>
         </div>
-        <img src="/imagens/Group65.png" class="girada" alt="ondas-footer">
-    </body>
+      </main>
+      <router-view />
+      <div class="girada"></div>
+    </div>
+  </body>
 </template>
 
 <style scoped>
-body img {
-    width: 102.39%;
-    /* largura visível */
-    height: 200px;
-    overflow: hidden;
-    /* esconde o que passa */
-    margin-top: -50px;
-    /* sobe a imagem para cortar a parte de cima */
-    margin-left: -20px;
-    /* empurra pra esquerda */
+.ondas {
+  background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%201440%20320%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20fill%3D%27%23ffffff%27%20d%3D%27M0%2C288L30%2C261.3C60%2C235%2C120%2C181%2C180%2C165.3C240%2C149%2C300%2C171%2C360%2C181.3C420%2C192%2C480%2C181%2C540%2C170.7C600%2C160%2C660%2C150%2C720%2C154.7C780%2C160%2C840%2C181%2C900%2C192C960%2C203%2C1020%2C213%2C1080%2C208C1140%2C203%2C1200%2C171%2C1260%2C181.3C1320%2C192%2C1380%2C235%2C1410%2C261.3L1440%2C288L1440%2C320L1410%2C320C1380%2C320%2C1320%2C320%2C1260%2C320C1200%2C320%2C1140%2C320%2C1080%2C320C1020%2C320%2C960%2C320%2C900%2C320C840%2C320%2C780%2C320%2C720%2C320C660%2C320%2C600%2C320%2C540%2C320C480%2C320%2C420%2C320%2C360%2C320C300%2C320%2C240%2C320%2C180%2C320C120%2C320%2C60%2C320%2C30%2C320L0%2C320Z%27%2F%3E%3C%2Fsvg%3E');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  width: 102%;
+  height: 60vh;
+  background-color: #1C72D3;
+  display: block;
+  margin-left: -20px;
+  margin-top: -30px;
 }
 
 h1 {
-    text-align: center;
-    color: #2D86FB;
-    font-weight: bold;
-    font-size: 2.5rem;
-    margin: 4vw 0 0 0;
+  text-align: center;
+  color: #2D86FB;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: -50px;
 }
 
 .menu {
-    display: flex;
-    justify-content: center;
-    gap: 4vw;
+  display: flex;
+  justify-content: center;
+  gap: 4vw;
+  margin-bottom: -8vw;
 }
 
 ul {
-    color: #2D86FB;
-    margin: 2vw 2vw 6vw 2vw;
+  color: #1C72D3;
+  ;
+  margin: 2vw 2vw 6vw 2vw;
 }
 
 ul ::marker {
-    font-size: 1.3em;
+  font-size: 1.3em;
 }
 
 li {
-    margin: 3vw;
-    font-size: 1.5rem;
-    cursor: pointer;
+  margin: 3vw;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .link {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
 .link:hover {
-    text-decoration: underline;
-    color: #2c71c0;
-    text-decoration: underline;
+  text-decoration: underline;
+  color: #2c71c0;
+  text-decoration: underline;
 }
 
 .girada {
-    width: 102.39%;
-    /* largura visível */
-    height: 180px;
-    overflow: hidden;
-    /* esconde o que passa */
-    margin-left: -20px;
-    /* empurra pra esquerda */
-    transform: rotate(180deg);
-    /* gira 45 graus */
+  background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%201440%20320%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20fill%3D%27%23ffffff%27%20d%3D%27M0%2C288L30%2C261.3C60%2C235%2C120%2C181%2C180%2C165.3C240%2C149%2C300%2C171%2C360%2C181.3C420%2C192%2C480%2C181%2C540%2C170.7C600%2C160%2C660%2C150%2C720%2C154.7C780%2C160%2C840%2C181%2C900%2C192C960%2C203%2C1020%2C213%2C1080%2C208C1140%2C203%2C1200%2C171%2C1260%2C181.3C1320%2C192%2C1380%2C235%2C1410%2C261.3L1440%2C288L1440%2C320L1410%2C320C1380%2C320%2C1320%2C320%2C1260%2C320C1200%2C320%2C1140%2C320%2C1080%2C320C1020%2C320%2C960%2C320%2C900%2C320C840%2C320%2C780%2C320%2C720%2C320C660%2C320%2C600%2C320%2C540%2C320C480%2C320%2C420%2C320%2C360%2C320C300%2C320%2C240%2C320%2C180%2C320C120%2C320%2C60%2C320%2C30%2C320L0%2C320Z%27%2F%3E%3C%2Fsvg%3E');
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  width: 102%;
+  height: 60vh;
+  background-color: #1C72D3;
+  display: block;
+  margin-left: -20px;
+  margin-bottom: -80px;
+  transform: rotate(180deg);
+  /* gira 45 graus */
+  margin-top: -100px;
 }
 </style>
