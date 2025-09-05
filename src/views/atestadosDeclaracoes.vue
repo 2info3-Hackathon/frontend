@@ -62,10 +62,11 @@ function voltarAoSumario() {
 </template>
 
 <style scoped>
+
 main {
-    background: #2D86FB;
+    background: #1C72D3;
     border-radius: 5px;
-    margin: 8vw 15vw 8vw 15vw;
+    margin: 0 15vw 8vw 15vw;
     padding: 0 6vw 3vw 6vw;
 }
 
@@ -74,13 +75,13 @@ h1 {
     text-align: center;
     color: white;
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 p {
     text-align: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 span {
@@ -128,7 +129,6 @@ a {
 a:hover {
   text-decoration: underline;
   color: #184374;
-  text-decoration: underline;
 }
 
 img{
@@ -140,7 +140,7 @@ img{
 
 .voltar button {
     margin: 0 5vw 5vw 5vw;
-    background-color: #2D86FB;
+    background-color: #1C72D3;;
     color: white;
     border-radius: 5px;
 }
