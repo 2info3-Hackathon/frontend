@@ -1,16 +1,16 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import { useAgro3Store } from '@/stores/agro3';
-import { useCartStore } from '@/stores/cart';
 
-import agro1Component from '@/components/agro1.vue';
-import agro2Component from '@/components/agro2.vue';
-import agro3Component from '@/components/agro3.vue';
-import info1Component from '@/components/info1.vue';
-import info2Component from '@/components/info2.vue';
-import info3Component from '@/components/info3.vue';
-import quimiComponent from '@/components/quimi.vue';
-import CartComponent from '@/components/cart.vue';
+
+//import agro1Component from '@/components/agro1.vue';
+//import agro2Component from '@/components/agro2.vue';
+//import agro3Component from '@/components/agro3.vue';
+//import info1Component from '@/components/info1.vue';
+//import info2Component from '@/components/info2.vue';
+//import info3Component from '@/components/info3.vue';
+//import quimiComponent from '@/components/quimi.vue';
+import ProdutosComponent from '@/components/produtos.vue'
+
 
 const router = useRouter()
 
@@ -35,10 +35,7 @@ function irPara3Info3(){
 function irPara3Quimi(){
     router.push('/3Quimi')
 }
-//import { useAgro3Store } from '@/stores/agro3';
-//import { useCartStore } from '@/stores/cart';
-//const ProdutosStore = useAgro3Store();
-//const cartStore = useCartStore();
+
 </script>
 
 <template>
@@ -69,16 +66,7 @@ function irPara3Quimi(){
         </div>
    <button @click="irParaProduto">Adicionar Produto</button>
 
-    <!--<Cart-component
-    v-if="cartStore.showCart"
-    :cart="cartStore.cart"
-    @hide-cart="cartStore.showCart = false"
-    @increment-produto="cartStore.incrementProdutoToCart"
-    @decrement-produto="cartStore.decrementProdutoToCart"
-     />-->
-
-
-       <!--:produto="produtosStore.produtos"
+       <!--:poduto="produtosStore.produtos"
     @add-to-cart="cartStore.addToCart"/>-->
 
    <agro1-component/>
@@ -88,6 +76,10 @@ function irPara3Quimi(){
    <info2-component />
    <info3-component />
    <quimi-component />
+
+   
+  <produtos-component />
+
 
 </template>
 <style scoped>

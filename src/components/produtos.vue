@@ -1,6 +1,11 @@
 <script setup>
 import { ref } from 'vue';
 
+const showCart = ref(false);
+const cart = ref({
+  items: [],
+  total: 0,
+});
 const carrinho = ref([]);
 
 const info1 = ref([
@@ -51,6 +56,9 @@ function adicionarProduto(prod) {
 </script>
 <template>
 
+
+  <p @click="showCart = !showCart">abrir carrinho</p>
+
     <section class="info1">
        <img src="/public/Banner3Info1.png" alt="" width="1834" height="">
 
@@ -82,6 +90,63 @@ function adicionarProduto(prod) {
    </div>
 
     </section>
+    <main v-if="showCart">
+  <section class="cart">
+    <h2>Carrinho</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Quantidade</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="produto in cart.items" :key="produto.id">
+          <td class="cart-item">
+            <img :src="produto.nome" :alt="produto.nome" />
+            <div class="cart-item-info">
+              <p class="cart-item-title">{{ produto.nome }}</p>
+              <p class="cart-item-author">{{ produto.preco }}</p>
+              <p class="cart-item-price">R$ {{ produto.local }}</p>
+            </div>
+          </td>
+          <td>
+            <div class="cart-item-quantity">
+              <button class="plain">
+                <span class="mdi mdi-minus" />
+              </button>
+              {{ book.quantity }}
+              <button class="plain">
+                <span class="mdi mdi-plus" />
+              </button>
+            </div>
+          </td>
+          <td class="cart-item-subtotal">
+            R$ {{ book.price * book.quantity }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button @click="showCart = false" class="outlined">Voltar para loja</button>
+    <div class="cart-summary">
+      <div class="cupom">
+        <input type="text" placeholder="Código do cupom" />
+        <button>Inserir cupom</button>
+      </div>
+      <div class="summary">
+        <h2>Total da Compra</h2>
+        <div class="summary-items">
+          <span>Produtos</span> <span>R$ {{ cart.total.toFixed(2) }}</span>
+          <span>Frete</span> <span> Grátis</span> <span>Total</span>
+          <span>R$ {{ cart.total.toFixed(2) }}</span>
+        </div>
+        <button>Ir para pagamento</button>
+      </div>
+    </div>
+  </section>
+</main>
+<main v-else>
 
 
 </template>

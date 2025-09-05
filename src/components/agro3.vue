@@ -54,91 +54,11 @@ function alternarTexto(){
 </script>
 <template>
 
-    <section class="agro3">
-         <img src="/public/Banner3Agro3.png" alt="" width="1834" height="">
-
-         <div>
-    <ul>
-      <li v-for="produto in agro3" :key="produto.id">
-        <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
-        <p class="imagem">{{ imagem }}</p>
-        <p class="nome"> {{ produto.nome }}</p>
-
-        <p v-for="preco in agro3" :key="preco.id"></p>
-        <p class="preco"> R${{ produto.preco }}</p>
-
-        <p v-for="local in agro3" :key="local.id"></p>
-        <p class="local"> {{ produto.local }}</p>
-
-        <div v-if="carrinho.find(p => p.id === livro.id)">
-          <button class="botao"> <a class="fa-solid fa-square-plus"></a> Comprado</button>
-        </div>
-
-        <div v-else>
-          <button class="comprar" @click="adicionarProduto(livro)"><a class="fa-solid fa-square-plus"></a> Comprar</button>
-
-        </div>
-
-
-        </li>
-    </ul>
-   </div>
-
-    </section>
 
 
 </template>
 
 <style scoped>
-section.agro3 ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 2vw;
-}
 
-section.agro3 li {
-  box-sizing: border-box;
-  width: 20%;
-  margin: 6vw 1vw 0 0;
-  padding: 0 1vw;
-  white-space: nowrap;
-  list-style: none;
-}
-section.agro3 div p.nome {
-  margin: 0 0 0.2vw 0;
-  font-family: bold;
-  font-size: 1.6vw;
-}
-section.agro3 div p.local {
-  font-family: bold;
-  font-size: 1.4vw;
-}
-section.agro3 div p.preco {
-  font-family: bold;
-  font-size: 1.2vw;
-}
-section.agro3 div button.comprar {
-  font-size: 1vw;
-  font-weight: bold;
-  color: white;
-  margin: 0.6vw 0 0 0;
-  padding: 1vw 4vw 1vw 4vw;
-  background-color: #5BA3CF;
-  border-color: #5BA3CF;
-  border-radius: 0.4vw;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-section.agro3 div button.comprar:hover {
-  background-color: #1e88e5;
-    transform: scale(1.2);
-    border-color: #1e88e5;
-}
-hr {
-  margin: 2vw 0 0 0;
-  height: 0.2vw;
-  background-color: #5BA3CF;
-}
 
 </style>

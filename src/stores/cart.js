@@ -32,8 +32,8 @@ export const useCartStore = defineStore('cart', () => {
     } else {
       cart.value.items.push({ ...produto, quantity: 1 });
     }
-    cart.value.total += produto.price;
-    alert(`Adicionado ${produto.title} ao cart!`);
+    cart.value.total += produto.preco;
+    alert(`Adicionado ${produto.nome} ao cart!`);
   }
 
   return {
