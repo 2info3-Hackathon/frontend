@@ -1,6 +1,7 @@
 <script setup>
 
 import { useEventStore } from '@/stores/event';
+
 const store = useEventStore();
 
 const eventos = store.events
@@ -17,6 +18,24 @@ const eventos = store.events
                 <h2 class="name">
                     {{ event.nome }}
                 </h2>
+                <ul>
+                    <li>
+                        <h2>
+                            Organizador:
+                        </h2>
+                        <p>
+                            {{ event.organizador }}
+                        </p>
+                    </li>
+                    <li>
+                        <h2>
+                            Email:
+                        </h2>
+                        <p>
+                            {{ event.email }}
+                        </p>
+                    </li>
+                </ul>
                 <ul>
                     <li>
                         <h2>
@@ -70,7 +89,6 @@ section {
         display: inline-block;
         border-radius: 5px;
         font-size: calc(4vw + 0.390625vw);
-        text-shadow: 0 0 1vw #2D88FF;
     }
 
     & article {
@@ -101,7 +119,6 @@ section {
                         display: inline-block;
                         color: #1B5299;
                         margin: 1.5vw 2vw 1vw 0;
-                        text-shadow: 0 0 1vw #2D88FF;
                     }
 
                     & p {
@@ -120,7 +137,6 @@ section {
                     display: inline-block;
                     color: #1B5299;
                     margin: 1.5vw 1vw 0 0;
-                    text-shadow: 0 0 1vw #2D88FF;
                 }
 
                 & p {
