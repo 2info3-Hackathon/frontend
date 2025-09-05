@@ -72,7 +72,7 @@ h1 {
   text-align: center;
   color: #2D86FB;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-top: -50px;
 }
 
@@ -95,7 +95,7 @@ ul ::marker {
 
 li {
   margin: 3vw;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
