@@ -8,7 +8,4 @@ import { useRoute } from 'vue-router';
 </template>
 
 <style>
-#app {
-    background-color: red;
-}
 </style>

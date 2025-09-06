@@ -169,7 +169,6 @@ div.branco2 {
   font-size: 1.3rem;
   text-align: center;
   padding: 1vw 2vw 1vw 2vw;
-  background-color: #1C72D3;
   margin: -12vw; 
 }
 
@@ -181,7 +180,8 @@ div li {
 
 .voltar {
   position: relative;
-  margin-top: 0px;
+  margin-top: 240px;
+  margin-bottom: 50px;
 }
 
 
@@ -189,7 +189,8 @@ div li {
   background-color: #1C72D3;
   color: aliceblue;
   border-radius: 10px;
-  padding: 12px 24px;
+  padding: 20px 20px 20px 20px;
+  margin-left:2vw ;
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
