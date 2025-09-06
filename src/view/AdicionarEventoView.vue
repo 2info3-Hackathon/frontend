@@ -1,5 +1,5 @@
 <script setup>
-import AdicionarEventoComponent from '@/components/AdicionarEventoComponent.vue'
+import AdicionarEventoComponent from '@/components/AdicionarEventoCompoent.vue'
 </script>
 
 <template>
