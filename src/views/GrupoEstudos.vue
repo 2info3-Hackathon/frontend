@@ -58,7 +58,6 @@ function adicionar(){
   <section class="conteudo">
     <p>Os Grupos de Estudos têm a intenção de praticar e auxiliar em matérias do ensino médio e técnico integrado para alunos com dificuldades.</p>
     <p>Em nossa sala de estudos sempre há um monitor responsável por ajudar os alunos interessados, seja em tirar dúvidas sobre as matérias ou até mesmo sobre os grupos.</p>
-    <p><a @click="adicionar">clique aqui!</a></p>
   </section>
 
   <section class="botoes">
@@ -85,30 +84,33 @@ h1{
   color: #1C72D3;
   text-align: center;
   padding: 40px 60px 5px 60px;
-  margin: 0 150px 50px 150px;
-  font-size: 45px;
+  font-size: 2rem;
   font-weight: bolder;
+  margin-top: 2vw;
+  margin-bottom: 3vw;
 }
 
 .conteudo {
-  background-image: url(/public//imagem/Group65.png);
-  width: 95.99%;
-  height: 60vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%201440%20320%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20fill%3D%27%23ffffff%27%20d%3D%27M0%2C288L30%2C261.3C60%2C235%2C120%2C181%2C180%2C165.3C240%2C149%2C300%2C171%2C360%2C181.3C420%2C192%2C480%2C181%2C540%2C170.7C600%2C160%2C660%2C150%2C720%2C154.7C780%2C160%2C840%2C181%2C900%2C192C960%2C203%2C1020%2C213%2C1080%2C208C1140%2C203%2C1200%2C171%2C1260%2C181.3C1320%2C192%2C1380%2C235%2C1410%2C261.3L1440%2C288L1440%2C320L1410%2C320C1380%2C320%2C1320%2C320%2C1260%2C320C1200%2C320%2C1140%2C320%2C1080%2C320C1020%2C320%2C960%2C320%2C900%2C320C840%2C320%2C780%2C320%2C720%2C320C660%2C320%2C600%2C320%2C540%2C320C480%2C320%2C420%2C320%2C360%2C320C300%2C320%2C240%2C320%2C180%2C320C120%2C320%2C60%2C320%2C30%2C320L0%2C320Z%27%2F%3E%3C%2Fsvg%3E');
+  background-size: cover; /* Para garantir que cubra toda a área da div */
+  background-position: bottom; /* Ajusta a posição da onda para o fundo */
+  background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
+  width: 100%;
+  height: 60vh; /* Ajuste conforme a necessidade */
+  background-color: #1C72D3;
   display: block;
   color: aliceblue;
   font-size: 1.3rem;
   padding: 1vw 2vw 1vw 2vw;
+  margin-bottom: -10vw;
 }
 
 p{
   color: white;
-  font-size: 2rem;
+  font-size: 1.3rem;
   text-align: center;
   margin: 0 17vw 0 17vw;
-  padding: 3vw 0 2.5vw 0;
+  padding: 2vw 0 2.5vw 0;
 }
 
 a{
@@ -127,18 +129,19 @@ a:hover{
   grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
   gap: 100px; /* espaço entre os botões */
   max-width: 1000px; /* opcional, controla a largura total */
-  margin: 80px auto; /* centraliza o grid */
+  margin: 0px auto; /* centraliza o grid */
 }
 
 .botoes button {
   background: linear-gradient(135deg, #1e88e5, #42a5f5);
   color: white;
-  font-size: 22px;
-  padding: 30px 85px;
   border: none;
-  border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  font-size: 1.2rem;
+  margin-left: 2vw;
 }
 
 .botoes button:hover {

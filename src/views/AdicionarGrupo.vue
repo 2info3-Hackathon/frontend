@@ -56,13 +56,13 @@ function voltar() {
 button{
   background: linear-gradient(135deg, #1e88e5, #42a5f5);
   color: white;
-  font-size: 20px;
-  padding: 15px 30px;
-  margin: 0 150px 50px 212px;
   border: none;
-  border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  font-size: 1.2rem;
+  margin-left: 2vw;
 }
 
 .fundo button:hover {
@@ -75,8 +75,9 @@ button{
   color: #1C72D3;
   text-align: center;
   padding: 30px 60px 30px 60px;
-  margin: 0 150px 50px 150px;
-  font-size: 45px;
+  margin-top: 3vw;
+  font-size: 2rem;
+  margin-bottom: 2vw;
   font-weight: bolder;
 }
 
