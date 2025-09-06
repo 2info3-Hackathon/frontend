@@ -1,47 +1,12 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const showCart = ref(false);
+
+const showCart = ref(false)
 const cart = ref({
   items: [],
   total: 0,
-});
-const carrinho = ref([]);
-
-const info1 = ref([
-  {
-    id: 1,
-    nome:'chocolate',
-    preco: '5,00',
-    descricao: 'marca Garoto',
-    local: 'bloco E, cantina',
-    imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000',
-  },
-   {
-    id: 2,
-    nome:'chocolate',
-    preco: '5,00',
-    descricao: 'marca Garoto',
-    local: 'bloco E, cantina',
-    imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000',
-  },
-   {
-    id: 3,
-    nome:'chocolate',
-    preco: '5,00',
-    descricao: 'marca Garoto',
-    local: 'bloco E, cantina',
-    imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000',
-  },
-   {
-    id: 4,
-    nome:'chocolate',
-    preco: '5,00',
-    descricao: 'marca Garoto',
-    local: 'bloco E, cantina',
-    imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000',
-  },
-]);
+})
 
 function decrementProdutoToCart(produto) {
   const existingProduto = cart.value.items.find((item) => item.id === produto.id)
@@ -50,124 +15,95 @@ function decrementProdutoToCart(produto) {
   } else {
     existingProduto.quantity--
   }
-  cart.value.total -= Produto.preco
+  cart.value.total -= produto.preco
 }
 
 function incrementProdutoToCart(produto) {
-  const existingBook = cart.value.items.find((item) => item.id === produto.id)
-  existingBook.quantity++
-  cart.value.total += produto.price
+  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
+  existingProduto.quantity++
+  cart.value.total += produto.preco
 }
 
 function addToCart(produto) {
-  const existingBook = cart.value.items.find((item) => item.id === book.id)
-  if (existingBook) {
-    existingBook.quantity++
+  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
+  if (existingProduto) {
+    existingProduto.quantity++
   } else {
-    cart.value.items.push({ ...book, quantity: 1 })
+    cart.value.items.push({ ...produto, quantity: 1 })
   }
-  cart.value.total += book.price
-  alert(`Adicionado ${book.title} ao carrinho!`)
+  cart.value.total += produto.preco
+  alert(`Adicionado ${produto.nome} ao carrinho!`)
 }
 
 </script>
+
 <template>
-
-
-  <p @click="showCart = !showCart">abrir carrinho</p>
-
-    <section class="info1">
-       <img src="/public/Banner3Info1.png" alt="" width="1834" height="">
-
-         <div>
-    <ul>
-      <li v-for="produto in info1" :key="produto.id">
-        <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
-        <p class="imagem">{{ imagem }}</p>
-        <p class="nome"> {{ produto.nome }}</p>
-
-        <p v-for="preco in info1" :key="preco.id"></p>
-        <p class="preco"> R${{ produto.preco }}</p>
-
-        <p v-for="local in info1" :key="local.id"></p>
-        <p class="local"> {{ produto.local }}</p>
-
-        <div v-if="carrinho.find(p => p.id === livro.id)">
-          <button class="botao"> <a class="fa-solid fa-square-plus"></a> Comprado</button>
+   <li @click="showCart = !showCart"><span class="mdi mdi-cart"></span></li>
+  <main v-if="showCart">
+    <section class="cart">
+      <h2>Carrinho</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Quantidade</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="produto in cart.items" :key="produto.id">
+            <td class="cart-item">
+              <img :src="produto.local" :alt="produto.nome" />
+              <div>
+                <p>{{ produto.nome }}</p>
+                <p>{{ produto.vendedor }}</p>
+                <p>R$ {{ produto.preco.toFixed(2) }}</p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <button @click="decrementProdutoToCart(produto)" class="plain">
+                  <span class="mdi mdi-minus" />
+                </button>
+                {{ produto.quantity }}
+                <button @click="incrementProdutoToCart(produto)" class="plain">
+                  <span class="mdi mdi-plus" />
+                </button>
+              </div>
+            </td>
+            <td class="cart-item-subtotal">R$ {{ produto.preco * produto.quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <button @click="showCart = false" class="outlined">Voltar para loja</button>
+      <div class="cart-summary">
+        <div class="summary">
+          <h2>Total da Compra</h2>
+          <div class="summary-items">
+            <span>Produtos</span> <span>R$ {{ cart.total.toFixed(2) }}</span> <span>Frete</span>
+            <span> Grátis</span> <span>Total</span> <span>R$ {{ cart.total.toFixed(2) }}</span>
+          </div>
+          <button>Ir para pagamento</button>
         </div>
-
-        <div v-else>
-          <button class="comprar" @click="adicionarProduto(livro)"><a class="fa-solid fa-square-plus"></a> Comprar</button>
-
-        </div>
-
-
-        </li>
-    </ul>
-   </div>
-
+      </div>
     </section>
-    <main v-if="showCart">
-  <section class="cart">
-    <h2>Carrinho</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Quantidade</th>
-          <th>Subtotal</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="produto in cart.items" :key="produto.id">
-          <td class="cart-item">
-            <img :src="produto.nome" :alt="produto.nome" />
-            <div class="cart-item-info">
-              <p class="cart-item-title">{{ produto.nome }}</p>
-              <p class="cart-item-author">{{ produto.preco }}</p>
-              <p class="cart-item-price">R$ {{ produto.local }}</p>
-            </div>
-          </td>
-          <td>
-            <div class="cart-item-quantity">
-              <button class="plain">
-                <span class="mdi mdi-minus" />
-              </button>
-              {{ book.quantity }}
-              <button class="plain">
-                <span class="mdi mdi-plus" />
-              </button>
-            </div>
-          </td>
-          <td class="cart-item-subtotal">
-            R$ {{ book.price * book.quantity }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <button @click="showCart = false" class="outlined">Voltar para loja</button>
-    <div class="cart-summary">
-      <div class="cupom">
-        <input type="text" placeholder="Código do cupom" />
-        <button>Inserir cupom</button>
-      </div>
-      <div class="summary">
-        <h2>Total da Compra</h2>
-        <div class="summary-items">
-          <span>Produtos</span> <span>R$ {{ cart.total.toFixed(2) }}</span>
-          <span>Frete</span> <span> Grátis</span> <span>Total</span>
-          <span>R$ {{ cart.total.toFixed(2) }}</span>
-        </div>
-        <button>Ir para pagamento</button>
-      </div>
-    </div>
-  </section>
-</main>
-
-
+  </main>
+  <main v-else>
+    <section class="info1">
+      <article class="produto" v-for="produto in info1" :key="produto.id">
+        <img :src="produto.local" :alt="produto.nome" />
+        <h2>{{ produto.nome }}</h2>
+        <p class="produto-vendedor">{{ produto.vendedor }}</p>
+        <span class="preco-and-like">
+          <p class="produto-preco">R$ {{ produto.preco.toFixed(2) }}</p>
+          <span class="mdi mdi-heart-outline"></span>
+        </span>
+        <button @click="addToCart(produto)"><span class="mdi mdi-cart"></span>Comprar</button>
+      </article>
+    </section>
+  </main>
 
 </template>
-
 <style scoped>
 section.info1 ul {
   display: flex;

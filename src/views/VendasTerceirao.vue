@@ -1,15 +1,16 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { useProdutosStore } from '@/stores/produtosStore'
+
+import produtos from '@/components/produtos.vue'
 
 
-//import agro1Component from '@/components/agro1.vue';
-//import agro2Component from '@/components/agro2.vue';
-//import agro3Component from '@/components/agro3.vue';
-//import info1Component from '@/components/info1.vue';
-//import info2Component from '@/components/info2.vue';
-//import info3Component from '@/components/info3.vue';
-//import quimiComponent from '@/components/quimi.vue';
-import ProdutosComponent from '@/components/produtos.vue'
+const produtosStore = useProdutosStore()
+
+const produtosAgro1 = produtosStore.getProdutosAgro1
+const produtosAgro2 = produtosStore.getProdutosAgro2
+
+
 
 
 const router = useRouter()
@@ -35,6 +36,7 @@ function irPara3Info3(){
 function irPara3Quimi(){
     router.push('/3Quimi')
 }
+
 
 </script>
 
@@ -66,19 +68,29 @@ function irPara3Quimi(){
         </div>
    <button @click="irParaProduto">Adicionar Produto</button>
 
-       <!--:poduto="produtosStore.produtos"
-    @add-to-cart="cartStore.addToCart"/>-->
+    <ul>
+        <li v-for="produto in produtosAgro1" :key="produto.id">
+          {{ produto.nome }} - R$ {{ produto.preco }} <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
+        <p class="imagem">{{ produto.imagem }}</p>
+        </li>
+      </ul>
+       <ul>
+        <li v-for="produto in produtosAgro2" :key="produto.id">
+          {{ produto.nome }} -
+          R$ {{ produto.preco }}
+           <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
+        <p class="imagem">{{ produto.imagem }}</p>
+        </li>
+      </ul>
+       <li @click="showCart = !showCart"><span class="mdi mdi-cart"></span></li>
 
-   <agro1-component/>
-   <agro2-component />
-   <agro3-component />
-   <info1-component />
-   <info2-component />
-   <info3-component />
-   <quimi-component />
 
-   
-  <produtos-component />
+       <produtos />
+
+
+
+
+
 
 
 </template>

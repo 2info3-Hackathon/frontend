@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import agro1Component from '@/components/agro1.vue'
+import produtos from '@/components/produtos.vue'
 
 const router = useRouter()
 
@@ -11,7 +11,7 @@ function voltar() {
 
 </script>
 <template>
-    <agro1-component />
+    <produtos />
     <button class="turmas" @click="voltar">Voltar</button>
 </template>
 <style scoped>
