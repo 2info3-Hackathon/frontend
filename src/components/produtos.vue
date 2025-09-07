@@ -8,39 +8,14 @@ const cart = ref({
   total: 0,
 })
 
-function decrementProdutoToCart(produto) {
-  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
-  if (existingProduto.quantity === 1) {
-    cart.value.items = cart.value.items.filter((item) => item.id !== produto.id)
-  } else {
-    existingProduto.quantity--
-  }
-  cart.value.total -= produto.preco
-}
 
-function incrementProdutoToCart(produto) {
-  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
-  existingProduto.quantity++
-  cart.value.total += produto.preco
-}
-
-function addToCart(produto) {
-  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
-  if (existingProduto) {
-    existingProduto.quantity++
-  } else {
-    cart.value.items.push({ ...produto, quantity: 1 })
-  }
-  cart.value.total += produto.preco
-  alert(`Adicionado ${produto.nome} ao carrinho!`)
-}
 
 </script>
 
 <template>
    <li @click="showCart = !showCart"><span class="mdi mdi-cart"></span></li>
   <main v-if="showCart">
-    <section class="cart">
+    <section class="cartCompras">
       <h2>Carrinho</h2>
       <table>
         <thead>
@@ -87,9 +62,10 @@ function addToCart(produto) {
         </div>
       </div>
     </section>
+
   </main>
   <main v-else>
-    <section class="info1">
+    <section class="lista">
       <article class="produto" v-for="produto in info1" :key="produto.id">
         <img :src="produto.local" :alt="produto.nome" />
         <h2>{{ produto.nome }}</h2>
@@ -105,55 +81,5 @@ function addToCart(produto) {
 
 </template>
 <style scoped>
-section.info1 ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 2vw;
-}
-
-section.info1 li {
-  box-sizing: border-box;
-  width: 20%;
-  margin: 6vw 1vw 0 0;
-  padding: 0 1vw;
-  white-space: nowrap;
-  list-style: none;
-}
-section.info1 div p.nome {
-  margin: 0 0 0.2vw 0;
-  font-family: bold;
-  font-size: 1.6vw;
-}
-section.info1 div p.local {
-  font-family: bold;
-  font-size: 1.4vw;
-}
-section.info1 div p.preco {
-  font-family: bold;
-  font-size: 1.2vw;
-}
-section.info1 div button.comprar {
-  font-size: 1vw;
-  font-weight: bold;
-  color: white;
-  margin: 0.6vw 0 0 0;
-  padding: 1vw 4vw 1vw 4vw;
-  background-color: #5BA3CF;
-  border-color: #5BA3CF;
-  border-radius: 0.4vw;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-section.info1 div button.comprar:hover {
-  background-color: #1e88e5;
-    transform: scale(1.2);
-    border-color: #1e88e5;
-}
-hr {
-  margin: 2vw 0 0 0;
-  height: 0.2vw;
-  background-color: #5BA3CF;
-}
 
 </style>
