@@ -14,65 +14,159 @@ export const useProdutosStore = defineStore('produtos', {
       { id: 2,
         nome: 'Produto Tipo 1B', 
         preco: 150, 
-        vendedor: 'Kauan', 
         local: 'B3',
+        vendedor: 'Kauan', 
         imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
       },
         
       { id: 3,
         nome: 'Produto Tipo 1C', 
         preco: 200, 
-        vendedor: 'Kauan', 
         local: 'B3', 
+        vendedor: 'Kauan', 
         imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
       },
 
     ],
     produtosAgro2: [
-      { id: 1, nome: 'Produto Tipo 1A', preco: 100, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 2, nome: 'Produto Tipo 1B', preco: 150, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 3, nome: 'Produto Tipo 1C', preco: 200, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-    ],
-    produtosAgro3: [
-      { id: 1, nome: 'Produto Tipo 1A', preco: 100, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 2, nome: 'Produto Tipo 1B', preco: 150, vendedor: 'Kauan', local: 'B3' },
-      { id: 3, nome: 'Produto Tipo 1C', preco: 200, vendedor: 'Kauan', local: 'B3' },
-    ],
-    produtosInfo1: [
-      { id: 1, nome: 'Produto Tipo 1A', preco: 100, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 2, nome: 'Produto Tipo 1B', preco: 150, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 3, nome: 'Produto Tipo 1C', preco: 200, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-    ],
-    produtosInfo2: [
-      { id: 1, nome: 'Produto Tipo 1A', preco: 100, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 2, nome: 'Produto Tipo 1B', preco: 150, vendedor: 'Kauan', local: 'B3' },
-      { id: 3, nome: 'Produto Tipo 1C', preco: 200, vendedor: 'Kauan', local: 'B3' },
-    ],
-    produtosInfo3: [
-      { id: 1, nome: 'Produto Tipo 1A', preco: 100, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 2, nome: 'Produto Tipo 1B', preco: 150, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 3, nome: 'Produto Tipo 1C', preco: 200, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-    ],
-    produtosQuimi: [
-      { id: 1, nome: 'Produto Tipo 1A', preco: 100, local: 'B3', vendedor: 'Kauan',
-        imagem: 'https://compremais.vtexassets.com/...jpg' },
-      { id: 2, nome: 'Produto Tipo 1B', preco: 150, vendedor: 'Kauan', local: 'B3' },
-      { id: 3, nome: 'Produto Tipo 1C', preco: 200, vendedor: 'Kauan', local: 'B3' },
+      { id: 1, 
+        nome: 'Produto Tipo 1A', 
+        preco: 100, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000'  
+      },
+      { id: 2, 
+        nome: 'Produto Tipo 1B', 
+        preco: 150, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+       imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+      { id: 3, 
+        nome: 'Produto Tipo 1C', 
+        preco: 200, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+       imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
     ],
 
-    cart: [],              // carrinho
-    isCartVisible: false    // visibilidade (se quiser abrir/fechar carrinho)
+    produtosAgro3: [
+      { id: 1, 
+        nome: 'Produto Tipo 1A', 
+        preco: 100, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+       imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+      { id: 2, 
+        nome: 'Produto Tipo 1B', 
+        preco: 150,
+        local: 'B3', 
+        vendedor: 'Kauan', 
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+      { id: 3, 
+        nome: 'Produto Tipo 1C', 
+        preco: 200, 
+        local: 'B3',
+        vendedor: 'Kauan', 
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+    ],
+
+    produtosInfo1: [
+      { id: 1, 
+        nome: 'Produto Tipo 1A', 
+        preco: 100, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+      { id: 2, 
+        nome: 'Produto Tipo 1B', 
+        preco: 150, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' },
+      { id: 3, 
+        nome: 'Produto Tipo 1C', 
+        preco: 200, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+    ],
+
+    produtosInfo2: [
+      { id: 1, 
+        nome: 'Produto Tipo 1A', 
+        preco: 100, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' },
+      { id: 2, 
+        nome: 'Produto Tipo 1B', 
+        preco: 150,
+        local: 'B3', 
+        vendedor: 'Kauan', 
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000'
+      },
+      { id: 3, 
+        nome: 'Produto Tipo 1C', 
+        preco: 200,
+        local: 'B3', 
+        vendedor: 'Kauan', 
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+    ],
+
+    produtosInfo3: [
+      { id: 1, nome: 'Produto Tipo 1A', preco: 100, local: 'B3', vendedor: 'Kauan',
+       imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' },
+      { id: 2, 
+        nome: 'Produto Tipo 1B', 
+        preco: 150, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+      { id: 3, 
+        nome: 'Produto Tipo 1C', 
+        preco: 200, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+    ],
+
+    produtosQuimi: [
+      { id: 1, 
+        nome: 'Produto Tipo 1A', 
+        preco: 100, 
+        local: 'B3', 
+        vendedor: 'Kauan',
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+      { id: 2, 
+        nome: 'Produto Tipo 1B', 
+        preco: 150, 
+        local: 'B3', 
+        vendedor: 'Kauan', 
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000'
+      },
+      { id: 3, 
+        nome: 'Produto Tipo 1C', 
+        preco: 200,
+        local: 'B3', 
+        vendedor: 'Kauan', 
+        imagem: 'https://compremais.vtexassets.com/unsafe/fit-in/568x568/center/middle/https%3A%2F%2Fcompremais.vtexassets.com%2Farquivos%2Fids%2F422428%2FBarra-de-Chocolate-ao-Leite-Lacta-Pacote165g.jpg%3Fv%3D638686805480530000' 
+      },
+    ],
+
+    cart: [],              
+    isCartVisible: false    
   }),
 
   getters: {

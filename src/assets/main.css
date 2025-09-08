@@ -62,3 +62,53 @@ p.preco {
 
 }
 
+/*=================================================================*/
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 2vw;
+}
+
+li {
+  box-sizing: border-box;
+  width: 20%;
+  margin: 6vw 1vw 0 0;
+  padding: 0 1vw;
+  white-space: nowrap;
+  list-style: none;
+}
+p.nome {
+  margin: 0 0 0.2vw 0;
+  font-family: bold;
+  font-size: 1.6vw;
+}
+p.local {
+  font-family: bold;
+  font-size: 1.4vw;
+}
+p.preco {
+  font-family: bold;
+  font-size: 1.2vw;
+}
+button.reservar {
+  font-size: 1vw;
+  font-weight: bold;
+  color: white;
+  margin: 0.6vw 0 0 0;
+  padding: 1vw 4vw 1vw 4vw;
+  background-color: #5BA3CF;
+  border-color: #5BA3CF;
+  border-radius: 0.4vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button.reservar:hover {
+  background-color: #1e88e5;
+    transform: scale(1.2);
+    border-color: #1e88e5;
+}
+
+
+

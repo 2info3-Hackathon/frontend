@@ -1,47 +1,21 @@
 <script setup>
-import {ref} from 'vue'
 import { useRouter } from 'vue-router'
 import { useProdutosStore } from '@/stores/produtosStore'
+import { useCartStore } from '@/stores/cartStore'
+import cart from '@/components/cart.vue'
+
 
 const produtosStore = useProdutosStore()
+const cartStore = useCartStore()
+const router = useRouter()
 
 const produtosAgro1 = produtosStore.getProdutosAgro1
 const produtosAgro2 = produtosStore.getProdutosAgro2
-
-const showCart = ref(false)
-const cart = ref({
-  items: [],
-  total: 0,
-})
-
-function decrementProdutoToCart(produto) {
-  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
-  if (existingProduto.quantity === 1) {
-    cart.value.items = cart.value.items.filter((item) => item.id !== produto.id)
-  } else {
-    existingProduto.quantity--
-  }
-  cart.value.total -= produto.preco
-}
-
-function incrementProdutoToCart(produto) {
-  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
-  existingProduto.quantity++
-  cart.value.total += produto.preco
-}
-
-function addToCart(produto) {
-  const existingProduto = cart.value.items.find((item) => item.id === produto.id)
-  if (existingProduto) {
-    existingProduto.quantity++
-  } else {
-    cart.value.items.push({ ...produto, quantity: 1 })
-  }
-  cart.value.total += produto.preco
-  alert(`Adicionado ${produto.nome} ao carrinho!`)
-}
-
-const router = useRouter()
+const produtosAgro3 = produtosStore.getProdutosAgro3
+const produtosInfo1 = produtosStore.getProdutosInfo1
+const produtosInfo2 = produtosStore.getProdutosInfo2
+const produtosInfo3 = produtosStore.getProdutosInfo3
+const produtosQuimi = produtosStore.getProdutosQuimi 
 
 function irPara3Agro1(){
     router.push('/3Agro1')
@@ -68,6 +42,17 @@ function irPara3Quimi(){
 </script>
 
 <template>
+
+  <li @click="cartStore.toggleCart">
+    <span class="mdi mdi-cart"></span>
+  </li>
+
+   <cart v-if="cartStore.showCart" />
+   
+   
+   
+      <div class="lista" v-else>
+   
     <div class="tudo">
     <h2>
         Turmas
@@ -91,76 +76,18 @@ function irPara3Quimi(){
              <button @click="irPara3Quimi"> 3Quimi </button>
         </div>
         </div>
- 
-        <li @click="showCart = !showCart"><span class="mdi mdi-cart"></span></li>
+        <ul>
+        <li v-for="produtos in produtosAgro1" :key="produtos.id">
 
-    <main v-if="showCart">
-    <section class="cartCompras">
-      <h2>Carrinho</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Título</th>
-            <th>Quantidade</th>
-            <th>Subtotal</th>
+          <p><img :src="produtos.imagem" alt="" width="200" height="200"></p>
+         <p v-for="preco in produtosAgro1" :key="preco.id"></p>
+         <p class="nome"> {{ produtos.nome }}</p>
+        <p class="preco"> R${{ produtos.preco }}</p>
 
-          </tr>
-        </thead>
-        <tbody>
-
-          <tr v-for="produto in cart.items" :key="produto.id">
-            <td class="cart-item">
-              <img :src="produto.local" :alt="produto.nome" />
-              <div>
-                <p>{{ produto.nome }}</p>
-                <p>{{ produto.vendedor }}</p>
-                <p>R$ {{ produto.preco.toFixed(2) }}</p>
-              </div>
-            </td>
-            <td>
-
-              <div>
-                <button @click="decrementProdutoToCart(produto)" class="plain">
-                  <span class="mdi mdi-minus" />
-                </button>
-                {{ produto.quantity }}
-                <button @click="incrementProdutoToCart(produto)" class="plain">
-                  <span class="mdi mdi-plus" />
-                </button>
-              </div>
-
-            </td>
-            <td class="cart-item-subtotal">R$ {{ produto.preco * produto.quantity }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button @click="showCart = false" class="outlined">Voltar para loja</button>
-      <div class="cart-summary">
-        <div class="summary">
-          <h2>Total da Compra</h2>
-          <div class="summary-items">
-            <span>Produtos</span> <span>R$ {{ cart.total.toFixed(2) }}</span> <span>Frete</span>
-            <span> Grátis</span> <span>Total</span> <span>R$ {{ cart.total.toFixed(2) }}</span>
-          </div>
-          <button>Ir para pagamento</button>
-        </div>
-      </div>
-    </section>
-    </main>
-
-     <main v-else>
-    <ul>
-        <li v-for="produto in produtosAgro1" :key="produto.id">
-
-          <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
-         <p v-for="preco in produtoAgro1" :key="preco.id"></p>
-         <p class="nome"> {{ produto.nome }}</p>
-        <p class="preco"> R${{ produto.preco }}</p>
-
-        <p v-for="local in produtoAgro1" :key="local.id"></p>
-        <p class="local"> {{ produto.local }}</p>
-        <p class="vendedor"> {{ produto.vendedor }}</p>
-            <button @click="addToCart(produto)"><span class="mdi mdi-cart"></span>Comprar</button>
+        <p v-for="local in produtosAgro1" :key="local.id"></p>
+        <p class="local"> {{ produtos.local }}</p>
+        <p class="vendedor"> {{ produtos.vendedor }}</p>
+            <button class="reservar" @click="cartStore.addToCart(produtos)"><span class="mdi mdi-cart"></span>reservar</button>
         </li>
         </ul>
 
@@ -175,20 +102,95 @@ function irPara3Quimi(){
         <p v-for="local in produtoAgro2" :key="local.id"></p>
         <p class="local"> {{ produto.local }}</p>
         <p class="vendedor"> {{ produto.vendedor }}</p>
-            <button @click="addToCart(produto)"><span class="mdi mdi-cart"></span>Comprar</button>
+            <button class="reservar" @click="cartStore.addToCart(produto)"><span class="mdi mdi-cart"></span>reservar</button>
         </li>
         </ul>
-        </main>
 
-      
+        <ul>
+        <li v-for="produtos in produtosAgro3" :key="produtos.id">
+
+          <p><img :src="produtos.imagem" alt="" width="200" height="200"></p>
+         <p v-for="preco in produtosAgro3" :key="preco.id"></p>
+         <p class="nome"> {{ produtos.nome }}</p>
+        <p class="preco"> R${{ produtos.preco }}</p>
+
+        <p v-for="local in produtosAgro3" :key="local.id"></p>
+        <p class="local"> {{ produtos.local }}</p>
+        <p class="vendedor"> {{ produtos.vendedor }}</p>
+            <button class="reservar" @click="cartStore.addToCart(produtos)"><span class="mdi mdi-cart"></span>reservar</button>
+        </li>
+        </ul>
+
+      <ul>
+        <li v-for="produto in produtosInfo1" :key="produto.id">
+
+          <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
+         <p v-for="preco in produtosInfo1" :key="preco.id"></p>
+         <p class="nome"> {{ produto.nome }}</p>
+        <p class="preco"> R${{ produto.preco }}</p>
+
+        <p v-for="local in produtosInfo1" :key="local.id"></p>
+        <p class="local"> {{ produto.local }}</p>
+        <p class="vendedor"> {{ produto.vendedor }}</p>
+            <button class="reservar" @click="cartStore.addToCart(produto)"><span class="mdi mdi-cart"></span>reservar</button>
+        </li>
+        </ul>
+
+        <ul>
+        <li v-for="produtos in produtosInfo2" :key="produtos.id">
+
+          <p><img :src="produtos.imagem" alt="" width="200" height="200"></p>
+         <p v-for="preco in produtosInfo2" :key="preco.id"></p>
+         <p class="nome"> {{ produtos.nome }}</p>
+        <p class="preco"> R${{ produtos.preco }}</p>
+
+        <p v-for="local in produtosInfo2" :key="local.id"></p>
+        <p class="local"> {{ produtos.local }}</p>
+        <p class="vendedor"> {{ produtos.vendedor }}</p>
+            <button class="reservar" @click="cartStore.addToCart(produtos)"><span class="mdi mdi-cart"></span>reservar</button>
+        </li>
+        </ul>
+
+      <ul>
+        <li v-for="produto in produtosInfo3" :key="produto.id">
+
+          <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
+         <p v-for="preco in produtosInfo3" :key="preco.id"></p>
+         <p class="nome"> {{ produto.nome }}</p>
+        <p class="preco"> R${{ produto.preco }}</p>
+
         
+        <p v-for="local in produtosInfo3" :key="local.id"></p>
+        <p class="local"> {{ produto.local }}</p>
+        <p class="vendedor"> {{ produto.vendedor }}</p>
+            <button class="reservar" @click="cartStore.addToCart(produto)"><span class="mdi mdi-cart"></span>reservar</button>
+        </li>
+        </ul>
+        <img src="/public/3Quimi.png" width="1750" height="" alt="">
+        <ul>
 
-       
+        <li v-for="produto in produtosQuimi" :key="produto.id">
 
+          <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
+         <p v-for="preco in produtosQuimi" :key="preco.id"></p>
+         <p class="nome"> {{ produto.nome }}</p>
+        <p class="preco"> R${{ produto.preco }}</p>
 
+        
+        <p v-for="local in produtosQuimi" :key="local.id"></p>
+        <p class="local"> {{ produto.local }}</p>
+        <p class="vendedor"> {{ produto.vendedor }}</p>
+            <button class="reservar" @click="cartStore.addToCart(produto)"><span class="mdi mdi-cart"></span>reservar</button>
+        </li>
+        </ul>
+        
+      </div>
+      
 
+    
 
-
+  
+    
 
 
 </template>
@@ -274,55 +276,5 @@ div.quimi button:hover {
 
 /*===============================================================================================================================================================*/
 
-section.lista ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 2vw;
-}
-
-section.lista li {
-  box-sizing: border-box;
-  width: 20%;
-  margin: 6vw 1vw 0 0;
-  padding: 0 1vw;
-  white-space: nowrap;
-  list-style: none;
-}
-section.lista div p.nome {
-  margin: 0 0 0.2vw 0;
-  font-family: bold;
-  font-size: 1.6vw;
-}
-section.lista div p.local {
-  font-family: bold;
-  font-size: 1.4vw;
-}
-section.lista div p.preco {
-  font-family: bold;
-  font-size: 1.2vw;
-}
-section.lista div button.comprar {
-  font-size: 1vw;
-  font-weight: bold;
-  color: white;
-  margin: 0.6vw 0 0 0;
-  padding: 1vw 4vw 1vw 4vw;
-  background-color: #5BA3CF;
-  border-color: #5BA3CF;
-  border-radius: 0.4vw;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-section.lista div button.comprar:hover {
-  background-color: #1e88e5;
-    transform: scale(1.2);
-    border-color: #1e88e5;
-}
-hr {
-  margin: 2vw 0 0 0;
-  height: 0.2vw;
-  background-color: #5BA3CF;
-}
 
 </style>

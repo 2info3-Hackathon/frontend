@@ -1,29 +1,50 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { useProdutosStore } from '@/stores/produtosStore'
+import { useCartStore } from '@/stores/cartStore'
+import cart from '@/components/cart.vue'
 
 const produtosStore = useProdutosStore()
+const cartStore = useCartStore()
 const produtosQuimi = produtosStore.getProdutosQuimi
+
 const router = useRouter()
 
+
+//function fecharCarrinho() {
+  //cartStore.toggleCart()
+//}
+
 function voltar() {
-    router.push('/')
+  router.push('/')
 }
 </script>
+
 <template>
-   <ul>
-        <li v-for="produto in produtosQuimi" :key="produto.id">
+  <li @click="cartStore.toggleCart">
+    <span class="mdi mdi-cart"></span>
+  </li>
 
-          <p><img :src="produto.imagem" alt="" width="200" height="200"></p>
-         <p v-for="preco in produtoQuimi" :key="preco.id"></p>
-         <p class="nome"> {{ produto.nome }}</p>
-        <p class="preco"> R${{ produto.preco }}</p>
+  <cart v-if="cartStore.showCart" 
+   
+  />
 
-        <p v-for="local in produtoQuimi" :key="local.id"></p>
-        <p class="local"> {{ produto.local }}</p>
-        <p class="vendedor"> {{ produto.vendedor }}</p>
 
-        </li>
-      </ul>
+  <section v-else>
+    <ul>
+      <li v-for="produto in produtosQuimi" :key="produto.id">
+        <p><img :src="produto.imagem" alt="" width="200" height="200" /></p>
+        <p class="nome">{{ produto.nome }}</p>
+        <p class="preco">R${{ produto.preco }}</p>
+        <p class="local">{{ produto.local }}</p>
+        <p class="vendedor">{{ produto.vendedor }}</p>
+
+        <button class="reservar" @click="cartStore.addToCart(produto)">
+          <span class="mdi mdi-cart"></span> Reservar
+        </button>
+      </li>
+    </ul>
     <button class="turmas" @click="voltar">Voltar</button>
+  </section>
+
 </template>
