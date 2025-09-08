@@ -83,10 +83,10 @@ main {
 h1{
   color: #1C72D3;
   text-align: center;
-  padding: 40px 60px 5px 60px;
+  
   font-size: 2rem;
   font-weight: bolder;
-  margin-top: 2vw;
+  margin-top: 3vw;
   margin-bottom: 3vw;
 }
 
@@ -95,7 +95,7 @@ h1{
   background-size: cover; /* Para garantir que cubra toda a área da div */
   background-position: bottom; /* Ajusta a posição da onda para o fundo */
   background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
-  width: 100%;
+  width: 95.995%;
   height: 60vh; /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;

@@ -74,7 +74,6 @@ button{
 .fundo h1{
   color: #1C72D3;
   text-align: center;
-  padding: 30px 60px 30px 60px;
   margin-top: 3vw;
   font-size: 2rem;
   margin-bottom: 2vw;
@@ -83,7 +82,7 @@ button{
 
 .informacoes{
   background: linear-gradient(135deg, #1c7ed4, #42a5f5);
-  margin: 100px 220px 150px 220px;
+  margin: 50px 200px 150px 220px;
   border-radius: 20px;
 }
 
@@ -91,7 +90,7 @@ button{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 108vh;
 }
 
 form {

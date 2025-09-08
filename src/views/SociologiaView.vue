@@ -14,18 +14,18 @@ function voltar() {
   <div class="fundo">
     <h1>Grupo de Estudos de Sociologia</h1>
 
-      <div class="informacoes">
+    <div class="informacoes">
         <h2>
           Monitor Responsável:
         </h2>
         <p>Nome: ??</p>
-        <p>Sala: ??</p>
-        <p>Horário disponível:??</p>
+        <p>Email: ??</p>
+        <p>Horário disponível: ??</p>
 
         <h2>
-          Sala:
+          Localização:
         </h2>
-        <p>??</p>
+        <p>Grupo de Estudos, Bloco C</p>
     </div>
 
     <button @click="voltar">Voltar</button>
@@ -54,7 +54,6 @@ button{
 .fundo h1{
   color: #1C72D3;
   text-align: center;
-  padding: 30px 60px 30px 60px;
   margin-top: 3vw;
   font-size: 2rem;
   margin-bottom: 3vw;
