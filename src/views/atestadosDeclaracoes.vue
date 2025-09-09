@@ -7,32 +7,33 @@ const route = useRoute()
 const router = useRouter()
 
 watch(
-  () => route.fullPath,
-  (newPath) => {
-    showSummary.value = newPath === '/'
-  },
-  { immediate: true }
+    () => route.fullPath,
+    (newPath) => {
+        showSummary.value = newPath === '/'
+    },
+    { immediate: true }
 )
 
 function voltarAoSumario() {
-  router.push('/')
+    router.push('/')
 }
 </script>
 
 <template>
-  <main>
-    <h1>oi</h1>
-    <div v-if="!showSummary" class="voltar">
-      <button @click="voltarAoSumario">← Voltar ao Sumário</button>
-    </div>
-  </main>
+    <main>
+        <h1>oi</h1>
+        <div v-if="!showSummary" class="voltar">
+            <button @click="voltarAoSumario">← Voltar ao Sumário</button>
+        </div>
+    </main>
 </template>
 
 <style scoped>
 h1 {
-margin: 5vw;
+    margin: 5vw;
 }
-div{
-  margin: 5vw;
+
+div {
+    margin: 6vw;
 }
 </style>

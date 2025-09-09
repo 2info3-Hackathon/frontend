@@ -29,8 +29,11 @@ function voltarAoSumario() {
 </template>
 
 <style scoped>
+h1 {
+  margin: 5vw;
+}
 
-div{
-  margin: 4vw;
+div {
+  margin: 6vw;
 }
 </style>
