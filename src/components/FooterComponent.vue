@@ -38,11 +38,11 @@
                 <p>
                     Diretor(a): Fernando José Braz
                 </p>
-                <p>
-                    www.araquari.ifc.edu.br
+                <p class="bola">
+                   <img src="/public/imagem/Rectangle 51.png" alt="bola" height="2%" width="5%"> www.araquari.ifc.edu.br
                 </p>
-                <p>
-                    ifc.oficial.araquari
+                <p class="insta">
+                   <img src="/public/imagem/Rectangle 50.png" alt="insta" height="2%" width="5%"> ifc.oficial.araquari
                 </p>
             </ul>
         </div>
@@ -67,9 +67,15 @@ footer {
 }
 div.conteudo {
     display: flex;
-    margin-top: 4vw;
-    margin-right: 8vw;
-    margin-left: 8vw;
+    margin-right: 10%;
+    margin-left: 10%;
     justify-content: space-between
+}
+ul{
+    margin-top: 20%;
+    color: white;
+}
+li{
+   list-style: none;
 }
 </style>
