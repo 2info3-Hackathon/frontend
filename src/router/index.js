@@ -7,49 +7,46 @@ const routes = [
         component: () => import('@/views/VendasTerceirao.vue'),
     },
     {
-        path: '/turmasComponent',
+        path: '/turmasComponentView',
         name: 'turmas',
         component: () => import('@/components/turmas.vue'),
     },
     {
-        path: '/3Agro1',
+        path: '/3Agro1View',
         name: '3Agro1',
-        componet: () => import('@/views/3Agro1.vue'),
+        component: () => import('@/views/3Agro1.vue'),
     },
     {
-        path: '/3Agro2',
+        path: '/3Agro2View',
         name: '3Agro2',
         component: () => import('@/views/3Agro2.vue'),
     },
     {
-        path: '/3Agro3',
+        path: '/3Agro3View',
         name: '3Agro3',
         component: () => import('@/views/3Agro3.vue'),
     },
     {
-        path: '/3Info1',
+        path: '/3Info1View',
         name: '3Info1',
         component: () => import('@/views/3Info1.vue'),
     },
     {
-        path: '/3Info2',
+        path: '/3Info2View',
         name: '3Info2',
         component: () => import('@/views/3Info2.vue'),
     },
     {
-        path: '/3Info3',
+        path: '/3Info3View',
         name: '3Info3',
         component: () => import('@/views/3Info3.vue'),
     },
     {
-        path: '/3Quimi',
+        path: '/3QuimiView',
         name: '3Quimi',
         component: () => import('@/views/3Quimi.vue'),
     },
-    {   path: '/carrinho',
-        name: 'carrinho',
-        component: () => import('@/views/carrinhoView.vue'),
-    }
+
 ]
 
 const router = createRouter({

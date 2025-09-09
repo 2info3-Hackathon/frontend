@@ -25,8 +25,8 @@ function voltar() {
     <span class="mdi mdi-cart"></span>
   </li>
 
-  <cart v-if="cartStore.showCart" 
-   
+  <cart v-if="cartStore.showCart"
+
   />
 
 

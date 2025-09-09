@@ -15,28 +15,28 @@ const produtosAgro3 = produtosStore.getProdutosAgro3
 const produtosInfo1 = produtosStore.getProdutosInfo1
 const produtosInfo2 = produtosStore.getProdutosInfo2
 const produtosInfo3 = produtosStore.getProdutosInfo3
-const produtosQuimi = produtosStore.getProdutosQuimi 
+const produtosQuimi = produtosStore.getProdutosQuimi
 
 function irPara3Agro1(){
-    router.push('/3Agro1')
+    router.push('/3Agro1View')
 }
 function irPara3Agro2(){
-    router.push('/3Agro2')
+    router.push('/3Agro2View')
 }
 function irPara3Agro3(){
-    router.push('/3Agro3')
+    router.push('/3Agro3View')
 }
 function irPara3Info1(){
-    router.push('/3Info1')
+    router.push('/3Info1View')
 }
 function irPara3Info2(){
-    router.push('/3Info2')
+    router.push('/3Info2View')
 }
 function irPara3Info3(){
-    router.push('/3Info3')
+    router.push('/3Info3View')
 }
 function irPara3Quimi(){
-    router.push('/3Quimi')
+    router.push('/3QuimiView')
 }
 
 </script>
@@ -48,11 +48,11 @@ function irPara3Quimi(){
   </li>
 
    <cart v-if="cartStore.showCart" />
-   
-   
-   
+
+
+
       <div class="lista" v-else>
-   
+
     <div class="tudo">
     <h2>
         Turmas
@@ -159,7 +159,7 @@ function irPara3Quimi(){
          <p class="nome"> {{ produto.nome }}</p>
         <p class="preco"> R${{ produto.preco }}</p>
 
-        
+
         <p v-for="local in produtosInfo3" :key="local.id"></p>
         <p class="local"> {{ produto.local }}</p>
         <p class="vendedor"> {{ produto.vendedor }}</p>
@@ -176,21 +176,21 @@ function irPara3Quimi(){
          <p class="nome"> {{ produto.nome }}</p>
         <p class="preco"> R${{ produto.preco }}</p>
 
-        
+
         <p v-for="local in produtosQuimi" :key="local.id"></p>
         <p class="local"> {{ produto.local }}</p>
         <p class="vendedor"> {{ produto.vendedor }}</p>
             <button class="reservar" @click="cartStore.addToCart(produto)"><span class="mdi mdi-cart"></span>reservar</button>
         </li>
         </ul>
-        
+
       </div>
-      
 
-    
 
-  
-    
+
+
+
+
 
 
 </template>

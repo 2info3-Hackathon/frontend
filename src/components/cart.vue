@@ -3,27 +3,26 @@ import { useCartStore } from '@/stores/cartStore'
 
 const cartStore = useCartStore()
 
+
 </script>
 
 <template>
         <section class="cartCompras">
-      <h2>Carrinho</h2>
+      <h1>Carrinho</h1>
       <table>
         <thead>
           <tr>
-            <th>Título</th>
-            <th>Quantidade</th>
-            <th>Subtotal</th>
+            <th>Produtos </th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="produto in cartStore.cart.items" :key="produto.id">
             <td class="cart-item">
-              <img :src="produto.imagem" :alt="produto.nome" width="50" height="50"/>
+              <img :src="produto.imagem" :alt="produto.nome" width="200" height="200"/>
               <div>
-                <p>{{ produto.nome }}</p>
-                <p>{{ produto.vendedor }}</p>
-                <p>R$ {{ produto.preco.toFixed(2) }}</p>
+                <p class="nome">{{ produto.nome }}</p>
+                <p class="vendedor">{{ produto.vendedor }}</p>
+                <p class="preco">R$ {{ produto.preco.toFixed(2) }}</p>
               </div>
             </td>
             <td>
@@ -68,5 +67,14 @@ const cartStore = useCartStore()
 </template>
 
 <style scoped>
+section.cartCompras h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+}
+section.cartCompras td img {
+  display: flex;
 
+
+}
 </style>

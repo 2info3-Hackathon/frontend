@@ -25,15 +25,15 @@ function voltar() {
     <span class="mdi mdi-cart"></span>
   </li>
 
-  <cart v-if="cartStore.showCart" 
-   
+  <cart v-if="cartStore.showCart"
+
   />
 
 
   <section v-else>
     <ul>
       <li v-for="produto in produtosAgro3" :key="produto.id">
-        <p>img :src="produto.imagem" alt="" width="200" height="200" /></p>
+       <p><img :src="produto.imagem" alt="" width="200" height="200" /></p>
         <p class="nome">{{ produto.nome }}</p>
         <p class="preco">R${{ produto.preco }}</p>
         <p class="local">{{ produto.local }}</p>
