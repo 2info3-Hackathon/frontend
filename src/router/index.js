@@ -4,7 +4,22 @@ const routes = [
     {
         path: '/',
         name: 'Login',
-        component: () => import('@/views/LoginComponent.vue'),
+        component: () => import('@/views/LoginView.vue'),
+    },
+    {
+        path: '/DiscenteView',
+        name: 'Discente',
+        component: () => import('@/views/DiscenteView.vue'),
+    },
+    {
+        path: '/DocenteView',
+        name: 'Docente',
+        component: () => import('@/views/DocenteView.vue'),
+    },
+    {
+        path: '/TerceiraoView',
+        name: 'Terceirao',
+        component: () => import('@/views/TerceiraoView.vue'),
     },
 ]
 

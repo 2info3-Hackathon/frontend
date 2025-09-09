@@ -1,3 +1,21 @@
+<script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+function irParaDiscente(){
+  router.push('/DiscenteView')
+}
+
+function irParaDocente(){
+  router.push('/DocenteView')
+}
+
+function irParaTerceirao(){
+  router.push('/TerceiraoView')
+}
+</script>
+
 <template>
   <section>
     <div class="principal">
@@ -19,27 +37,27 @@
 
   <section class="cadastros">
     <div>
-      <h2>Docente,</h2>
+      <h2>Docente:</h2>
       <p>
         caso ainda não possua cadastro,<br> clique no link abaixo.
       </p>
-      <a href="">Cadastre-se</a>
+      <a @click="irParaDocente">Cadastre-se</a>
     </div>
 
     <div>
-      <h2>Dicente,</h2>
+      <h2>Discente:</h2>
       <p>
         caso ainda não possua cadastro,<br> clique no link abaixo.
       </p>
-      <a href="">Cadastre-se</a>
+      <a @click="irParaDiscente">Cadastre-se</a>
     </div>
 
     <div>
-      <h2>Terceirão Vendas,</h2>
+      <h2>Terceirão Vendas:</h2>
       <p>
         caso ainda não possua cadastro,<br> clique no link abaixo.
       </p>
-      <a href="">Cadastre-se</a>
+      <a @click="irParaTerceirao">Cadastre-se</a>
     </div>
   </section>
 </template>
@@ -49,13 +67,13 @@
 .principal{
   background: linear-gradient(135deg, #1c7ed4, #42a5f5);
   margin: 50px 150px 50px 150px;
-  padding: 150px 70px 90px 70px;
+  padding: 150px 140px 140px 140px;
   border-radius: 20px;
 }
 
 form {
   background: white;
-  padding: 85px 105px 35px 245px;
+  padding: 85px 105px 35px 295px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -88,7 +106,7 @@ form button {
   color: white;
   font-size: 18px;
   padding: 10px 25px;
-  margin: 50px 150px 50px 189px;
+  margin: 60px 150px 30px 290px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -136,7 +154,7 @@ a:hover{
   background: #fff;
   border-radius: 50%;
   padding: 8px;
-  
+
 }
 
 .icone img {
