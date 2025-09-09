@@ -4,7 +4,7 @@ import { useEventStore } from '@/stores/event';
 
 const store = useEventStore();
 
-const eventos = store.events
+const events = store.events
 
 </script>
 
@@ -13,7 +13,7 @@ const eventos = store.events
         <h1>
             Eventos
         </h1>
-        <article v-for="event in eventos" :key="event.id">
+        <article v-for="event in events" :key="event.id">
             <div class="events">
                 <h2 class="name">
                     {{ event.nome }}
@@ -51,14 +51,6 @@ const eventos = store.events
                         </h2>
                         <p>
                             {{ event.data }}
-                        </p>
-                    </li>
-                    <li>
-                        <h2>
-                            Tema:
-                        </h2>
-                        <p>
-                            {{ event.tema }}
                         </p>
                     </li>
                 </ul>
