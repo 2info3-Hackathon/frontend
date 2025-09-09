@@ -70,7 +70,7 @@ watch(
 
 h1 {
   text-align: center;
-  color: #2D86FB;
+  color: #1C72D3;
   font-weight: bold;
   font-size: 2.5rem;
   margin-top: -50px;
@@ -124,7 +124,6 @@ li {
   margin-left: -20px;
   margin-bottom: -80px;
   transform: rotate(180deg);
-  /* gira 45 graus */
   margin-top: -100px;
 }
 </style>

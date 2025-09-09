@@ -75,7 +75,6 @@ h1 {
     text-align: center;
     color: white;
     font-weight: bold;
-    font-size: 2rem;
 }
 
 p {
