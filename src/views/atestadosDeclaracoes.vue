@@ -33,7 +33,8 @@ function voltarAoSumario() {
                 outros):</p>
             <img src="/imagens/QrCode-Atestados_e_Declarações.png" alt="QrCode">
             <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSeeUKe0cKL_MQkgGSqf9xZNKbeInX_6sRj4vfXM5o75R4JCTg/viewform">Clique aqui!
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeeUKe0cKL_MQkgGSqf9xZNKbeInX_6sRj4vfXM5o75R4JCTg/viewform">Clique
+                aqui!
             </a>
             <h2>Teve atividade avaliativa no dia? </h2>
             <div class="botoes">
@@ -62,7 +63,6 @@ function voltarAoSumario() {
 </template>
 
 <style scoped>
-
 main {
     background: #1C72D3;
     border-radius: 5px;
@@ -113,10 +113,10 @@ button:hover {
 }
 
 a {
-    display: block;     /* transforma em bloco */
-    text-align: center; /* centraliza o texto dentro do link */
-    margin: 0 auto;     /* centraliza se tiver largura definida */
-    width: fit-content; /* largura mínima necessária */
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.3s;
@@ -126,11 +126,11 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
-  color: #184374;
+    text-decoration: underline;
+    color: #184374;
 }
 
-img{
+img {
     width: 20%;
     margin: 2vw;
     display: block;
@@ -139,7 +139,8 @@ img{
 
 .voltar button {
     margin: 0 5vw 5vw 5vw;
-    background-color: #1C72D3;;
+    background-color: #1C72D3;
+    ;
     color: white;
     border-radius: 5px;
 }
