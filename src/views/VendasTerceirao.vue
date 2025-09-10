@@ -38,6 +38,9 @@ function irPara3Info3(){
 function irPara3Quimi(){
     router.push('/3QuimiView')
 }
+function irParaAdicionarProdutos() {
+    router.push('adicionarProdutosView')
+}
 
 </script>
 
@@ -52,6 +55,7 @@ function irPara3Quimi(){
 
 
       <div class="lista" v-else>
+ <button @click="irParaAdicionarProdutos"> Adicionar Produtos </button>
 
     <div class="tudo">
     <h2>

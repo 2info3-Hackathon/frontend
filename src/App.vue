@@ -1,4 +1,4 @@
-<script setup>
+j<script setup>
 import turmasComponent from './components/turmas.vue'
 //import exibicaoProdutosComponent from './components/exibicaoProdutos.vue'
 

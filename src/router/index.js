@@ -46,6 +46,11 @@ const routes = [
         name: '3Quimi',
         component: () => import('@/views/3Quimi.vue'),
     },
+    {
+        path: '/adicionarProdutosView',
+        name: 'adicionarEventos',
+        component: () => import('@/views/adicionarProdutosView.vue')
+    }
 
 ]
 
