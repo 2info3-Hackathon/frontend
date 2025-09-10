@@ -1,14 +1,35 @@
 <script setup>
 
-import { addEvent } from '@/stores/event';
+import { useRouter } from 'vue-router'
+import { useEventStore } from '@/stores/event';
+import { ref } from 'vue'
 
-const UseAddEvent = addEvent();
+let router = useRouter();
+
+let nomeEvento = ref('');
+let data = ref('');
+let hora = ref('');
+let desc = ref('');
+
+let eventStore = useEventStore();
+
+function addEvent()
+{
+    eventStore.newEvent(nomeEvento.value, data.value, hora.value, desc.value);
+
+    nomeEvento.value = '';
+    data.value = '';
+    hora.value = '';
+    desc.value = ''
+
+    router.push({ name: 'Eventos' });
+}
 
 </script>
 
 <template>
     <section>
-        <form @submit.prevent="UseAddEvent">
+        <form @submit.prevent="addEvent">
             <div>
                 <label for="nomeEvento">
                     Nome do Evento:
@@ -39,7 +60,6 @@ const UseAddEvent = addEvent();
             </div>
 
             <div class="final">
-                <input type="reset" value="Voltar">
                 <input type="submit" value="Enviar">
             </div>
         </form>

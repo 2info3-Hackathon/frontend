@@ -6,6 +6,8 @@ const store = useEventStore();
 
 const events = store.events
 
+console.log('Eventos carregados:', events);
+
 </script>
 
 <template>
@@ -13,10 +15,13 @@ const events = store.events
         <h1>
             Eventos
         </h1>
-        <article v-for="event in events" :key="event.id">
+
+        <div v-if=" !events || events.length === 0">Nenhum evento encontrado.</div>
+
+        <article v-for="evento in events" :key="evento.id">
             <div class="events">
                 <h2 class="name">
-                    {{ event.nome }}
+                    {{ evento.nomeEvento }}
                 </h2>
                 <ul>
                     <li>
@@ -24,7 +29,7 @@ const events = store.events
                             Organizador:
                         </h2>
                         <p>
-                            {{ event.organizador }}
+                            
                         </p>
                     </li>
                     <li>
@@ -32,7 +37,7 @@ const events = store.events
                             Email:
                         </h2>
                         <p>
-                            {{ event.email }}
+                            
                         </p>
                     </li>
                 </ul>
@@ -42,7 +47,7 @@ const events = store.events
                             Hora:
                         </h2>
                         <p>
-                            {{ event.hora }}
+                            {{ evento.hora }}
                         </p>
                     </li>
                     <li>
@@ -50,7 +55,7 @@ const events = store.events
                             Data:
                         </h2>
                         <p>
-                            {{ event.data }}
+                            {{ evento.data }}
                         </p>
                     </li>
                 </ul>
@@ -59,7 +64,7 @@ const events = store.events
                         Descrição:
                     </h2>
                     <p>
-                        {{ event.descricao }}
+                        {{ evento.descricao }}
                     </p>
                 </div>
             </div>
@@ -97,7 +102,6 @@ section {
                 border-radius: 5px;
                 margin: 1.5vw 0;
                 display: inline-block;
-                text-shadow: 0 0 1vw #2D88FF;
             }
 
             & ul {
