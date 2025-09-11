@@ -54,11 +54,14 @@ function voltar() {
         <label for="sala">Horário Disponível:</label>
         <input type="text" name="sala" rows="5" required>
 
-        <button type="submit">Enviar</button>
+        <div class="botoes">
+          <button type="reset">Limpar</button>
+          <button type="submit">Enviar</button>
+        </div>
       </form>
 
       <div v-if="mostrarAviso" class="aviso">
-        ✅ Formulário enviado para revisão com sucesso!
+        ✅ Formulário enviado com sucesso!
       </div>
     </div>
 
@@ -68,19 +71,19 @@ function voltar() {
 
 <style scoped>
 button {
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
   border: none;
   cursor: pointer;
   transition: transform 0.2s;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 20px 20px 20px 20px;
-  font-size: 1.2rem;
+  font-size: calc(1.2rem);
   margin-left: 2vw;
 }
 
 .fundo button:hover {
-  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  background: linear-gradient(135deg, #02367a, #1e88e5);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
 }
@@ -89,14 +92,14 @@ button {
   color: #1C72D3;
   text-align: center;
   margin-top: 3vw;
-  font-size: 2rem;
+  font-size: calc(2.5rem);
   margin-bottom: 2vw;
   font-weight: bolder;
 }
 
 .informacoes {
-  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
-  margin: 50px 200px 150px 220px;
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  margin: 50px 370px 150px 370px;
   border-radius: 20px;
 }
 
@@ -116,7 +119,7 @@ form {
 
 h2 {
   font-weight: bolder;
-  font-size: 20px;
+  font-size: calc(20px);
   padding: 15px 5px 15px 0;
 }
 
@@ -127,7 +130,7 @@ label {
 }
 
 input {
-  font-size: 15px;
+  font-size: calc(15px);
   width: 100%;
   padding: 15px 5px 15px 0;
   margin-top: 5px;
@@ -135,12 +138,12 @@ input {
   border-radius: 6px;
 }
 
-form button {
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+.botoes button {
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
-  font-size: 18px;
-  padding: 10px 25px;
-  margin: 50px 150px 50px 320px;
+  font-size: calc(20px);
+  padding: 15px 30px;
+  margin: 60px 80px 30px 80px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -151,7 +154,7 @@ form button {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  background: linear-gradient(135deg, #1B5299, #42a5f5);
   color: white;
   padding: 12px 20px;
   border-radius: 8px;

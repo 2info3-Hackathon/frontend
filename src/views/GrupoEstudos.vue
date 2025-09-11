@@ -39,10 +39,6 @@ function irParaQuimica(){
 function irParaSociologia(){
   router.push('/SociologiaView')
 }
-
-function adicionar(){
-  router.push('/AdicionarGrupo')
-}
 </script>
 
 <template>
@@ -58,6 +54,38 @@ function adicionar(){
   <section class="conteudo">
     <p>Os Grupos de Estudos têm a intenção de praticar e auxiliar em matérias do ensino médio e técnico integrado para alunos com dificuldades.</p>
     <p>Em nossa sala de estudos sempre há um monitor responsável por ajudar os alunos interessados, seja em tirar dúvidas sobre as matérias ou até mesmo sobre os grupos.</p>
+    <p>Há também regras dos grupos de estudos:</p>
+    <ul>
+      <li>
+        - Mantenha o local limpo;
+      </li>
+
+      <li>
+      - Janelas e cortinas abertas;
+      </li>
+
+      <li>
+      - Luzes acesas;
+      </li>
+
+      <li>
+      - Não mexa nos móveis;
+      </li>
+
+      <li>
+      - Ao sair, desligue as luzes;
+      </li>
+
+      <li>
+      - Sujou? Limpe;
+      </li>
+
+      <li>
+      - Devolver a chave no SISAE até as 16h50.
+      </li>
+    </ul>
+    <p>Para ver os horários livres dos laboratórios de informática, <a href="https://www.canva.com/design/DAGm-Zn1wkM/nityHiEms_2zAhY1L7DN1A/edit">clique aqui!</a>
+    </p>
   </section>
 
   <section class="botoes">
@@ -83,8 +111,7 @@ main {
 h1{
   color: #1C72D3;
   text-align: center;
-  
-  font-size: 2rem;
+  font-size: calc(2.5rem);
   font-weight: bolder;
   margin-top: 3vw;
   margin-bottom: 3vw;
@@ -96,31 +123,44 @@ h1{
   background-position: bottom; /* Ajusta a posição da onda para o fundo */
   background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
   width: 95.995%;
-  height: 60vh; /* Ajuste conforme a necessidade */
+  height: 130vh; /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;
   color: aliceblue;
-  font-size: 1.3rem;
+  font-size: calc(1.3rem);
   padding: 1vw 2vw 1vw 2vw;
-  margin-bottom: -10vw;
+  margin-bottom: -25vw;
 }
 
 p{
   color: white;
-  font-size: 1.3rem;
+  font-size: calc(1.5rem);
   text-align: center;
   margin: 0 17vw 0 17vw;
-  padding: 2vw 0 2.5vw 0;
+  padding: 1vw 0 1vw 0;
+}
+
+ul{
+  color: white;
+  font-size: calc(1.5rem);
+  text-align: left;
+  margin: 0 17vw 0 35vw;
+  padding: 1vw 0 1vw 0;
+}
+
+li{
+  padding: 0.3vw 0 0.3vw 0;
 }
 
 a{
   color: #bfc5ff;
   cursor: pointer;
   transition: color 0.3s;
+  text-decoration: none;
 }
 
 a:hover{
-  color: #245ea0;
+  color: #063770;
   text-decoration: underline;
 }
 
@@ -133,19 +173,19 @@ a:hover{
 }
 
 .botoes button {
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
   border: none;
   cursor: pointer;
   transition: transform 0.2s;
   border-radius: 10px;
   padding: 20px 20px 20px 20px;
-  font-size: 1.2rem;
+  font-size: calc(1.2rem);
   margin-left: 2vw;
 }
 
 .botoes button:hover {
-  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  background: linear-gradient(135deg, #02367a, #1e88e5);
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
   transform: scale(1.05);
 }
