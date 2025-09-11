@@ -23,7 +23,7 @@ function voltarAoSumario() {
     <main>
         <h1>oi</h1>
         <div v-if="!showSummary" class="voltar">
-            <button @click="voltarAoSumario">← Voltar ao Sumário</button>
+            <button @click="voltarAoSumario">← Voltar</button>
         </div>
     </main>
 </template>
