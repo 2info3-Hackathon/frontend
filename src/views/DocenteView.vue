@@ -6,6 +6,11 @@ const router = useRouter()
 function voltar() {
   router.push('/')
 }
+
+function toggleSenha() {
+    const senha = document.getElementById("senha");
+    senha.type = senha.type === "password" ? "text" : "password";
+}
 </script>
 
 <template>
@@ -30,7 +35,7 @@ function voltar() {
         <input type="text" id="login" name="login" required>
 
         <label for="senha">Senha de Login:</label>
-        <input type="password" id="senha" name="senha" required>
+        <input type="password" id="senha" name="senha" required onclick="toggleSenha()">
 
         <div class="botoes">
           <button type="reset">Limpar</button>
@@ -45,7 +50,7 @@ function voltar() {
 
 <style scoped>
 .principal{
-  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   margin: 50px 150px 50px 150px;
   padding: 70px 140px 140px 140px;
   border-radius: 20px;
@@ -61,10 +66,13 @@ h1{
 
 form {
   background: white;
-  padding: 95px 105px 35px 295px;
+  padding: 35px 105px 35px 105px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  display: flex;              
+  flex-direction: column;     
+  align-items: center
 }
 
 h2 {
@@ -94,7 +102,7 @@ input {
 }
 
 .botoes button {
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
   font-size: 20px;
   padding: 15px 30px;
@@ -106,13 +114,13 @@ input {
 }
 
 button:hover {
-  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  background: linear-gradient(135deg, #02367a, #1e88e5);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
 }
 
 .voltar{
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
   border: none;
   cursor: pointer;

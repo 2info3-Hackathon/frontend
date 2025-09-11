@@ -6,6 +6,11 @@ const router = useRouter()
 function voltar() {
   router.push('/')
 }
+
+function toggleSenha() {
+    const senha = document.getElementById("senha");
+    senha.type = senha.type === "password" ? "text" : "password";
+}
 </script>
 
 <template>
@@ -30,8 +35,8 @@ function voltar() {
         <input type="text" id="login" name="login" required>
 
         <label for="senha">Senha de Login:</label>
-        <input type="password" id="senha" name="senha" required>
-
+        <input type="password" id="senha" name="senha" required onclick="toggleSenha()">
+         
         <div class="botoes">
           <button type="reset">Limpar</button>
           <button type="submit">Enviar</button>
@@ -45,7 +50,7 @@ function voltar() {
 
 <style scoped>
 .principal{
-  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   margin: 50px 150px 50px 150px;
   padding: 70px 140px 140px 140px;
   border-radius: 20px;
@@ -53,7 +58,7 @@ function voltar() {
 
 h1{
   color: white;
-  font-size: 2.5rem;
+  font-size: calc(2.5rem);
   font-weight: bolder;
   text-align: center;
   margin-bottom: 3.5vw;
@@ -61,27 +66,30 @@ h1{
 
 form {
   background: white;
-  padding: 95px 105px 35px 295px;
+  padding: 35px 105px 35px 105px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  display: flex;              
+  flex-direction: column;     
+  align-items: center
 }
 
 h2 {
   font-weight: bolder;
-  font-size: 20px;
+  font-size: calc(20px);
   padding: 15px 5px 15px 0;
 }
 
 label {
-  font-size: 20px;
+  font-size: calc(20px);
   display: block;
   margin-top: 20px;
   font-weight: bold;
 }
 
 input {
-  font-size: 15px;
+  font-size: calc(15px);
   width: 80%;
   padding: 15px 5px 15px 0;
   margin-top: 5px;
@@ -94,9 +102,9 @@ input {
 }
 
 .botoes button {
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
-  font-size: 20px;
+  font-size: calc(20px);
   padding: 15px 30px;
   margin: 60px 100px 30px 100px;
   border: none;
@@ -106,20 +114,20 @@ input {
 }
 
 button:hover {
-  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  background: linear-gradient(135deg, #02367a, #1e88e5);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
 }
 
 .voltar{
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
   border: none;
   cursor: pointer;
   transition: transform 0.2s;
   border-radius: 5px;
   padding: 20px 20px 20px 20px;
-  font-size: 1.2rem;
+  font-size: calc(1.2rem);
   margin-left: 2vw;
 }
 </style>

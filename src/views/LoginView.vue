@@ -14,6 +14,11 @@ function irParaDocente(){
 function irParaTerceirao(){
   router.push('/TerceiraoView')
 }
+
+function toggleSenha() {
+    const senha = document.getElementById("senha");
+    senha.type = senha.type === "password" ? "text" : "password";
+}
 </script>
 
 <template>
@@ -28,7 +33,7 @@ function irParaTerceirao(){
         <input type="text" id="user" name="user" required>
 
         <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
+        <input type="password" id="senha" name="senha" required onclick="toggleSenha()">
 
         <button type="submit">Enviar</button>
       </form>
@@ -65,7 +70,7 @@ function irParaTerceirao(){
 <style scoped>
 
 .principal{
-  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   margin: 50px 150px 50px 150px;
   padding: 150px 140px 140px 140px;
   border-radius: 20px;
@@ -73,27 +78,30 @@ function irParaTerceirao(){
 
 form {
   background: white;
-  padding: 85px 105px 35px 295px;
+  padding: 85px 105px 35px 105px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  display: flex;              
+  flex-direction: column;     
+  align-items: center
 }
 
 h2 {
   font-weight: bolder;
-  font-size: 20px;
+  font-size: calc(20px);
   padding: 15px 5px 15px 0;
 }
 
 label {
-  font-size: 20px;
+  font-size: calc(20px);
   display: block;
   margin-top: 10px;
   font-weight: bold;
 }
 
 input {
-  font-size: 15px;
+  font-size: calc(15px);
   width: 80%;
   padding: 15px 5px 15px 0;
   margin-top: 5px;
@@ -102,11 +110,11 @@ input {
 }
 
 form button {
-  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
-  font-size: 18px;
+  font-size: calc(18px);
   padding: 10px 25px;
-  margin: 60px 150px 30px 290px;
+  margin: 60px 150px 30px 150px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -114,7 +122,7 @@ form button {
 }
 
 button:hover {
-  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  background: linear-gradient(135deg, #02367a, #1e88e5);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
 }
@@ -134,7 +142,7 @@ button:hover {
 }
 
 .cadastros a{
-  font-size: 18px;
+  font-size: calc(18px);
   color:#338ff8;
   text-decoration: none;
   cursor: pointer;
@@ -142,7 +150,7 @@ button:hover {
 }
 
 a:hover{
-  color: #0b4f9c;
+  color: #063770;
   text-decoration: underline;
 }
 
