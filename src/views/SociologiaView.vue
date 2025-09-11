@@ -28,7 +28,7 @@ function voltar() {
         <p>Grupo de Estudos, Bloco C</p>
     </div>
 
-    <button @click="voltar">Voltar</button>
+    <button @click="voltar">← Voltar</button>
   </div>
 </template>
 

@@ -65,7 +65,7 @@ function voltar() {
       </div>
     </div>
 
-    <button @click="voltar">Voltar</button>
+    <button @click="voltar">← Voltar</button>
   </div>
 </template>
 
@@ -99,7 +99,7 @@ button {
 
 .informacoes {
   background: linear-gradient(135deg, #1f68c7, #42a5f5);
-  margin: 50px 370px 150px 370px;
+  margin: 50px 50px 50px 50px;
   border-radius: 20px;
 }
 

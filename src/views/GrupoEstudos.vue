@@ -123,13 +123,13 @@ h1{
   background-position: bottom; /* Ajusta a posição da onda para o fundo */
   background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
   width: 95.995%;
-  height: 130vh; /* Ajuste conforme a necessidade */
+  height: 150vh; /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;
   color: aliceblue;
   font-size: calc(1.3rem);
   padding: 1vw 2vw 1vw 2vw;
-  margin-bottom: -25vw;
+  margin-bottom: -30vw;
 }
 
 p{
