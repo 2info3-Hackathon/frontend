@@ -1,6 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
-const routes = [
+import { createWebHistory, createRouter } from "vue-router";
+const router = createRouter 
+({
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: [
     {
         path: '/informacoesImportantes',
         name: 'Informações Importantes',
@@ -16,11 +18,22 @@ const routes = [
         name: 'Atestados e Declarações',
         component: () => import('@/views/atestadosDeclaracoes.vue')
     },
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
+    {
+         path: '/eventos',
+         name: 'Eventos',
+         component: () => import('@/view/EventosView.vue'),
+    },
+    {
+         path: '/adicionar-evento',
+         name: 'Adicionar Evento',
+         component: () => import('@/view/AdicionarEventoView.vue')
+    },
+    {
+         path: '/',
+         name: 'Inicial',
+         component: () => import('@/view/inicialView.vue'),
+    }
+ ]
 });
 
 export default router;
