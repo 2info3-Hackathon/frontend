@@ -53,7 +53,8 @@ function addProduto() {
 <template>
     <section>
         <form @submit.prevent="addProduto">
-          <div>
+          <div class="turmas">
+            <p> Turmas </p>
            <select v-model="categoria" required>
           <option value="">-- Selecione a turma --</option>
           <option value="3Agro1">3Agro1</option>
@@ -69,20 +70,18 @@ function addProduto() {
           </div>
             <div>
                 <label for="nomeProduto">
-                    Nome do Evento:
+                    Nome do Produto:
                 </label>
 
-    <input type="file" @change="onFileChange" accept="image/*" />
-
     <div v-if="imagemPreview">
-      <img :src="imagemPreview" alt="Prévia" width="200" height="200"  class="w-32 h-32 object-cover mt-2"/>
+      
     </div>
                 <input type="text" v-model="nomeProduto" id="nomeProduto">
             </div>
             <div class="data-hora">
               <div>
                 <label for="preco">
-                  preco
+                  preço
                 </label>
                 <input type="number" v-model="preco" id="preco">
               </div>
@@ -94,13 +93,13 @@ function addProduto() {
                   </div>
                 <div>
                     <label for="data">
-                        Data:
+                      Data:
                     </label>
                     <input type="date" v-model="data" id="data">
                 </div>
                 <div>
                     <label for="hora">
-                        Hora:
+                      Hora:
                     </label>
                     <input type="time" id="time" v-model="hora" />
                 </div>
@@ -108,16 +107,92 @@ function addProduto() {
             <div>
                 <div>
                     <label for="desc">
-                        Descrição do Evento:
+                        Descrição do Produto:
                     </label>
                 </div>
                 <textarea v-model="desc" id="desc" rows="5" cols="45"></textarea>
             </div>
+            <div class="imagem">
+             <input class="imagem" type="file" @change="onFileChange" accept="image/*" />
+            <p>Imagem</p>
+      <img :src="imagemPreview" alt="Prévia" width="400" height="400"  class="w-32 h-32 object-cover mt-2"/>
+      </div>
 
-            <div class="final">
+       <div class="final">
                 <input type="submit" value="Enviar">
             </div>
         </form>
     </section>
 </template>
+<style scoped>
+section{
+    margin: 6vw;
+    background: linear-gradient(45deg, #1B5299, #2D88FF);
+    padding: 4vw;
+    border-radius: 10px;
+    color: white;
+    font-size: calc(1.5vw + 0.390625vw);
 
+    & .data-hora{
+        display: flex;
+        justify-content: space-between;
+        padding: 2vw 0;
+        width: 70%;
+    }
+
+    & input{
+        font-size: calc(1.5vw + 0.390625vw);
+        border-radius: 5px;
+        border: solid black ;
+        margin: 0 0 0 1vw;
+        padding: 10px;
+    }
+
+    & textarea{
+        font-size: calc(1.5vw + 0.390625vw);
+        border-radius: 5px;
+        border: solid black ;
+        margin: 2vw 0;
+    }
+
+    & .final {
+
+        text-align: center;
+
+        & input{
+            font-size: calc(1.5vw + 0.390625vw);
+            border-radius: 5px;
+            border: solid black ;
+            color: #1B5299;
+            margin: 0 3vw 0 0 ;
+            padding: 1vw;
+
+            &:last-child{
+                margin: 0 0 0 3vw;
+            }
+        }
+
+    }
+}
+ & select {
+   font-size: calc(1.5vw + 0.390625vw);
+        border-radius: 5px;
+        border: solid black ;
+        margin: 0 0 0 1vw;
+        padding: 10px;
+        margin: 0 0 4vw 0;
+}
+div.imagem {
+  text-align: center;
+}
+& input.imagem {
+font-size: calc(1.5vw + 0.390625vw);
+        border-radius: 5px;
+        border: solid black ;
+        margin: 0 0 0 1vw;
+        padding: 10px;
+        margin: 0 0 4vw 0;  
+         text-align: center;
+}
+
+</style>

@@ -1,6 +1,7 @@
 <script setup>
 import { useProdutosStore } from '@/stores/produtos'
-
+import { useCartStore } from '@/stores/cartStore';
+const cartStore = useCartStore()
 const store = useProdutosStore();
 const agro1 = store.agro1
 
@@ -13,7 +14,7 @@ console.log('Produtos carregados:', agro1);
 
   <section >
     <img src="/public/3Agro1.png" alt="3Agro1" height="497" width="">
-    <div v-if="!agro1 || agro1.length === 0">Nenhum produto encontrado.</div>
+    <div class="aviso" v-if="!agro1 || agro1.length === 0">Nenhum produto foi adicionado no momento  </div>
 
     <article v-for="produto in agro1" :key="produto.id">
       <div v-if="produto.imagem">
@@ -36,6 +37,12 @@ console.log('Produtos carregados:', agro1);
   </section>
 </template>
 <style scoped>
-
+div.aviso {
+  display: flex;
+  justify-content: center;
+  margin: 14vw;
+  font-size: 2.5rem;
+  color: #1e88e5;
+}
 
 </style>
