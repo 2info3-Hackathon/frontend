@@ -1,25 +1,39 @@
 import { createWebHistory, createRouter } from "vue-router";
-
 const router = createRouter 
 ({
     history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
-        {
-            path: '/eventos',
-            name: 'Eventos',
-            component: () => import('@/view/EventosView.vue'),
-        },
-        {
-            path: '/adicionar-evento',
-            name: 'Adicionar Evento',
-            component: () => import('@/view/AdicionarEventoView.vue')
-        },
-        {
-            path: '/',
-            name: 'Inicial',
-            component: () => import('@/view/inicialView.vue'),
-        }
-    ],
-})
+    {
+        path: '/informacoesImportantes',
+        name: 'Informações Importantes',
+        component: () => import('@/views/informacoesImportantes.vue'),
+    },
+    {
+        path: '/contatosImportantes',
+        name: 'Contatos Importantes',
+        component: () => import('@/views/contatosImportantes.vue'),
+    },
+    {
+        path: '/atestadosDeclaracoes',
+        name: 'Atestados e Declarações',
+        component: () => import('@/views/atestadosDeclaracoes.vue')
+    },
+    {
+         path: '/eventos',
+         name: 'Eventos',
+         component: () => import('@/view/EventosView.vue'),
+    },
+    {
+         path: '/adicionar-evento',
+         name: 'Adicionar Evento',
+         component: () => import('@/view/AdicionarEventoView.vue')
+    },
+    {
+         path: '/',
+         name: 'Inicial',
+         component: () => import('@/view/inicialView.vue'),
+    }
+ ]
+});
 
-export default router
+export default router;
