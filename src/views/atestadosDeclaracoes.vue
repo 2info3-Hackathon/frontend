@@ -57,14 +57,14 @@ function voltarAoSumario() {
             </div>
         </main>
         <div v-if="!showSummary" class="voltar">
-            <button @click="voltarAoSumario">← Voltar ao Sumário</button>
+            <button @click="voltarAoSumario">← Voltar</button>
         </div>
     </body>
 </template>
 
 <style scoped>
 main {
-    background: #1C72D3;
+    background: linear-gradient(135deg, #1c7ed4, #42a5f5);
     border-radius: 5px;
     margin: 0 15vw 8vw 15vw;
     padding: 0 6vw 3vw 6vw;
@@ -75,12 +75,13 @@ h1 {
     text-align: center;
     color: white;
     font-weight: bold;
+    font-size: 2.5rem;
 }
 
 p {
     text-align: center;
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 span {
@@ -139,8 +140,7 @@ img {
 
 .voltar button {
     margin: 0 5vw 5vw 5vw;
-    background-color: #1C72D3;
-    ;
+    background:#1c7ed4;
     color: white;
     border-radius: 5px;
 }

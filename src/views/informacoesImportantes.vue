@@ -62,7 +62,7 @@ watch(
   background-repeat: no-repeat;
   width: 102%;
   height: 60vh;
-  background-color: #1C72D3;
+  background-color: #1c7ed4;
   display: block;
   margin-left: -20px;
   margin-top: -30px;
@@ -119,7 +119,7 @@ li {
   background-repeat: no-repeat;
   width: 102%;
   height: 60vh;
-  background-color: #1C72D3;
+  background-color: #1c7ed4;
   display: block;
   margin-left: -20px;
   margin-bottom: -80px;
