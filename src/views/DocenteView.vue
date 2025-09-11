@@ -1,3 +1,13 @@
+<script setup>
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+function voltar() {
+  router.push('/')
+}
+</script>
+
 <template>
   <section>
     <div class="principal">
@@ -22,9 +32,14 @@
         <label for="senha">Senha de Login:</label>
         <input type="password" id="senha" name="senha" required>
 
-        <button type="submit">Enviar</button>
+        <div class="botoes">
+          <button type="reset">Limpar</button>
+          <button type="submit">Enviar</button>
+        </div>
       </form>
     </div>
+
+    <button class="voltar" @click="voltar">← Voltar</button>
   </section>
 </template>
 
@@ -46,7 +61,7 @@ h1{
 
 form {
   background: white;
-  padding: 85px 105px 35px 295px;
+  padding: 95px 105px 35px 295px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -61,7 +76,7 @@ h2 {
 label {
   font-size: 20px;
   display: block;
-  margin-top: 10px;
+  margin-top: 20px;
   font-weight: bold;
 }
 
@@ -74,12 +89,16 @@ input {
   border-radius: 6px;
 }
 
-form button {
+.botoes{
+  display: flex;
+}
+
+.botoes button {
   background: linear-gradient(135deg, #1e88e5, #42a5f5);
   color: white;
-  font-size: 18px;
-  padding: 10px 25px;
-  margin: 60px 150px 30px 290px;
+  font-size: 20px;
+  padding: 15px 30px;
+  margin: 60px 100px 30px 100px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -90,5 +109,17 @@ button:hover {
   background: linear-gradient(135deg, #1565c0, #1e88e5);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
+}
+
+.voltar{
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  font-size: 1.2rem;
+  margin-left: 2vw;
 }
 </style>
