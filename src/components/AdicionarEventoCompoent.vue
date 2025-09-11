@@ -73,7 +73,7 @@ section{
     padding: 4vw;
     border-radius: 10px;
     color: white;
-    font-size: calc(1.75vw + 0.390625vw);
+    font-size: calc(1.5vw + 0.390625vw);
 
     & .data-hora{
         display: flex;
@@ -83,7 +83,7 @@ section{
     }
 
     & input{
-        font-size: calc(1.75vw + 0.390625vw);
+        font-size: calc(1.5vw + 0.390625vw);
         border-radius: 5px;
         border: solid black ;
         margin: 0 0 0 1vw;
@@ -91,7 +91,7 @@ section{
     }
 
     & textarea{
-        font-size: calc(1.75vw + 0.390625vw);
+        font-size: calc(1.5vw + 0.390625vw);
         border-radius: 5px;
         border: solid black ;
         margin: 2vw 0;
@@ -102,7 +102,7 @@ section{
         text-align: center;
 
         & input{
-            font-size: calc(1.75vw + 0.390625vw);
+            font-size: calc(1.5vw + 0.390625vw);
             border-radius: 5px;
             border: solid black ;
             color: #1B5299;

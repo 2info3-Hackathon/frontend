@@ -85,11 +85,11 @@ section {
         padding: 1vw 2vw;
         display: inline-block;
         border-radius: 5px;
-        font-size: calc(4vw + 0.390625vw);
+        font-size: calc(2vw + 0.390625vw);
     }
 
     & article {
-        font-size: calc(1.75vw + 0.390625vw);
+        font-size: calc(1.5vw + 0.390625vw);
 
         & .events {
             border-radius: 5px;
