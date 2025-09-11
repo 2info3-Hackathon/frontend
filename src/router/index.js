@@ -13,6 +13,11 @@ const router = createRouter
             path: '/adicionar-evento',
             name: 'Adicionar Evento',
             component: () => import('@/view/AdicionarEventoView.vue')
+        },
+        {
+            path: '/',
+            name: 'Inicial',
+            component: () => import('@/view/inicialView.vue'),
         }
     ],
 })
