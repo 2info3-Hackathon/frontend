@@ -81,7 +81,7 @@ section {
 section h1{
    color: white;
    text-align: center;
-   font-size: 2.5vw;
+   font-size: calc(1.5rem + 0.390625vw);
    padding: 4vw 2vw 0 0;
 }
 
@@ -106,7 +106,7 @@ section div ul.esquerda{
    text-align: left;
    list-style-type: disc;
    padding-left: 2%;
-   font-size:1.5em ;
+   font-size: calc(1.5rem + 0.390625vw);;
 }
 section div ul.direita{
    width: 30%;
@@ -116,7 +116,7 @@ section div ul.direita{
 }
 section p{
  color: white;
- font-size: 1.5rem;
+ font-size: calc(1.5rem + 0.390625vw);
  justify-content: center;
  padding: 2vw 1vw 3.5vw 0;
 }
