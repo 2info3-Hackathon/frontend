@@ -4,6 +4,13 @@ import { useProdutosStore } from '@/stores/produtosStore'
 import { useCartStore } from '@/stores/cartStore'
 import cart from '@/components/cart.vue'
 
+import { useEventStore } from '@/stores/event';
+
+const store = useEventStore();
+
+const produtos_A = store.produtosA
+
+console.log('Eventos carregados:', produtos_A);
 
 const produtosStore = useProdutosStore()
 const cartStore = useCartStore()
@@ -45,6 +52,7 @@ function irParaAdicionarProdutos() {
 </script>
 
 <template>
+
 
   <li @click="cartStore.toggleCart">
     <span class="mdi mdi-cart"></span>
@@ -189,6 +197,43 @@ function irParaAdicionarProdutos() {
         </ul>
 
       </div>
+
+
+        <div v-if=" !produtos_A || produtos_A.length === 0">Nenhum evento encontrado.</div>
+
+        <article v-for="evento in produtos_A" :key="evento.id">
+            <div class="produtosA">
+                <h2 class="name">
+                    {{ evento.nomeEvento }}
+                </h2>
+                <ul>
+                  <li>
+                        <p>
+                          {{ evento.preco }}
+                        </p>
+                        <p>
+                          {{ evento.local }}
+                        </p>
+                        <p>
+                            {{ evento.hora }}
+                        </p>
+                        </li>
+                    <li>
+                        <p>
+                            {{ evento.data }}
+                        </p>
+                    </li>
+                </ul>
+                <div>
+
+                    <p>
+                        {{ evento.descricao }}
+                    </p>
+                </div>
+            </div>
+        </article>
+
+
 
 
 

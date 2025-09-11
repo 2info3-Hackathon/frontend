@@ -1,59 +1,98 @@
 <script setup>
-/*
+
+import { useRouter } from 'vue-router'
+import { useEventStore } from '@/stores/event';
 import { ref } from 'vue'
-import { useProdutosStore } from '@/stores/produtosStore'
 
-const produtosStore = useProdutosStore()
+let router = useRouter();
 
-const nome = ref('')
-const preco = ref('')
-const categoria = ref('agro1') // default
+let nomeProduto = ref('');
+let preco = ref('');
+let local = ref('');
+let data = ref('');
+let hora = ref('');
+let categoria = ref('');
 
-function enviarProduto() {
-  const produto = {
-    nome: nome.value,
-    preco: parseFloat(preco.value)
-  }
+let desc = ref('');
 
-  produtosStore.adicionarProduto(produto, categoria.value)
 
-  // Limpar formulário
-  nome.value = ''
-  preco.value = ''
-  categoria.value = 'agro1'
+let eventStore = useEventStore();
+
+function addProduto()
+{
+    eventStore.newEvent(nomeProduto.value, preco.value, local.value, data.value, hora.value, desc.value, categoria.value);
+
+    nomeProduto.value = '';
+    preco.value = '';
+    local.value = '';
+    data.value = '';
+    hora.value = '';
+    desc.value = '';
+    categoria.value = '';
+
+    router.push({ name: 'Eventos' });
+    router.push({name: 'A'})
 }
+
 </script>
 
 <template>
-  <div>
-    <h2>Adicionar Produto</h2>
-    <form @submit.prevent="enviarProduto">
-      <label>
-        Nome:
-        <input v-model="nome" required />
-      </label>
-      <br /><br />
-
-      <label>
-        Preço:
-        <input type="number" v-model="preco" required />
-      </label>
-      <br /><br />
-
-      <label>
-        Categoria:
-        <select v-model="categoria">
-          <option value="agro1">Agro 1</option>
-          <option value="agro2">Agro 2</option>
-          <option value="agro3">Agro3</option>
+    <section>
+        <form @submit.prevent="addProduto">
+          <div>
+           <select v-model="categoria" required>
+          <option value="">-- Selecione a categoria --</option>
+          <option value="A">Categoria A</option>
+          <option value="B">Categoria B</option>
+          <option value="C">Categoria C</option>
         </select>
-      </label>
-      <br /><br />
 
-      <button type="submit">Adicionar</button>
-    </form>
+          </div>
+            <div>
+                <label for="nomeProduto">
+                    Nome do Evento:
+                </label>
+                <input type="text" v-model="nomeProduto" id="nomeProduto">
+            </div>
+            <div class="data-hora">
+              <div>
+                <label for="preco">
+                  preco
+                </label>
+                <input type="number" v-model="numero" id="preco">
+              </div>
+               <div>
+                    <label for="local">
+                  Local
+                </label>
+                <input type="text" v-model="local" id="local">
+                  </div>
+                <div>
+                    <label for="data">
+                        Data:
+                    </label>
+                    <input type="date" v-model="data" id="data">
+                </div>
+                <div>
+                    <label for="hora">
+                        Hora:
+                    </label>
+                    <input type="time" id="time" v-model="hora" />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="desc">
+                        Descrição do Evento:
+                    </label>
+                </div>
+                <textarea v-model="desc" id="desc" rows="5" cols="45"></textarea>
+            </div>
 
-    <h3>Debug Arrays:</h3>
-    <pre>{{ produtosStore.$state }}</pre>
-  </div>*/
+            <div class="final">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+    </section>
 </template>
+
