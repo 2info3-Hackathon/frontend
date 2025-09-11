@@ -22,6 +22,8 @@ const cartStore = useCartStore()
               <div>
                 <p class="nome">{{ produto.nome }}</p>
                 <p class="preco">R$ {{ produto.preco.toFixed(2) }}</p>
+                <p class="data"> {{ produto.data }} </p>
+                <p class="hora"> {{ produto.hora }} </p>
                 <p class="local"> {{ produto.local }}</p>
                 <p class="vendedor">{{ produto.vendedor }}</p>
 
