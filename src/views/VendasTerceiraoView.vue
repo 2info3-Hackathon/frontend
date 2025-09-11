@@ -39,11 +39,9 @@ function irPara3Quimi(){
 function irParaAdicionarProdutos() {
     router.push('adicionarProdutos')
 }
-
 </script>
 
 <template>
-
 
   <li @click="cartStore.toggleCart">
     <span class="mdi mdi-cart"></span>
@@ -51,15 +49,13 @@ function irParaAdicionarProdutos() {
 
    <cart v-if="cartStore.showCart" />
 
-
-
       <div class="lista" v-else>
  <button @click="irParaAdicionarProdutos"> Adicionar Produtos </button>
 
     <div class="tudo">
-    <h2>
+    <h1>
         Turmas
-    </h2>
+    </h1>
     <section class="turmas">
 
         <div class="agro">
@@ -79,7 +75,6 @@ function irParaAdicionarProdutos() {
              <button @click="irPara3Quimi"> 3Quimi </button>
         </div>
         </div>
-
        <agro1-component />
        <agro2-component />
        <agro2-component />
@@ -87,76 +82,66 @@ function irParaAdicionarProdutos() {
        <info2-component />
        <info3-component />
        <quimi-component />
-
         </div>
-
-
-
-
-
-
-
-
-
-
 </template>
+
 <style scoped>
-h2 {
-    display: flex;
-    justify-content: center;
+h1 {
     margin: 0 33vw 0 33vw;
     background-color: white;
     padding: 10px 10px 10px 10px;
-    border-radius: 60px;
-    font-size: 30px;
-    color: black;
+    border-radius: 20px;
+    color: #1C72D3;
+    text-align: center;
+    font-size: calc(2.5rem);
+    font-weight: bolder;
 }
+
 div.tudo {
-    background:  linear-gradient(135deg, #1e88e5, #42a5f5);
+    background: linear-gradient(135deg, #1f68c7, #42a5f5);
     margin: 4vw 10vw 4vw 10vw;
     padding: 2vw 0 3vw 0;
-    border-radius: 7vw;
+    border-radius: 40px;
 }
+
 section.turmas {
-    margin: 50px 300px 50px 150px;
-    padding: 0 150px 0 150px;
+    margin: 50px 150px 50px 115px;
     display: flex;
-
-
 }
+
 section.turmas button {
     padding: 14px 60px 14px 60px;
     margin: 40px 120px 40px 120px;
     background-color: white;
-    color: black;
+    color: #1C72D3;
     border: 2px solid #1e88e5;
-    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-
+    transition: transform 0.2s;
+    border-radius: 8px;
+    font-size: calc(1.2rem);
 }
+
 section.turmas button:hover {
-    background-color: #1e88e5;
+    background: linear-gradient(135deg, #1f68c7, #42a5f5);
     transform: scale(1.2);
-    border-color: #1e88e5;
     color: white;
-
 }
+
 section.turmas div.agro {
     background-color: white;
     margin: 0 30px 0 0;
-    border-radius: 60px;
+    border-radius: 50px;
 }
+
 section.turmas div.info {
     background-color: white;
     margin: 0 0 0 30px;
-    border-radius: 60px;
+    border-radius: 50px;
 }
 div.quimi {
     text-align: center;
     background-color: white;
-    border-radius: 60px;
+    border-radius: 30px;
     font-size: 30px;
     margin: 0 30vw 0 30vw;
 
@@ -165,22 +150,16 @@ div.quimi button {
     padding: 14px 60px 14px 60px;
     margin: 20px 40px 20px 40px;
     background-color: white;
-    color: black;
+    color: #1C72D3;
     border: 2px solid #1e88e5;
-    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    transition: transform 0.2s;
+    border-radius: 8px;
+    font-size: calc(1.2rem)
 }
 div.quimi button:hover {
-    background-color: #1e88e5;
+    background: linear-gradient(135deg, #1f68c7, #42a5f5);
     transform: scale(1.2);
-    border-color: #1e88e5;
     color: white;
-
 }
-
-/*===============================================================================================================================================================*/
-
-
 </style>

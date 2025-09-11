@@ -12,7 +12,7 @@ console.log('Produtos carregados:', info2);
 
 
   <section >
-    <img src="/public/3Info2.png" alt="3Info2" height="497" width="">
+    <img src="/public/3Info2.png" alt="3Info2" height="500" width="100%">
     <div v-if="!info2 || info2.length === 0">Nenhum produto encontrado.</div>
 
     <article v-for="produto in info2" :key="produto.id">
@@ -35,7 +35,32 @@ console.log('Produtos carregados:', info2);
    
   </section>
 </template>
+
 <style scoped>
+.produto{
+  margin: 5vw 5vw;
+  display: flex;
+}
 
+article{
+  padding: 0 2vw;
+}
 
+button {
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 5px;
+  padding: 8px 5px;
+  font-size: calc(1rem);
+  margin: 4px 0 0 0;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #02367a, #1e88e5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
 </style>

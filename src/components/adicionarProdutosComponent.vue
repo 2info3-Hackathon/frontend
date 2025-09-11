@@ -6,6 +6,10 @@ import { ref } from 'vue'
 const router = useRouter();
 const produtosStore = useProdutosStore();
 
+function voltar() {
+    router.push('/')
+}
+
 let nomeProduto = ref('');
 let preco = ref('');
 let local = ref('');
@@ -48,76 +52,133 @@ function addProduto() {
 
   router.push({ name: 'Agro1' });
 } 
-
 </script>
+
 <template>
-    <section>
+  <h1>Adicionar Produtos</h1>
+
+    <section class="informacoes">
+
         <form @submit.prevent="addProduto">
-          <div>
-           <select v-model="categoria" required>
-          <option value="">-- Selecione a turma --</option>
-          <option value="3Agro1">3Agro1</option>
-          <option value="3Agro2">3Agro2</option>
-          <option value="3Agro3">3Agro3</option>
-          <option value="3Info1">3Info1</option>
-          <option value="3Info2">3Info2</option>
-          <option value="3Info3">3Info3</option>
-          <option value="3Quimi">3Quimi</option>
 
-        </select>
+          <select v-model="categoria" required>
+            <option value="">-- Selecione a turma --</option>
+            <option value="3Agro1">3Agro1</option>
+            <option value="3Agro2">3Agro2</option>
+            <option value="3Agro3">3Agro3</option>
+            <option value="3Info1">3Info1</option>
+            <option value="3Info2">3Info2</option>
+            <option value="3Info3">3Info3</option>
+            <option value="3Quimi">3Quimi</option>
+          </select>
 
+          <label for="foto">Baixe uma capa:</label>
+          <input type="file" @change="onFileChange" accept="image/*" />
+
+          <div v-if="imagemPreview">
+            <img :src="imagemPreview" alt="Prévia" width="200" height="200"  class="w-32 h-32 object-cover mt-2"/>
           </div>
-            <div>
-                <label for="nomeProduto">
-                    Nome do Evento:
-                </label>
 
-    <input type="file" @change="onFileChange" accept="image/*" />
+          <label for="nomeProduto">Nome do Evento:</label>
+          <input type="text" v-model="nomeProduto" id="nomeProduto">
 
-    <div v-if="imagemPreview">
-      <img :src="imagemPreview" alt="Prévia" width="200" height="200"  class="w-32 h-32 object-cover mt-2"/>
-    </div>
-                <input type="text" v-model="nomeProduto" id="nomeProduto">
-            </div>
-            <div class="data-hora">
-              <div>
-                <label for="preco">
-                  preco
-                </label>
-                <input type="number" v-model="preco" id="preco">
-              </div>
-               <div>
-                    <label for="local">
-                  Local
-                </label>
-                <input type="text" v-model="local" id="local">
-                  </div>
-                <div>
-                    <label for="data">
-                        Data:
-                    </label>
-                    <input type="date" v-model="data" id="data">
-                </div>
-                <div>
-                    <label for="hora">
-                        Hora:
-                    </label>
-                    <input type="time" id="time" v-model="hora" />
-                </div>
-            </div>
-            <div>
-                <div>
-                    <label for="desc">
-                        Descrição do Evento:
-                    </label>
-                </div>
-                <textarea v-model="desc" id="desc" rows="5" cols="45"></textarea>
-            </div>
+          <label for="preco">Preço:</label>
+          <input type="number" v-model="preco" id="preco">
 
-            <div class="final">
-                <input type="submit" value="Enviar">
-            </div>
+          <label for="local">Local</label>
+          <input type="text" v-model="local" id="local">
+
+          <label for="data">Data:</label>
+          <input type="date" v-model="data" id="data">
+
+          <label for="hora">Hora:</label>
+          <input type="time" id="time" v-model="hora" />
+
+          <label for="desc">Descrição do Evento:</label>
+          <textarea v-model="desc" id="desc" rows="5" cols="45"></textarea>
+
+          <div class="botoes">
+            <button type="reset">Limpar</button>
+            <button type="submit">Enviar</button>
+          </div>
         </form>
     </section>
+    <button class="turmas" @click="voltar">← Voltar</button>
 </template>
 
+<style scoped>
+button {
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  font-size: calc(1.2rem);
+  margin-left: 2vw;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #02367a, #1e88e5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+
+h1 {
+  color: #1C72D3;
+  text-align: center;
+  margin-top: 3vw;
+  font-size: calc(2.5rem);
+  margin-bottom: 2vw;
+  font-weight: bolder;
+}
+
+.informacoes {
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  margin: 50px 60px 50px 60px;
+  padding: 35px 95px 35px 95px;
+  border-radius: 20px;
+}
+
+form {
+  background: white;
+  padding: 35px 95px 35px 95px;
+  margin: 80px 150px 80px 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-weight: bolder;
+  font-size: calc(20px);
+  padding: 15px 5px 15px 0;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, select {
+  font-size: calc(15px);
+  width: 100%;
+  padding: 15px 5px 15px 0;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.botoes button {
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  color: white;
+  font-size: calc(20px);
+  padding: 15px 30px;
+  margin: 60px 80px 30px 100px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+</style>

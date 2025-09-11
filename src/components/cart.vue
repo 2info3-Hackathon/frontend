@@ -3,7 +3,6 @@ import { useCartStore } from '@/stores/cartStore'
 
 const cartStore = useCartStore()
 
-
 </script>
 
 <template>
@@ -47,8 +46,6 @@ const cartStore = useCartStore()
         </tbody>
       </table>
 
-      
-
       <div class="cart-final">
         <div class="final">
           <h2>Total da Compra</h2>
@@ -72,7 +69,7 @@ const cartStore = useCartStore()
 section.cartCompras h1 {
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 section.cartCompras th {
   font-size: 2rem;

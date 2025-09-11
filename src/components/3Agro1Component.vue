@@ -9,10 +9,9 @@ console.log('Produtos carregados:', agro1);
 </script>
 
 <template>
+  <img src="/public/3Agro1.png" alt="3Agro1" height="500" width="100%">
 
-
-  <section >
-    <img src="/public/3Agro1.png" alt="3Agro1" height="497" width="">
+  <section class="produto">
     <div v-if="!agro1 || agro1.length === 0">Nenhum produto encontrado.</div>
 
     <article v-for="produto in agro1" :key="produto.id">
@@ -31,11 +30,34 @@ console.log('Produtos carregados:', agro1);
         <span class="mdi mdi-cart"></span> Reservar
       </button>
     </article>
-
-   
   </section>
 </template>
+
 <style scoped>
+.produto{
+  margin: 5vw 5vw;
+  display: flex;
+}
 
+article{
+  padding: 0 2vw;
+}
 
+button {
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 5px;
+  padding: 8px 5px;
+  font-size: calc(1rem);
+  margin: 4px 0 0 0;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #02367a, #1e88e5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
 </style>
