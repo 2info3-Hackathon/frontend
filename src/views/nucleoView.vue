@@ -102,7 +102,7 @@ function voltarAoinicio() {
     </section>
     <section> 
       <div v-if="!showSummary" class="voltar">
-        <button @click="voltarAoinicio">← Voltar ao Sumário</button>
+        <button @click="voltarAoinicio">← Voltar </button>
       </div>
 
     </section>
@@ -110,9 +110,12 @@ function voltarAoinicio() {
 </template>
 
 <style scoped>
+img {
+  margin-left: -20px;
+}
 section.corpo h1 {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-top: 3vw;
   margin-bottom: 3vw;
 }
@@ -130,12 +133,13 @@ div.azul1 {
   background-repeat: no-repeat;
   /* Impede que a imagem de fundo se repita */
   width: 100%;
-  height: 150vh;
+  height: 170vh;
   /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;
+  margin-left: -20px;
   color: aliceblue;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 1vw 2vw 1vw 2vw;
   margin-bottom: -35vw;
 }
@@ -153,20 +157,21 @@ div.azul2 {
   /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;
+  margin-left: -20px;
   color: aliceblue;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 1vw 2vw 1vw 2vw;
   text-align: center;
 }
 
 div.branco {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 1vw 4vw 1vw 4vw;
   margin-bottom: 3vw;
 }
 
 div.branco2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 1vw 2vw 1vw 2vw;
   margin: -12vw; 
@@ -188,12 +193,15 @@ div li {
 .voltar button {
   background-color: #1C72D3;
   color: aliceblue;
-  border-radius: 10px;
-  padding: 20px 20px 20px 20px;
+  border-radius: 5px;
+  padding: 10px 30px;
   margin-left:2vw ;
   border: none;
-  font-size: 1.2rem;
+  font-size: 22px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+button:hover{
+  transform: scale(1.05);
 }
 </style>
