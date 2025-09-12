@@ -6,8 +6,8 @@ export const useReservadosStore = defineStore('reservados', {
   }),
 
   actions: {
-    addToReservados(produto) {
-      this.reservados.push(produto)
+    addToReservados(cart) {
+      this.reservados.push({...cart})
     }
   }
 })

@@ -1,7 +1,10 @@
-<script>
+<script setup>
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+import { useReservadosStore } from "@/stores/reservados";
+
+const reservadosStore = useReservadosStore()
 
 function voltar() {
     router.push('/')
@@ -10,7 +13,11 @@ function voltar() {
 
 <template>
 
+{{ reservadosStore.reservados }}
+
 <button class="turmas" @click="voltar">← Voltar</button>
+
+
 
 </template>
 

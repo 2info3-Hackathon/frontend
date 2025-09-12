@@ -12,8 +12,9 @@ console.log('Produtos carregados:', agro2);
 <template>
 
 
-
+<img src="/public/agro2.png" alt="agro2" width="1835" height="">
   <section class="produto">
+
     <div class="aviso" v-if="!agro2 || agro2.length === 0">Nenhum produto foi adicionado no momento  </div>
 
 
@@ -57,15 +58,15 @@ article{
   gap: 8px;
 }
 article img {
-  width: 100%;       /* imagem ocupa toda a largura do card */
+  width: 100%;
   height: 180px;
-  object-fit: cover; /* corta sem distorcer */
+  object-fit: cover;
   border-radius: 6px;
 }
 div.aviso {
   display: flex;
   justify-content: center;
-  margin: 14vw;
+   margin: 10vw 0 10vw 24vw;
   font-size: 2.5rem;
   color: #1e88e5;
 }
