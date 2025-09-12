@@ -31,6 +31,11 @@ const routes = [
     name: 'Informações Importantes',
     component: () => import('@/views/informacoesImportantesView.vue'),
   },
+   {
+     path: '/atendimento',
+     name: 'Atendimentos',
+     component: () => import('@/views/AtendimentoView.vue'),
+  },
   {
     path: '/contatos-importantes',
     name: 'Contatos Importantes',
@@ -60,4 +65,3 @@ const router = createRouter({
 
 export default router
 
-  
