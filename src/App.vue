@@ -1,12 +1,9 @@
 <script setup>
-import informacoesImportantes from './views/informacoesImportantes.vue';
 </script>
 
 <template>
-     <informacoesImportantes />
-    <main>
-        <RouterView />
-    </main>
+    <RouterView/>
 </template>
 
-<style scoped></style>
+<style>
+</style>
