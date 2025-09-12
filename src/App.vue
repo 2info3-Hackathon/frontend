@@ -4,6 +4,9 @@ import informacoesImportantes from './views/informacoesImportantes.vue';
 
 <template>
      <informacoesImportantes />
+    <main>
+        <RouterView />
+    </main>
 </template>
 
 <style scoped></style>

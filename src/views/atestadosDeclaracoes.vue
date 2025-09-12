@@ -3,6 +3,7 @@ import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const showSummary = ref(true)
+
 const textoAtivo = ref('')
 const route = useRoute()
 const router = useRouter()
@@ -25,7 +26,6 @@ function voltarAoSumario() {
 </script>
 
 <template>
-
     <body>
         <main>
             <h1>Faltei, e agora?</h1>
@@ -143,5 +143,5 @@ img {
     background:#1c7ed4;
     color: white;
     border-radius: 5px;
-}
+ }
 </style>
