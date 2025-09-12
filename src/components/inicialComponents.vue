@@ -37,22 +37,22 @@ watch(
         <div class="lista">
           <ul>
             <li> 
-              <RouterLink to="/nucleos"> <h2>Núcleos </h2></RouterLink>
+              <RouterLink to="/nucleos" class="link"> <h2>Núcleos </h2></RouterLink>
             </li>
             <li>
              <h2>Vendas Terceirão</h2>
             </li>
              <li>
-              <RouterLink to="/inicio"><h2>Cômites e Comissões</h2></RouterLink>
+              <RouterLink to="/inicio" class="link"><h2>Cômites e Comissões</h2></RouterLink>
             </li>
             <li>
               <h2>Grupo de Estudo</h2>
             </li>
             <li>
-              <RouterLink to="/eventos"><h2>Eventos</h2></RouterLink>
+              <RouterLink to="/eventos" class="link"><h2>Eventos</h2></RouterLink>
             </li>
             <li>
-             <RouterLink to="/informacoes-importantes"> <h2>Informações Importantes</h2></RouterLink>
+             <RouterLink to="/informacoes-importantes" class="link"> <h2>Informações Importantes</h2></RouterLink>
             </li>
           </ul>
         </div>
@@ -100,10 +100,14 @@ cursor: pointer;
 transition: transform 0.2s;
 border-radius: 10px;
 background:  #1C72D3;
-color: aliceblue;
+color: white;
 }
 li:hover{
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
   transform: scale(1.2);
+}
+.link {
+  color: white;
+  text-decoration: none;
 }
 </style>

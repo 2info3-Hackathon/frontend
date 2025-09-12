@@ -42,7 +42,7 @@ function voltarAoInicial() {
           </ul>
           <ul>
             <li>
-              <RouterLink to="/atendimentos" class="link">
+              <RouterLink to="/atendimento" class="link">
                 Atendimentos
               </RouterLink>
             </li>
