@@ -81,7 +81,7 @@ function addProduto() {
             <img :src="imagemPreview" alt="Prévia" width="200" height="200"  class="w-32 h-32 object-cover mt-2"/>
           </div>
 
-          <label for="nomeProduto">Nome do Evento:</label>
+          <label for="nomeProduto">Nome do Produto:</label>
           <input type="text" v-model="nomeProduto" id="nomeProduto">
 
           <label for="preco">Preço:</label>
