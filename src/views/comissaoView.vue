@@ -66,14 +66,14 @@ section.lista div.azul{
   display: block;
   margin-left: -20px;
   color: aliceblue;
-  font-size: calc(1.3rem + 0.390625vw);
+  font-size: 1.5rem;
   padding: 1vw 2vw 1vw 2vw;
   margin-bottom: -16vw;
 }
 div.branco{
    margin-top: -12vw;
     margin-bottom: 2vw;
-    font-size: calc(1.3rem + 0.390625vw);
+    font-size: 1.5rem;
     padding: 1vw 2vw 1vw 2vw;
 }
 h1{

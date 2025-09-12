@@ -22,20 +22,20 @@ function voltarAoinicio() {
 <template>
     <main>
          <section class="img">
-    <img src="/public/imagem/Rectangle 43.png" alt="imagem-if" height="900" width="1800">
+    <img src="/public/imagem/Rectangle 43.png" alt="imagem-if" height="900" width="1860">
   </section>
   <section>
     <h1>Conheça nossos Comitê </h1>
     <div class="azul">
         <h2>Comitê de ética em Pesquisa com Seres Humanos - CEPSH : </h2>
         <p>
-            O CEPSH é um colegiado interdisciplinar e independente, de relevância pública, de caráter consultivo, deliberativo e educativo, criado para defender<br> os interesses dos participantes da pesquisa em sua integridade e dignidade e para contribuir no desenvolvimento da pesquisa dentro<br> de padrões ético-científicos, vinculado ao Gabinete da Reitoria, atendendo ao IFC.
+            O CEPSH é um colegiado interdisciplinar e independente, de relevância pública, de caráter consultivo, deliberativo e educativo, criado para defender os interesses dos participantes da pesquisa em sua integridade e dignidade e para contribuir no desenvolvimento da pesquisa dentro de padrões ético-científicos, vinculado ao Gabinete da Reitoria, atendendo ao IFC.
         </p>
     </div>
     <div class="branco">
         <h2>Comitê de Ética no Uso de Animais – CEUA</h2>
         <p>
-            O Comitê de Ética no Uso de Animais (CEUA) tem por finalidade analisar e qualificar,do ponto de vista ético, as atividades que envolvam o uso <br> de animais em projetos de ensino, pesquisa e extensão, dentro e fora do IFC – Campus Araquari e todas as atividades que envolvam <br>ditos animais  deverão ser submetidas à aprovação prévia do CEUA.
+            O Comitê de Ética no Uso de Animais (CEUA) tem por finalidade analisar e qualificar,do ponto de vista ético, as atividades que envolvam o uso  de animais em projetos de ensino, pesquisa e extensão, dentro e fora do IFC – Campus Araquari e todas as atividades que envolvam ditos animais  deverão ser submetidas à aprovação prévia do CEUA.
         </p>
     </div>
     <div v-if="!showSummary" class="voltar">
@@ -55,7 +55,7 @@ section div.azul{
   background-position: bottom; /* Ajusta a posição da onda para o fundo */
   background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
   width: 100%;
-  height: 70vh; /* Ajuste conforme a necessidade */
+  height: 60vh; /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;
   margin-left: -20px;
@@ -81,9 +81,11 @@ div{
 }
 div h2{
     text-align: center;
+    margin-top: 3vw;
 }
 div p {
    text-align: center;
+   margin: 3vw 6vw 0vw 6vw ;
 }
 button{
     background-color: #1C72D3;
