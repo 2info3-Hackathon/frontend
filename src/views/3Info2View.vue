@@ -1,12 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { useCartStore } from '@/stores/cartStore'
-import Info2Component from '@/components/3Info2Component.vue';
-<<<<<<< HEAD
- import { useRouter } from 'vue-router'
-import { useCartStore } from '@/stores/cartStore'
-=======
->>>>>>> 1e805e5812ae0b93fdb655650a69afcdf48ba75b
+import Info2Component from '@/components/3Info2Component.vue'
 import Cart from '@/components/cart.vue'
 
 const cartStore = useCartStore()
@@ -18,7 +13,6 @@ function voltar() {
 </script>
 
 <template>
-<<<<<<< HEAD
     <p @click="cartStore.toggleCart">
     <span class="mdi mdi-cart"></span>
    </p>
@@ -46,12 +40,3 @@ button:hover {
   transform: scale(1.05);
 }
 </style>
-=======
-   <p @click="cartStore.toggleCart">
-    <span class="mdi mdi-cart"></span>
-   </p>
-  <Cart v-if="cartStore.showCart" />
-<Info2Component v-else/>
- <button class="turmas" @click="voltar">Voltar</button>
-</template>
->>>>>>> 1e805e5812ae0b93fdb655650a69afcdf48ba75b

@@ -11,14 +11,9 @@ console.log('Produtos carregados:', agro2);
 </script>
 
 <template>
+  <img src="/public/3Agro2.png" alt="3Agro2" height="500" width="100%">
   <section >
-<<<<<<< HEAD
-    <img src="/public/3Agro2.png" alt="3Agro2" height="500" width="100%">
-    <div v-if="!agro2 || agro2.length === 0">Nenhum produto encontrado.</div>
-=======
-    <img src="/public/3Agro2.png" alt="3Agro2" height="497" width="">
     <div class="aviso" v-if="!agro2 || agro2.length === 0">Nenhum produto foi adicionado no momento </div>
->>>>>>> 1e805e5812ae0b93fdb655650a69afcdf48ba75b
 
     <article v-for="produto in agro2" :key="produto.id">
       <div v-if="produto.imagem">
@@ -42,12 +37,11 @@ console.log('Produtos carregados:', agro2);
 </template>
 
 <style scoped>
-<<<<<<< HEAD
 .produto{
   margin: 5vw 5vw;
   display: flex;
 }
-=======
+
 div.aviso {
   display: flex;
   justify-content: center;
@@ -55,8 +49,6 @@ div.aviso {
   font-size: 2.5rem;
   color: #1e88e5;
 }
-
->>>>>>> 1e805e5812ae0b93fdb655650a69afcdf48ba75b
 
 article{
   padding: 0 2vw;
