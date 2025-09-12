@@ -1,6 +1,4 @@
 <script setup>
-import inicioViews from './views/inicioViews.vue';
-import { useRoute } from 'vue-router';
 </script>
 
 <template>
