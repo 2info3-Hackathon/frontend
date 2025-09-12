@@ -1,4 +1,23 @@
 <script setup>
+import { ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+const showSummary = ref(true)
+
+const route = useRoute()
+const router = useRouter()
+
+watch(
+    () => route.fullPath,
+    (newPath) => {
+        showSummary.value = newPath === '/'
+    },
+    { immediate: true }
+)
+
+function voltarAoSumario() {
+    router.push('/informacoes-importantes')
+}
 </script>
 
 <template>
@@ -52,6 +71,9 @@
          Marcar atendimento pelo email que constar na página do respectivo professor(a)!
        </p>
  </section>
+ <div v-if="!showSummary" class="voltar">
+            <button @click="voltarAoSumario">← Voltar</button>
+        </div>
   <div class="girada"></div>
 </body>
 </template>
@@ -142,6 +164,12 @@ section div.listas ul li a:hover{
   transform: rotate(180deg);
   margin-top: -100px;
 }
+.voltar button {
+    margin: 0 5vw 5vw 5vw;
+    background:#1c7ed4;
+    color: white;
+    border-radius: 5px;
+ }
 
 </style>
 

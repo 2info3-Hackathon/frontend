@@ -19,7 +19,7 @@ const routes = [
   {
     path: '/inicio',
     name: 'inicio',
-    component: () => import(`@/views/inicioViews.vue`),
+    component: () => import(`@/views/inicioView.vue`),
   },
   {
     path: '/',
@@ -34,7 +34,7 @@ const routes = [
    {
      path: '/atendimento',
      name: 'Atendimentos',
-     component: () => import('@/views/AtendimentoView.vue'),
+     component: () => import('@/views/atendimentoView.vue'),
   },
   {
     path: '/contatos-importantes',
@@ -49,12 +49,12 @@ const routes = [
   {
     path: '/eventos',
     name: 'Eventos',
-    component: () => import('@/views/EventosView.vue'),
+    component: () => import('@/views/eventosView.vue'),
   },
   {
     path: '/adicionar-evento',
     name: 'Adicionar Evento',
-    component: () => import('@/views/AdicionarEventoView.vue')
+    component: () => import('@/views/adicionarEventoView.vue')
   }
 ];
 
