@@ -21,7 +21,7 @@ watch(
 )
 
 function voltarAoSumario() {
-    router.push('/')
+    router.push('/informacoes-importantes')
 }
 </script>
 

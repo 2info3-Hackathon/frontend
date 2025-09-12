@@ -1,5 +1,17 @@
 <script setup>
-import App from '@/App.vue';
+import { RouterLink, useRoute } from 'vue-router';
+import { ref, watch } from 'vue'
+
+const showSummary = ref(true)
+const route = useRoute()
+
+watch(
+    () => route.fullPath,
+    (newPath) => {
+        showSummary.value = newPath === '/'
+    },
+    { immediate: true }
+)
 </script>
 
 <template>
@@ -8,7 +20,7 @@ import App from '@/App.vue';
          
         </nav>
         </header>
-        <main>
+        <main v-if="showSummary">
      <section class="imagem-if">
         <div class="banner">
             <img src="https://noticias.memoria.araquari.ifc.edu.br/wp-content/uploads/sites/11/2017/02/IMG_5786.jpg" alt="banner" width="100%" height="700">
@@ -24,23 +36,23 @@ import App from '@/App.vue';
         </div>
         <div class="lista">
           <ul>
-            <li>
-              <h2>Núcleos </h2>
+            <li> 
+              <RouterLink to="/nucleos"> <h2>Núcleos </h2></RouterLink>
             </li>
             <li>
-              <h2>Vendas Terceirão</h2>
+             <h2>Vendas Terceirão</h2>
             </li>
              <li>
-              <h2>Cômites e Comissões</h2>
+              <RouterLink to="/inicio"><h2>Cômites e Comissões</h2></RouterLink>
             </li>
             <li>
               <h2>Grupo de Estudo</h2>
             </li>
             <li>
-              <h2>Eventos</h2>
+              <RouterLink to="/eventos"><h2>Eventos</h2></RouterLink>
             </li>
             <li>
-              <h2>Informações Importantes</h2>
+             <RouterLink to="/informacoes-importantes"> <h2>Informações Importantes</h2></RouterLink>
             </li>
           </ul>
         </div>

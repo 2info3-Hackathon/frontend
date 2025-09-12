@@ -15,7 +15,7 @@ watch(
 )
 
 function voltarAoSumario() {
-  router.push('/')
+  router.push('/informacoes-importantes')
 }
 </script>
 
@@ -23,7 +23,7 @@ function voltarAoSumario() {
   <main>
     <h1>oii</h1>
     <div v-if="!showSummary" class="voltar">
-      <button @click="voltarAoSumario">← Voltar ao Sumário</button>
+      <button @click="voltarAoSumario">← Voltar</button>
     </div>
   </main>
 </template>

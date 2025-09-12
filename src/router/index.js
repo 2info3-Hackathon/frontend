@@ -17,34 +17,39 @@ const routes = [
     component: () => import(`@/views/comiteView.vue`),
   },
   {
-    path: '/',
+    path: '/inicio',
     name: 'inicio',
     component: () => import(`@/views/inicioViews.vue`),
   },
   {
-    path: '/informacoesImportantes',
+    path: '/',
+    name: 'inicial',
+    component: () => import(`@/views/inicialView.vue`),
+  },
+  {
+    path: '/informacoes-importantes',
     name: 'Informações Importantes',
-    component: () => import('@/views/informacoesImportantes.vue'),
+    component: () => import('@/views/informacoesImportantesView.vue'),
   },
   {
-    path: '/contatosImportantes',
+    path: '/contatos-importantes',
     name: 'Contatos Importantes',
-    component: () => import('@/views/contatosImportantes.vue'),
+    component: () => import('@/views/contatosImportantesView.vue'),
   },
   {
-    path: '/atestadosDeclaracoes',
+    path: '/atestados-declaracoes',
     name: 'Atestados e Declarações',
-    component: () => import('@/views/atestadosDeclaracoes.vue')
+    component: () => import('@/views/atestadosDeclaracoesView.vue')
   },
   {
     path: '/eventos',
     name: 'Eventos',
-    component: () => import('@/view/EventosView.vue'),
+    component: () => import('@/views/EventosView.vue'),
   },
   {
     path: '/adicionar-evento',
     name: 'Adicionar Evento',
-    component: () => import('@/view/AdicionarEventoView.vue')
+    component: () => import('@/views/AdicionarEventoView.vue')
   }
 ];
 

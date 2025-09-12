@@ -15,7 +15,7 @@ watch(
 )
 
 function voltarAoinicio() {
-  router.push('/')
+  router.push('/inicio')
 
 }
 </script>
