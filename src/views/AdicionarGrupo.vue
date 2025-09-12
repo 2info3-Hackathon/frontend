@@ -61,7 +61,7 @@ function voltar() {
       </form>
 
       <div v-if="mostrarAviso" class="aviso">
-        ✅ Formulário enviado com sucesso!
+        ✅ Formulário enviado para revisão com sucesso!
       </div>
     </div>
 
