@@ -6,9 +6,9 @@ const router = createRouter
    history: createWebHistory(import.meta.env.BASE_URL),
    routes: [
        {
-           path: '/atendimentos',
+           path: '/atendimento',
            name: 'Atendimentos',
-           component: () => import('@/view/AtendimentosView.vue'),
+           component: () => import('@/views/AtendimentoView.vue'),
        }
    ],
 })
