@@ -7,9 +7,9 @@ const router = createRouter
         {
             path: '/clifc', 
             name: 'CLIFC',
-            component: () => import('@/view/ClifcView.vue'),
+            component: () => import('@/views/clifcView.vue'),
         }
     ],
-})
+});
 
 export default router
