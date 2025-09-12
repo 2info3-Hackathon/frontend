@@ -18,9 +18,9 @@ function voltar() {
         <h2>
           Monitor Responsável:
         </h2>
-        <p><span>Nome:</span> <br>- </p>
+        <p><span>Nome:</span> <br>- Nabilly; <br>- Christiny;<br>- Betina;<br>- Giulia;<br>- Kimberlly; <br>- Wesley.</p>
         <p><span>Email:</span> comitedeensino.memoria.araquari@ifc.edu.br</p>
-        <p><span>Horário disponível:</span> ??</p>
+        <p><span>Horário disponível:</span> <br>- Segunda à tarde, Sexta à tarde; <br>- Terça de manhã, Quarta à tarde, Sexta à tarde;<br>- Terça de manhã, Sexta à tarde;<br>- Terça de manhã;<br>- Terça à tarde; <br>- Quarta à tarde.</p>
 
         <h2>
           Localização:
@@ -79,10 +79,13 @@ button{
   font-weight: 500;
   margin: 30px 0 30px 280px;
   color: white;
+  word-spacing: 7px;
+  line-height: 1.3;
 }
 
 span{
   font-weight: bolder;
   padding: 0 5px 0 0;
+  line-height: 2;
 }
 </style>

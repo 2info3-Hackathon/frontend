@@ -79,10 +79,13 @@ button{
   font-weight: 500;
   margin: 30px 0 30px 280px;
   color: white;
+  word-spacing: 7px;
+  line-height: 1.3;
 }
 
 span{
   font-weight: bolder;
   padding: 0 5px 0 0;
+  line-height: 2;
 }
 </style>
