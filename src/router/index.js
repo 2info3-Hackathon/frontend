@@ -5,9 +5,9 @@ const router = createRouter({
    history: createWebHistory(import.meta.env.BASE_URL),
    routes: [
        {
-           path: '/',
+           path: '/contatos-importantes',
            name: 'ContatosImportantes',
-           component: () => import('@/view/ContatosImportantesView.vue'),
+           component: () => import('@/views/ContatosImportantesView.vue'),
        }
    ],
 })

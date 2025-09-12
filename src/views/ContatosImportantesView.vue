@@ -1,14 +1,11 @@
-<script setup>
-/* COLOCAR NO PATH DO INDEX.JS "contatosImportantes.vue"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-</script>
+<script setup></script>
 
 <template>
 
     <section>
-
         <h1>Contatos Importantes</h1>
-
-        <ul>
+        <div>
+            <ul>
             <li>
                 <p>
                     Curso Técnico em Informática para Internet Integrado ao Ensino Médio <br>
@@ -31,43 +28,51 @@
                 </p>
             </li>
         </ul>
-
+        </div>
     </section>
 
 </template>
 
 <style scoped>
-
-section h1 {
-    padding: 2vw 0 0 0;
+h1 {
+    margin: 4vw 0 0 0;
     color: black;
     display: flex;
+    font-size: 2.5rem;
     justify-content: center;
-    font-size: 2vw;
-
 }
 
-section ul {
-
-    padding: 0.8vw 1.3vw 0 35vw;
-    line-height: 1.7vw;
-    font-size: 1vw;
-    
-}
-section li{
-
-    color: #2D86FB;
+ul {
+  color: #1C72D3;
+  margin: 4vw 19vw;
 }
 
-section ul li p {
+ul ::marker {
+    font-size: 1.3em;
+}
 
+li {
+    margin: 3vw;
+    font-size: 1.5rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+ul li p {
     color: black;
-
+    font-size: 1.5rem;
 }
 
-section ul li p span{
-
-        color: #2D86FB;
+ul li p span{
+    color: #1C7ED4;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
 }
+
+span:hover {
+  text-decoration: underline;
+}
+
 
 </style>
