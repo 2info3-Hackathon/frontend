@@ -1,7 +1,14 @@
 <script setup>
 import { useCartStore } from '@/stores/cartStore'
+import { useReservadosStore } from '@/stores/reservados'
 
 const cartStore = useCartStore()
+const reservadosStore = useReservadosStore()
+
+function moverProdutoParaReservados(produto) {
+  reservadosStore.addToReservados(produto)
+  cartStore.cart.items = cartStore.cart.items.filter(p => p.id !== produto.id)
+}
 
 </script>
 
@@ -9,7 +16,9 @@ const cartStore = useCartStore()
         <section class="cartCompras">
       <h1>Carrinho</h1>
       <table>
-        <thead>
+        <thead>  <button class="reservar" @click="cartStore.addToReservados(produto)">
+        <span class="mdi mdi-cart"></span> Reservar
+      </button>
           <tr>
             <th>Produtos </th>
           </tr>
@@ -22,7 +31,7 @@ const cartStore = useCartStore()
                 <p class="nome">{{ produto.nome }}</p>
                 <p class="preco">R$ {{ produto.preco.toFixed(2) }}</p>
                 <p class="data"> {{ produto.data }} </p>
-                <p class="hora"> {{ produto.hora }} </p>
+                <p class="hora"> {{ produto.hora }} </p>  <button>Ir para reservar</button>
                 <p class="local"> {{ produto.local }}</p>
                 <p class="vendedor">{{ produto.vendedor }}</p>
 
@@ -55,9 +64,10 @@ const cartStore = useCartStore()
             <span>Total</span>
             <span>R$ {{ cartStore.cart.total.toFixed(2) }}</span>
           </div>
-          <button>Ir para reservar</button>
+       <button @click="reservadosStore(produto)">Ir para reservar</button>
         </div>
       </div>
+
      <button @click="cartStore.toggleCart" class="outlined">
         Voltar para loja
       </button>
@@ -118,12 +128,12 @@ div.quantidade button:hover {
 div.cart-final {
   margin: 0 13vw 20vw 0 ;
   display: flex;
-  justify-content: right;   
+  justify-content: right;
 
 }
-/*position: fixed;    fixa o elemento na tela 
-  top: 6vw;             encosta no topo 
-  left: 4vw;            começa do lado esquerdo 
-  width: 100%; 
+/*position: fixed;    fixa o elemento na tela
+  top: 6vw;             encosta no topo
+  left: 4vw;            começa do lado esquerdo
+  width: 100%;
 */
 </style>

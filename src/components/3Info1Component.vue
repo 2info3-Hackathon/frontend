@@ -10,7 +10,7 @@ console.log('Produtos carregados:', info1);
 </script>
 
 <template>
-  <img src="/public/3info1.png" alt="3info1" height="500" width="100%">
+
 
 
   <section class="produto">
@@ -23,10 +23,10 @@ console.log('Produtos carregados:', info1);
       </div>
       <div class="produtos">
         <ul>
-      <li><p class="nome"> {{ produto.nomeProduto }}</p> </li> 
-      <li> <p class="preco">R$ {{ produto.preco }}</p></li> 
-     <li> <p class="local">{{ produto.local }}</p></li> 
-     <li> <p class="horas">{{ produto.hora }}</p></li> 
+      <li><p class="nome"> {{ produto.nomeProduto }}</p> </li>
+      <li> <p class="preco">R$ {{ produto.preco }}</p></li>
+     <li> <p class="local">{{ produto.local }}</p></li>
+     <li> <p class="horas">{{ produto.hora }}</p></li>
      <li> <p class="data">{{ produto.data }}</p></li>
       <li><p>{{ produto.descricao }}</p></li>
       </ul>
@@ -47,7 +47,7 @@ console.log('Produtos carregados:', info1);
 }
 
 article{
-  flex: 0 1 220px;  
+  flex: 0 1 220px;
   box-sizing: border-box;
   border: 1px solid #1e88e5;
   border-radius: 8px;
@@ -90,19 +90,19 @@ button:hover {
 .produto {
   margin: 5vw 5vw;
   display: flex;
-  flex-wrap: wrap;  
-  gap: 20px;        
+  flex-wrap: wrap;
+  gap: 20px;
   justify-content: flex-start;
 }
 
 
 div.produtos ul {
-  display: block;    
+  display: block;
   padding: 0;
   margin: 0;
 }
 div.produtos li {
-  width: 100%;       
+  width: 100%;
   padding: 2px 0;
   white-space: normal;
   list-style: none;

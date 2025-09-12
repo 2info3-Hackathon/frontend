@@ -43,7 +43,7 @@ export const useCartStore = defineStore('cart', {
 
     toggleCart() {
       this.showCart = !this.showCart
-    }
+    },
   }
 })
 

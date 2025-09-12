@@ -13,6 +13,7 @@ import Info3Component from '@/components/3Info3Component.vue';
 import QuimiComponent from '@/components/3QuimiComponent.vue';
 
 const cartStore = useCartStore()
+const produtosStore = useProdutosStore()
 const router = useRouter()
 
 function irPara3Agro1(){
@@ -39,9 +40,14 @@ function irPara3Quimi(){
 function irParaAdicionarProdutos() {
     router.push('adicionarProdutos')
 }
+function irParaReservados() {
+  router.push('/reservados')
+}
+
 </script>
 
 <template>
+  <button @click="irParaReservados">Suas reservas feitas </button>
 
   <li @click="cartStore.toggleCart">
     <span class="mdi mdi-cart"></span>
@@ -77,7 +83,7 @@ function irParaAdicionarProdutos() {
         </div>
        <agro1-component />
        <agro2-component />
-       <agro2-component />
+       <agro3-component />
        <info1-component />
        <info2-component />
        <info3-component />

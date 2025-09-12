@@ -47,6 +47,11 @@ const routes = [
         component: () => import('@/views/3QuimiView.vue'),
     },
     {
+      path: '/reservados',
+      name: 'Reservados',
+      component: () => import('@/views/reservadosView.vue'),
+    },
+    {
         path: '/adicionarProdutos',
         name: 'adicionarEventos',
         component: () => import('@/views/adicionarProdutosView.vue')
