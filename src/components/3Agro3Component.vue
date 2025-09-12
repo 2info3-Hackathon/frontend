@@ -12,7 +12,7 @@ console.log('Produtos carregados:', agro3);
 <template>
 
 
-<img src="/public/agro3.png" alt="agro3" width="1835" height="">
+<img src="/public/agro3.png" alt="agro3" width="1835" height="500">
   <section class="produto">
     <div class="aviso" v-if="!agro3 || agro3.length === 0">Nenhum produto foi adicionado no momento  </div>
 
