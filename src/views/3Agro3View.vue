@@ -18,7 +18,7 @@ function voltar() {
    </p>
   <Cart v-if="cartStore.showCart" />
 <Agro3Component v-else/>
- <button class="turmas" @click="voltar">Voltar</button>
+ <button class="turmas" @click="voltar">← Voltar</button>
 </template>
 
 <style scoped>

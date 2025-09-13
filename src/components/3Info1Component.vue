@@ -12,7 +12,7 @@ console.log('Produtos carregados:', info1);
 <template>
 
 
-<img src="/public/info1.png" alt="info1" width="1835" height="500">
+<img src="/public/info1.png" alt="info1" width="100%" height="500">
   <section class="produto">
     <div class="aviso" v-if="!info1 || info1.length === 0">Nenhum produto foi adicionado no momento  </div>
 

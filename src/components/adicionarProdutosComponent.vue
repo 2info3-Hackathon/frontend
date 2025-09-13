@@ -52,6 +52,16 @@ function addProduto() {
 
   router.push({ name: 'Agro1' });
 } 
+
+const mostrarAviso = ref(false);
+
+function enviarFormulario() {
+  mostrarAviso.value = true;
+
+  setTimeout(() => {
+    mostrarAviso.value = false;
+  }, 3000);
+}
 </script>
 
 <template>
@@ -101,10 +111,15 @@ function addProduto() {
 
           <div class="botoes">
             <button type="reset">Limpar</button>
-            <button type="submit">Enviar</button>
+            <button type="submit" @click="enviarFormulario">Enviar</button>
           </div>
     </div>
     </form>
+
+    <div v-if="mostrarAviso" class="aviso">
+        ✅ Produto adicionado com sucesso!
+      </div>
+
     </section>
     <button class="turmas" @click="voltar">← Voltar</button>
 </template>
@@ -195,5 +210,30 @@ p{
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s;
+}
+
+.aviso {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #1B5299, #42a5f5);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>
