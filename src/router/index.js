@@ -108,6 +108,11 @@ const routes = [
     component: () => import('@/views/atestadosDeclaracoesView.vue'),
   },
   {
+     path: '/clifc', 
+     name: 'CLIFC',
+    component: () => import('@/views/clifcView.vue'),
+  },
+  {
     path: '/eventos',
     name: 'Eventos',
     component: () => import('@/views/eventosView.vue'),
