@@ -33,8 +33,12 @@ function toggleSenha() {
         <input type="text" id="user" name="user" required>
 
         <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required onclick="toggleSenha()">
-
+        <div class="campo-senha">
+          <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" required>
+          <span class="olho" @click="toggleSenha">
+          {{ senhaVisivel ? '🙈' : '👁' }}
+          </span>
+          </div>
         <button type="submit">Enviar</button>
       </form>
     </div>
@@ -44,7 +48,7 @@ function toggleSenha() {
     <div>
       <h2>Docente:</h2>
       <p>
-        caso ainda não possua cadastro,<br> clique no link abaixo.
+        caso ainda não possua cadastro, clique no link abaixo.
       </p>
       <a @click="irParaDocente">Cadastre-se</a>
     </div>
@@ -52,7 +56,7 @@ function toggleSenha() {
     <div>
       <h2>Discente:</h2>
       <p>
-        caso ainda não possua cadastro,<br> clique no link abaixo.
+        caso ainda não possua cadastro, clique no link abaixo.
       </p>
       <a @click="irParaDiscente">Cadastre-se</a>
     </div>
@@ -60,7 +64,7 @@ function toggleSenha() {
     <div>
       <h2>Terceirão Vendas:</h2>
       <p>
-        caso ainda não possua cadastro,<br> clique no link abaixo.
+        caso ainda não possua cadastro, clique no link abaixo.
       </p>
       <a @click="irParaTerceirao">Cadastre-se</a>
     </div>
@@ -70,7 +74,7 @@ function toggleSenha() {
 <style scoped>
 
 .principal{
-  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
   margin: 50px 150px 50px 150px;
   padding: 150px 140px 140px 140px;
   border-radius: 20px;
@@ -84,24 +88,26 @@ form {
   position: relative;
   display: flex;              
   flex-direction: column;     
-  align-items: center
+  align-items: center;
 }
 
 h2 {
   font-weight: bolder;
-  font-size: calc(20px);
+  font-size: calc(1.3rem);
   padding: 15px 5px 15px 0;
+  text-align: center;
 }
 
 label {
-  font-size: calc(20px);
+  font-size: calc(1.5rem);
   display: block;
   margin-top: 10px;
   font-weight: bold;
+  margin: 2vw 0 0.5vw -27vw ;
 }
 
 input {
-  font-size: calc(15px);
+  font-size: calc(1.3rem);
   width: 80%;
   padding: 15px 5px 15px 0;
   margin-top: 5px;
@@ -109,14 +115,38 @@ input {
   border-radius: 6px;
 }
 
+.campo-senha {
+  position: relative;
+  width: 80%;
+}
+
+.campo-senha input {
+  font-size: calc(1.5rem);
+  width: 100%;
+  padding: 15px 5px 15px 0;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.campo-senha .olho {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.3rem;
+  user-select: none;
+}
+
 form button {
-  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
   color: white;
-  font-size: calc(18px);
-  padding: 10px 25px;
+  font-size: calc(1.3rem);
+  padding: 10px 25px 10px 25px;
   margin: 60px 150px 30px 150px;
   border: none;
-  border-radius: 12px;
+  border-radius: 5px;
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -129,20 +159,22 @@ button:hover {
 
 .cadastros{
   display: flex;
+  text-align: justify;
 }
 
 .cadastros div{
-  text-align: center;
-  margin: 0 7vw 5vw 9.5vw;
+  margin: 0 9.5vw 5vw 9.5vw;
 }
 
 .cadastros p{
-  font-size: 18px;
-  padding: 10px 0 10px 0;
+  font-size: 1.2rem;
+  padding: 10px 0px 10px 0;
+  margin: 0 0 0 0.5vw;
 }
 
 .cadastros a{
-  font-size: calc(18px);
+  margin: 0 0 0 3.7vw;
+  font-size: calc(1.2rem);
   color:#338ff8;
   text-decoration: none;
   cursor: pointer;

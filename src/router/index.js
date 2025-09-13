@@ -7,17 +7,17 @@ const routes = [
         component: () => import('@/views/LoginView.vue'),
     },
     {
-        path: '/DiscenteView',
+        path: '/cadastro-discente',
         name: 'Discente',
         component: () => import('@/views/DiscenteView.vue'),
     },
     {
-        path: '/DocenteView',
+        path: '/cadastro-docente',
         name: 'Docente',
         component: () => import('@/views/DocenteView.vue'),
     },
     {
-        path: '/TerceiraoView',
+        path: '/cadastro-terceirao',
         name: 'Terceirao',
         component: () => import('@/views/TerceiraoView.vue'),
     },
