@@ -1,15 +1,7 @@
-<script setup>
-
-import ClifcComponent from './components/ClifcComponent.vue';
-
-</script>
+<script setup></script>
 
 <template>
-  
-<ClifcComponent />
-
+    <RouterView/>
 </template>
 
-<style scoped>
-
-</style>
+<style></style>
