@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+import footerComponent from './components/FooterComponent.vue';
+</script>
 
 <template>
-    <RouterView/>
+    <main>
+      <RouterView/>
+    </main>
+    <footer-Component />
 </template>
 
-<style></style>
+<style scoped></style>
