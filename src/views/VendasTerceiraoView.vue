@@ -47,16 +47,17 @@ function irParaReservados() {
 </script>
 
 <template>
-  <button @click="irParaReservados">Suas reservas feitas </button>
+    <div class="minhas-compras">
+        <button class="colorido" @click="irParaReservados">Suas reservas feitas </button>
 
-  <li @click="cartStore.toggleCart">
-    <span class="mdi mdi-cart"></span>
-  </li>
+        <li class="carrinho-colorido" @click="cartStore.toggleCart">
+            <span class="mdi mdi-cart"></span>
+        </li>
+    </div>
+        <cart v-if="cartStore.showCart" />
 
-   <cart v-if="cartStore.showCart" />
-
-      <div class="lista" v-else>
- <button @click="irParaAdicionarProdutos"> Adicionar Produtos </button>
+        <div class="lista" v-else>
+        <button class="colorido" @click="irParaAdicionarProdutos"> Adicionar Produtos </button>
 
     <div class="tudo">
     <h1>
@@ -167,5 +168,47 @@ div.quimi button:hover {
     background: linear-gradient(135deg, #1f68c7, #42a5f5);
     transform: scale(1.2);
     color: white;
+}
+
+.colorido{
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 8px 5px;
+    font-size: calc(1rem);
+    margin: 0.5vw 3vw 0 4vw;
+    cursor: pointer;
+    background-color: white;
+    color: #1C72D3;
+    border: 2px solid #1e88e5;
+    border-radius: 8px;
+}
+
+.colorido:hover {
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+    transform: scale(1.2);
+    color: white;
+}
+
+.carrinho-colorido{
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 8px 5px;
+    font-size: calc(1rem);
+    margin: 0.5vw 0 0 0;
+    background-color: white;
+    color: #1C72D3;
+    border: 2px solid #1e88e5;
+    border-radius: 8px;
+}
+
+.carrinho-colorido:hover {
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+    transform: scale(1.2);
+    color: white;
+}
+
+.minhas-compras{
+    display: flex;
 }
 </style>

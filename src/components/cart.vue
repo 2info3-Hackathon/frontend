@@ -20,9 +20,9 @@ const reservadosStore = useReservadosStore()
         <tbody>
           <tr v-for="produto in cartStore.cart.items" :key="produto.id">
             <td class="cart-item">
-              <img :src="produto.imagem" :alt="produto.nome" width="200" height="200"/>
+              <img :src="produto.imagem" :alt="produto.imagem" width="200" height="200"/>
               <div>
-                <p class="nome">{{ produto.nome }}</p>
+                <p class="nome">{{ produto.nomeProduto }}</p>
                 <p class="preco">R$ {{ produto.preco.toFixed(2) }}</p>
                 <p class="data"> {{ produto.data }} </p>
                 <p class="hora"> {{ produto.hora }} </p>
@@ -53,10 +53,10 @@ const reservadosStore = useReservadosStore()
         <div class="final">
           <h2>Total da Compra</h2>
           <div class="final-items">
-            <span>Produtos</span>
-            <span>R$ {{ cartStore.cart.total.toFixed(2) }}</span>
-            <span>Total</span>
-            <span>R$ {{ cartStore.cart.total.toFixed(2) }}</span>
+            <span>Produtos:</span>
+            <p>R$ {{ cartStore.cart.total.toFixed(2) }}</p>
+            <span>Total:</span>
+            <p>R$ {{ cartStore.cart.total.toFixed(2) }}</p>
           </div>
      <button class="reservar" @click="reservadosStore.addToReservados(cartStore.cart)">
         <span class="mdi mdi-cart"></span> Reservar
@@ -76,35 +76,49 @@ section.cartCompras h1 {
   display: flex;
   justify-content: center;
   font-size: 2.5rem;
+  color: #1C72D3;
+  font-weight: bold;
 }
 section.cartCompras th {
   font-size: 2rem;
-  padding: 5vw 0 3vw 6vw;
+  padding: 5vw 0 3vw 3vw;
 }
 section.cartCompras td img {
-  margin: 0 0 3vw 6vw;
+  margin: 0 3vw 3vw 8vw;
 }
 p.nome {
-    margin:0 0 0 6vw;
-  font-family: bold;
+  margin:0 0 0 8vw;
+  font-weight: bold;
   font-size: 1.6vw;
 }
 p.preco {
-  margin: 0 0 0 6vw;
-  font-family: bold;
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
+}
+p.data{
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
+}
+p.hora{
+  margin: 0 0 0 8vw;
   font-size: 1.2vw;
 }
 p.local {
-  margin: 0 0 0 6vw;
-  font-family: bold;
-  font-size: 1.4vw;
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
 }
 p.vendedor {
-  margin: 0 0 0 6vw;
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
 }
 div.quantidade {
   margin: 10vw 0 0 0;
 }
+
+tr td{
+  padding: 0 0 0 1vw;
+}
+
 div.quantidade button {
   padding:  4px 12px 4px 12px;
   font-size: 1vw;
@@ -122,13 +136,26 @@ div.quantidade button:hover {
   border-color: #1e88e5;
 }
 div.cart-final {
-  margin: 0 13vw 20vw 0 ;
+  margin: 0 13vw 20vw 74vw ;
   display: flex;
   justify-content: right;
-
+  box-sizing: border-box;
+  border: 1px solid #1e88e5;
+  border-radius: 8px;
+  padding: 12px;
 }
 
-button {
+.final h2{
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.final-items span{
+  display: flex;
+  font-weight: bold;
+}
+
+button{
   background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
   border: none;
@@ -145,9 +172,22 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
 }
-/*position: fixed;    fixa o elemento na tela
-  top: 6vw;             encosta no topo
-  left: 4vw;            começa do lado esquerdo
-  width: 100%;
-*/
+
+.outlined{
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  font-size: calc(1.2rem);
+  margin-left: 2vw;
+}
+
+.outlined:hover {
+  background: linear-gradient(135deg, #02367a, #1e88e5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
 </style>
