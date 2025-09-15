@@ -30,22 +30,27 @@
                 </li>
             </ul>
             <ul class="outros">
-                <p>Endereço: Rodovia BR 280, Caixa Postal 21, <br> Centro. Araquari/SC. CEP: 89245-000
-                    Telefone: (47) 3803-7200p</p>
                 <p>
-                    E-mail: gabinete.araquari@ifc.edu.br
+                    <span>Endereço:</span>Rodovia BR 280, Caixa Postal 21,Centro.<br>Araquari/SC. CEP: 89245-000
                 </p>
                 <p>
-                    Diretor(a): Fernando José Braz
+                    <span>Telefone:</span>(47) 3803-7200
+                </p>
+                <p>
+                    <span>E-mail:</span>gabinete.araquari@ifc.edu.br
+                </p>
+                <p>
+                    <span>Diretor(a):</span>Fernando José Braz
                 </p>
                 <p class="bola">
-                   <img src="/public/imagem/Rectangle 51.png" alt="bola" height="2%" width="5%"> www.araquari.ifc.edu.br
+                    <span class="fa-solid fa-arrow-pointer"></span> www.araquari.ifc.edu.br
                 </p>
                 <p class="insta">
-                   <img src="/public/imagem/Rectangle 50.png" alt="insta" height="2%" width="5%"> ifc.oficial.araquari
+                    <span class="fa-brands fa-instagram"></span> ifc.oficial.araquari
                 </p>
             </ul>
         </div>
+        <p class="copyright">© 2025 Alguns direitos reservados </p>
     </footer>
 
 </template>
@@ -58,24 +63,38 @@ footer {
     background-position: bottom;
     background-repeat: no-repeat;
     width: 102%;
-    height: 60vh;
+    height: 90%;
     background-color: #1C72D3;
     display: block;
     margin-left: -20px;
-    margin-bottom: -80px;
-    margin-top: 100px;
+    margin-bottom: -75px;
+    margin-top: 20vw;
 }
 div.conteudo {
     display: flex;
     margin-right: 10%;
     margin-left: 10%;
-    justify-content: space-between
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin: 4vw 10vw 2vw 20vw;
+    padding: 8vw 0 0 0;
 }
 ul{
-    margin-top: 20%;
+    margin-top: 30%;
     color: white;
+    letter-spacing: 1px;
 }
 li{
    list-style: none;
+}
+p.copyright {
+   text-align: center;
+   color: white;
+   font-size: 1.2rem;
+   padding: 0 0 2vw 0;
+}
+span {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 </style>
