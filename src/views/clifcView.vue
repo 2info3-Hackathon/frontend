@@ -9,7 +9,7 @@
 
 <p>Escaneie o QRCode e tire suas dúvidas:</p>
 
-<img src="/imagens/QrCode-CLIFC.png" alt="QrCode-CLIFC">
+<img src="/imagem/QrCode-CLIFC.png" alt="QrCode-CLIFC">
 
 <p class="email">clifc.araquari@ifc.edu.br</p>
 

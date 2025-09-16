@@ -31,7 +31,7 @@ function voltarAoSumario() {
             <h1>Faltei, e agora?</h1>
             <p><span>Apresentar Justificativa ao SISAE</span> enviando sua documentação (atestados, declarações,
                 outros):</p>
-            <img src="/imagens/QrCode-Atestados_e_Declarações.png" alt="QrCode">
+            <img src="/imagem/QrCode-Atestados_e_Declarações.png" alt="QrCode">
             <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeeUKe0cKL_MQkgGSqf9xZNKbeInX_6sRj4vfXM5o75R4JCTg/viewform">Clique
                 aqui!
@@ -43,11 +43,11 @@ function voltarAoSumario() {
             </div>
             <div v-if="textoAtivo === 'texto1'" class="texto">
                 <p>Preencha o formulário de pedido de uma nova avaliação:</p>
-                <img src="/imagens/QrCode-Nova_Avaliação.png" alt="QrCode">
+                <img src="/imagem/QrCode-Nova_Avaliação.png" alt="QrCode">
                 <a href="https://bit.ly/nova-avalia%C3%A7%C3%A3o?r=qr">Clique aqui!
                 </a>
                 <p>Faça o requerimento de nova avaliação, até 72h após a falta.</p>
-                <img src="/imagens/QrCode-Requerimento.png" alt="QrCode">
+                <img src="/imagem/QrCode-Requerimento.png" alt="QrCode">
                 <a href="https://bit.ly/requerimentos2025?r=qr">Clique aqui!
                 </a>
             </div>
