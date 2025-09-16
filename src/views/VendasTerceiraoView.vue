@@ -136,13 +136,13 @@ section.turmas button:hover {
 
 section.turmas div.agro {
     background-color: white;
-    margin: 0 30px 0 0;
+    margin: 0 10vw 0 5vw;
     border-radius: 50px;
 }
 
 section.turmas div.info {
     background-color: white;
-    margin: 0 0 0 30px;
+    margin: 0 10vw 0 0;
     border-radius: 50px;
 }
 div.quimi {

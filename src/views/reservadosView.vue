@@ -13,8 +13,9 @@ function voltar() {
 
 <template>
 
-{{ reservadosStore.reservados }}
-
+<li v-for="produtos in reservadosStore.reservados" :key="produtos">
+  {{ produtos.nomeProduto }} - R$ {{ produtos.preco }}
+</li>
 <button class="turmas" @click="voltar">← Voltar</button>
 
 
