@@ -15,7 +15,7 @@ function enviarFormulario() {
 }
 
 function voltar() {
-  router.push('/')
+  router.push('/grupo-estudos')
 }
 </script>
 

@@ -4,7 +4,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function voltar() {
-  router.push('/')
+  router.push('/grupo-estudos')
 }
 </script>
 

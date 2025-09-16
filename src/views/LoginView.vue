@@ -4,20 +4,24 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function irParaDiscente(){
-  router.push('/DiscenteView')
+  router.push('/cadastro-discente')
 }
 
 function irParaDocente(){
-  router.push('/DocenteView')
+  router.push('/cadastro-docente')
 }
 
 function irParaTerceirao(){
-  router.push('/TerceiraoView')
+  router.push('/cadastro-terceirao')
 }
 
 function toggleSenha() {
     const senha = document.getElementById("senha");
     senha.type = senha.type === "password" ? "text" : "password";
+}
+
+function irParaPaginaInicial(){
+  router.push('/pag-inicial')
 }
 </script>
 
@@ -39,7 +43,7 @@ function toggleSenha() {
           {{ senhaVisivel ? '🙈' : '👁' }}
           </span>
           </div>
-        <button type="submit">Enviar</button>
+        <button type="submit" @click="irParaPaginaInicial">Enviar</button>
       </form>
     </div>
   </section>

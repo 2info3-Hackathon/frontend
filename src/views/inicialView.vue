@@ -1,7 +1,14 @@
 <script setup>
-import inicialComponents from '@/components/inicialComponents.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
+import InicialComponent from '@/components/InicialComponent.vue';
+
 </script>
 
 <template>
-    <inicialComponents />
+    <body>
+        <main>
+            <InicialComponent />
+        </main>
+        <FooterComponent />
+    </body>
 </template>

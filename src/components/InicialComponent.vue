@@ -20,7 +20,7 @@ watch(
          
         </nav>
         </header>
-        <main v-if="showSummary">
+        <main>
      <section class="imagem-if">
         <div class="banner">
             <img src="https://noticias.memoria.araquari.ifc.edu.br/wp-content/uploads/sites/11/2017/02/IMG_5786.jpg" alt="banner" width="100%" height="700">

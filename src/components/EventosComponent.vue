@@ -21,7 +21,7 @@ watch(
 )
 
 function voltarAoInicial() {
-  router.push('/')
+  router.push('/pag-inicial')
 
 }
 </script>
