@@ -1,5 +1,16 @@
 <script setup>
+import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import axios from 'axios'
+import { jwtDecode } from "jwt-decode";
+
+
+const user = reactive({
+  username: 'admin',
+  password: 'admin'
+})
+
+const tipo = ref('não logado')
 
 const router = useRouter()
 
@@ -19,22 +30,31 @@ function toggleSenha() {
     const senha = document.getElementById("senha");
     senha.type = senha.type === "password" ? "text" : "password";
 }
+
+async function login() {
+  const {data } = await  axios.post('http://127.0.0.1:8000/api/token/', user)
+  const token = data.access
+  const decoded_token = jwtDecode(token);
+  tipo.value = decoded_token.tipo
+}
+
 </script>
 
 <template>
   <section>
+    {{ tipo }}
     <div class="principal">
-      <form>
+      <form @submit.prevent="login">
         <div class="icone">
           <img src="/public/imagem/Group 71.png" alt="avatar">
         </div>
 
         <label for="user">Usuário:</label>
-        <input type="text" id="user" name="user" required>
+        <input type="text" id="user" name="user" v-model="user.username"  required>
 
         <label for="senha">Senha:</label>
         <div class="campo-senha">
-          <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" required>
+          <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" v-model="user.password" required>
           <span class="olho" @click="toggleSenha">
           {{ senhaVisivel ? '🙈' : '👁' }}
           </span>
