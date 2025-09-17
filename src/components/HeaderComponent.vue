@@ -1,22 +1,26 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from 'vue-router'
 
 const showDropdown = ref(false);
+const router = useRouter();
+
+function irParaInicio(){
+  router.push('/inicio')
+}
 </script>
 
 <template>
   <header>
     <nav>
-      <!-- Logo -->
-      <h1>
-        <RouterLink to="/">
-          IFC
-          <span class="logo-title">Campus Araquari</span>
-        </RouterLink>
-      </h1>
+      <div class="logo" @click="irParaInicio">
+        <h1>
+            IFC
+        </h1>
+        <span class="logo-title">Campus Araquari</span>
+      </div>
 
-      <!-- Campo de busca -->
-      <div class="search-wrapper">
+      <div class="barra">
         <input type="text" class="search" placeholder="Buscar..." />
       </div>
 
@@ -56,7 +60,47 @@ header nav {
   color: white;
 }
 
-/* ---------------- Menu ---------------- */
+.logo{
+  display: flex;
+  cursor: pointer;
+}
+
+.logo h1{
+  color: white;
+  border-right: 1px solid white;
+  padding: 0 1vw 0 0;
+  font-size: 2vw;
+  font-weight: bolder;
+}
+
+.logo span{
+  padding: 0.4vw 0 0 1vw;
+  font-size: 1.2vw;
+}
+
+input {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: 0;
+  background-color: #f1f1f1;
+  padding: 5px;
+}
+
+.barra::before {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+  
+.barra {
+  padding-right: 2rem;
+}
+
 .menu {
   display: flex;
   list-style: none;
@@ -70,14 +114,12 @@ header nav {
   cursor: pointer;
 }
 
-.menu a,
 .menu span {
   text-decoration: none;
   color: white;
   font-weight: 500;
 }
 
-/* ---------------- Dropdown ---------------- */
 .submenu {
   position: absolute;
   top: 100%;
