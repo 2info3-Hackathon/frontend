@@ -1,83 +1,73 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
-    {
-        path: '/',
-        name: 'Login',
-        component: () => import('@/views/LoginView.vue'),
-    },
-    {
-        path: '/cadastro-discente',
-        name: 'Discente',
-        component: () => import('@/views/DiscenteView.vue'),
-    },
-    {
-        path: '/cadastro-docente',
-        name: 'Docente',
-        component: () => import('@/views/DocenteView.vue'),
-    },
-    {
-        path: '/cadastro-terceirao',
-        name: 'Terceirao',
-        component: () => import('@/views/TerceiraoView.vue'),
-    },
-     {
+  {
     path: '/',
+    name: 'Login',
+    component: () => import('@/views/LoginView.vue'),
+  },
+  {
+    path: '/cadastro',
+    name: 'Cadastro',
+    component: () => import('@/views/CadastroView.vue'),
+  },
+  {
+    path: '/grupo-estudos',
     name: 'Grupo Estudos',
     component: () => import('@/views/GrupoEstudos.vue'),
   },
   {
-    path: '/HeaderComponent',
+    path: '/header-component',
     name: 'Header',
     component: () => import('@/components/HeaderComponent.vue'),
   },
   {
-    path: '/BiologiaView',
+    path: '/biologia',
     name: 'Biologia',
     component: () => import('@/views/BiologiaView.vue'),
   },
   {
-    path: '/FilosofiaView',
+    path: '/filosofia',
     name: 'Filosofia',
     component: () => import('@/views/FilosofiaView.vue'),
   },
   {
-    path: '/FisicaView',
+    path: '/fisica',
     name: 'Fisica',
     component: () => import('@/views/FisicaView.vue'),
   },
   {
-    path: '/GeografiaView',
+    path: '/geografia',
     name: 'Geografia',
     component: () => import('@/views/GeografiaView.vue'),
   },
   {
-    path: '/HistoriaView',
+    path: '/historia',
     name: 'Historia',
     component: () => import('@/views/HistoriaView.vue'),
   },
   {
-    path: '/MatematicaView',
+    path: '/matematica',
     name: 'Matematica',
     component: () => import('@/views/MatematicaView.vue'),
   },
   {
-    path: '/PortuguesView',
+    path: '/portugues',
     name: 'Portugues',
     component: () => import('@/views/PortuguesView.vue'),
   },
   {
-    path: '/QuimicaView',
+    path: '/quimica',
     name: 'Quimica',
     component: () => import('@/views/QuimicaView.vue'),
   },
   {
-    path: '/SociologiaView',
+    path: '/sociologia',
     name: 'Sociologia',
     component: () => import('@/views/SociologiaView.vue'),
   },
   {
-    path: '/AdicionarGrupo',
+    path: '/adicionar-grupo',
     name: 'Adicionar Grupo',
     component: () => import('@/views/AdicionarGrupo.vue'),
   },
@@ -112,10 +102,10 @@ const routes = [
     name: 'Informações Importantes',
     component: () => import('@/views/informacoesImportantesView.vue'),
   },
-   {
-     path: '/atendimento',
-     name: 'Atendimentos',
-     component: () => import('@/views/atendimentoView.vue'),
+  {
+    path: '/atendimento',
+    name: 'Atendimentos',
+    component: () => import('@/views/atendimentoView.vue'),
   },
   {
     path: '/contatos-importantes',
@@ -128,8 +118,8 @@ const routes = [
     component: () => import('@/views/atestadosDeclaracoesView.vue'),
   },
   {
-     path: '/clifc', 
-     name: 'CLIFC',
+    path: '/clifc',
+    name: 'CLIFC',
     component: () => import('@/views/clifcView.vue'),
   },
   {
@@ -145,8 +135,8 @@ const routes = [
 ];
 
 const router = createRouter({
-history: createWebHistory(import.meta.env.BASE_URL),
-routes,
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes,
 })
 
 export default router

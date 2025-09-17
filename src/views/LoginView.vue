@@ -15,15 +15,7 @@ const tipo = ref('não logado')
 const router = useRouter()
 
 function irParaDiscente(){
-  router.push('/DiscenteView')
-}
-
-function irParaDocente(){
-  router.push('/DocenteView')
-}
-
-function irParaTerceirao(){
-  router.push('/TerceiraoView')
+  router.push('/cadastro')
 }
 
 function toggleSenha() {
@@ -66,27 +58,11 @@ async function login() {
 
   <section class="cadastros">
     <div>
-      <h2>Docente:</h2>
-      <p>
-        caso ainda não possua cadastro, clique no link abaixo.
-      </p>
-      <a @click="irParaDocente">Cadastre-se</a>
-    </div>
-
-    <div>
       <h2>Discente:</h2>
       <p>
         caso ainda não possua cadastro, clique no link abaixo.
       </p>
       <a @click="irParaDiscente">Cadastre-se</a>
-    </div>
-
-    <div>
-      <h2>Terceirão Vendas:</h2>
-      <p>
-        caso ainda não possua cadastro, clique no link abaixo.
-      </p>
-      <a @click="irParaTerceirao">Cadastre-se</a>
     </div>
   </section>
 </template>

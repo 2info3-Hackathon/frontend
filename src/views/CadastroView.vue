@@ -1,32 +1,46 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { ref, onMounted } from 'vue'
 
 const router = useRouter()
+const tiposUsuarios = ref([])
 
 function voltar() {
   router.push('/')
 }
 
 function toggleSenha() {
-    const senha = document.getElementById("senha");
-    senha.type = senha.type === "password" ? "text" : "password";
+  const senha = document.getElementById("senha");
+  senha.type = senha.type === "password" ? "text" : "password";
 }
+
+async function carregarTiposUsuario() {
+  try {
+    const response = await fetch('http://localhost:8000/api/tipo_usuario/') // ajuste a URL se necessário
+    const data = await response.json()
+    tiposUsuarios.value = data
+  } catch (error) {
+    console.error('Erro ao carregar tipos de usuário:', error)
+  }
+}
+
+onMounted(() => {
+  carregarTiposUsuario()
+})
+
 </script>
 
 <template>
   <section>
     <div class="principal">
-       <h1>Cadastro de Discentes</h1>
+      <h1>Cadastro de Discentes</h1>
 
-      <form>
+      <form @submit.prevent="cadastrar">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
-
-        <label for="matricula">Matrícula:</label>
-        <input type="number" id="matricula" name="matricula" required>
 
         <label for="nascimento">Data de Nascimento:</label>
         <input type="date" id="nascimento" name="nascimento" required>
@@ -34,7 +48,16 @@ function toggleSenha() {
         <label for="login">Nome de Login:</label>
         <input type="text" id="login" name="login" required>
 
-       <label for="senha">Senha:</label>
+        <select name="tipo_user" id="tipo_user" required>
+          <option disabled value="">
+            Selecione o seu tipo de usuário
+          </option>
+          <option v-for="tipo in tiposUsuarios.filter(t => t.descricao !== 'Admin')" :key="tipo.id" :value="tipo.id" >
+            {{ tipo.descricao }}
+          </option>
+        </select>
+
+        <label for="senha">Senha:</label>
         <div class="campo-senha">
           <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" required>
           <span class="olho" @click="toggleSenha">
