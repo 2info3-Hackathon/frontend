@@ -1,9 +1,60 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { ref, onMounted } from 'vue'
+import axios from 'axios'
 
-const router = useRouter()
-const tiposUsuarios = ref([])
+let router = useRouter()
+let tiposUsuarios = ref([])
+
+let first_name = ref('');
+let last_name = ref('');
+let nome = ref('');
+let email = ref('');
+let data_nascimento = ref('');
+let username = ref('');
+let tipo_user = ref('');
+let senha = ref('');
+let telefone = ref('')
+
+
+async function cadastrar() {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/usuario/', {
+      first_name: first_name.value,
+      last_name: last_name.value,
+      nome: first_name.value + last_name.value,
+      email: email.value,
+      data_nascimento: data_nascimento.value,
+      telefone: telefone.value,
+      username: username.value,
+      tipo_user: tipo_user.value,
+      senha: senha.value,
+    })
+    console.log('Usuário cadastrado com sucesso', response.data)
+    first_name.value = '';
+    last_name.value = '';
+    nome.value = '';
+    email.value = '';
+    data_nascimento.value = '';
+    telefone.value = '';
+    username.value = '';
+    tipo_user.value = '';
+    senha.value = '';
+  } catch (error) {
+    console.error('Erro ao cadastrar usuário:', error)
+    if (error.response) {
+      console.error('Erro no servidor:', error.response.data);
+      alert('Erro no servidor: ' + error.response.data.detail);
+    } else if (error.request) {
+      console.error('Sem resposta do servidor:', error.request);
+      alert('Sem resposta do servidor. Tente novamente mais tarde.');
+    } else {
+      console.error('Erro de configuração:', error.message);
+      alert('Erro ao tentar enviar a requisição.');
+    }
+  }
+}
+
 
 function voltar() {
   router.push('/')
@@ -16,7 +67,7 @@ function toggleSenha() {
 
 async function carregarTiposUsuario() {
   try {
-    const response = await fetch('http://localhost:8000/api/tipo_usuario/') // ajuste a URL se necessário
+    const response = await fetch('http://localhost:8000/api/tipo_usuario/')
     const data = await response.json()
     tiposUsuarios.value = data
   } catch (error) {
@@ -33,26 +84,32 @@ onMounted(() => {
 <template>
   <section>
     <div class="principal">
-      <h1>Cadastro de Discentes</h1>
+      <h1>Cadastro</h1>
 
-      <form @submit.prevent="cadastrar">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+      <form @submit.prevent="cadastrar" method="post">
+        <label for="first_name">Nome:</label>
+        <input type="text" id="first_name" name="first_name" required>
+
+        <label for="last_name">Sobrenome:</label>
+        <input type="text" id="last_name" name="last_name" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" name="telefone" id="telefone">
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="nascimento">Data de Nascimento:</label>
-        <input type="date" id="nascimento" name="nascimento" required>
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required>
 
-        <label for="login">Nome de Login:</label>
-        <input type="text" id="login" name="login" required>
+        <label for="username">Nome de Login:</label>
+        <input type="text" id="username" name="username" required>
 
         <select name="tipo_user" id="tipo_user" required>
           <option disabled value="">
             Selecione o seu tipo de usuário
           </option>
-          <option v-for="tipo in tiposUsuarios.filter(t => t.descricao !== 'Admin')" :key="tipo.id" :value="tipo.id" >
+          <option v-for="tipo in tiposUsuarios.filter(t => t.descricao !== 'Admin')" :key="tipo.id" :value="tipo.id">
             {{ tipo.descricao }}
           </option>
         </select>

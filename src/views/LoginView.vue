@@ -14,8 +14,9 @@ const tipo = ref('não logado')
 
 const router = useRouter()
 
-function irParaDiscente(){
+function irParaCadastro(){
   router.push('/cadastro')
+  console.log('foi')
 }
 
 function toggleSenha() {
@@ -62,7 +63,7 @@ async function login() {
       <p>
         caso ainda não possua cadastro, clique no link abaixo.
       </p>
-      <a @click="irParaDiscente">Cadastre-se</a>
+      <a @click="irParaCadastro">Cadastre-se</a>
     </div>
   </section>
 </template>
