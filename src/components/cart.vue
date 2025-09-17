@@ -1,0 +1,193 @@
+<script setup>
+import { useCartStore } from '@/stores/cartStore'
+import { useReservadosStore } from '@/stores/reservados'
+
+const cartStore = useCartStore()
+const reservadosStore = useReservadosStore()
+
+
+</script>
+
+<template>
+        <section class="cartCompras">
+      <h1>Carrinho</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Produtos </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="produto in cartStore.cart.items" :key="produto.id">
+            <td class="cart-item">
+              <img :src="produto.imagem" :alt="produto.imagem" width="200" height="200"/>
+              <div>
+                <p class="nome">{{ produto.nomeProduto }}</p>
+                <p class="preco">R$ {{ produto.preco.toFixed(2) }}</p>
+                <p class="data"> {{ produto.data }} </p>
+                <p class="hora"> {{ produto.hora }} </p>
+                <p class="local"> {{ produto.local }}</p>
+                <p class="vendedor">{{ produto.vendedor }}</p>
+
+              </div>
+            </td>
+            <td>
+              <div class="quantidade">
+                <button @click="cartStore.decrementProdutoToCart(produto)" class="plain">
+                  <span class="mdi mdi-minus" />
+                </button>
+                {{ produto.quantity }}
+                <button @click="cartStore.incrementProdutoToCart(produto)" class="plain">
+                  <span class="mdi mdi-plus" />
+                </button>
+              </div>
+            </td>
+            <td class="cart-item-subtotal">
+              R$ {{ (produto.preco * produto.quantity).toFixed(2) }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cart-final">
+        <div class="final">
+          <h2>Total da Compra</h2>
+          <div class="final-items">
+            <span>Produtos:</span>
+            <p>R$ {{ cartStore.cart.total.toFixed(2) }}</p>
+            <span>Total:</span>
+            <p>R$ {{ cartStore.cart.total.toFixed(2) }}</p>
+          </div>
+     <button class="reservar" @click="reservadosStore.addToReservados(cartStore.cart)">
+        <span class="mdi mdi-cart"></span> Reservar
+      </button>
+        </div>
+      </div>
+
+     <button @click="cartStore.toggleCart" class="outlined">
+        ← Voltar
+      </button>
+    </section>
+
+</template>
+
+<style scoped>
+section.cartCompras h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: #1C72D3;
+  font-weight: bold;
+}
+section.cartCompras th {
+  font-size: 2rem;
+  padding: 5vw 0 3vw 3vw;
+}
+section.cartCompras td img {
+  margin: 0 3vw 3vw 8vw;
+}
+p.nome {
+  margin:0 0 0 8vw;
+  font-weight: bold;
+  font-size: 1.6vw;
+}
+p.preco {
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
+}
+p.data{
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
+}
+p.hora{
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
+}
+p.local {
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
+}
+p.vendedor {
+  margin: 0 0 0 8vw;
+  font-size: 1.2vw;
+}
+div.quantidade {
+  margin: 10vw 0 0 0;
+}
+
+tr td{
+  padding: 0 0 0 1vw;
+}
+
+div.quantidade button {
+  padding:  4px 12px 4px 12px;
+  font-size: 1vw;
+  font-weight: bold;
+  color: white;
+  background-color: #5BA3CF;
+  border-color: #5BA3CF;
+  border-radius: 0.4vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+div.quantidade button:hover {
+  background-color: #1e88e5;
+  transform: scale(1.2);
+  border-color: #1e88e5;
+}
+div.cart-final {
+  margin: 0 13vw 20vw 74vw ;
+  display: flex;
+  justify-content: right;
+  box-sizing: border-box;
+  border: 1px solid #1e88e5;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.final h2{
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.final-items span{
+  display: flex;
+  font-weight: bold;
+}
+
+button{
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 5px;
+  padding: 8px 5px;
+  font-size: calc(1rem);
+  margin: 4px 0 0 0;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #02367a, #1e88e5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+
+.outlined{
+  background: linear-gradient(135deg, #1f68c7, #42a5f5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  font-size: calc(1.2rem);
+  margin-left: 2vw;
+}
+
+.outlined:hover {
+  background: linear-gradient(135deg, #02367a, #1e88e5);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+</style>
