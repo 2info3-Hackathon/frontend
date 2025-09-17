@@ -15,27 +15,13 @@ let username = ref('');
 let tipo_user = ref('');
 let senha = ref('');
 let telefone = ref('');
+
 let senhaVisivel = ref(false);
 
 async function cadastrar() {
-  console.log({
-    first_name: first_name.value,
-    last_name: last_name.value,
-    email: email.value,
-    data_nascimento: data_nascimento.value,
-    telefone: telefone.value,
-    username: username.value,
-    tipo_user: tipo_user.value,
-    password: senha.value, // Corrigido para 'password'
-  });
-
   try {
-    console.log(data_nascimento.value, username.value, tipo_user.value)
-
     nome.value = `${first_name.value} ${last_name.value}`;
-    const response = await axios.post('http://127.0.0.1:8000/api/usuario/', /* {
-      first_name: first_name.value,
-      last_name: last_name.value,
+    const response = await axios.post('http://127.0.0.1:8000/api/usuario/', {
       nome: nome.value,
       email: email.value,
       data_nascimento: data_nascimento.value,
@@ -43,27 +29,9 @@ async function cadastrar() {
       username: username.value,
       tipo_user: tipo_user.value,
       password: senha.value,
-    },*/
-    {
-      first_name: "John",
-      last_name: "Doe",
-      email: "johndoe@example.com",
-      data_nascimento: "1990-01-01",
-      telefone: "1234567890",
-      username: "johndoe",
-      tipo_user: 2,  // Supondo que tipo_user seja o ID
-      password: "senha123"
-    })
+    },)
     console.log('Usuário cadastrado com sucesso', response.data)
-    first_name.value = '';
-    last_name.value = '';
-    nome.value = '';
-    email.value = '';
-    data_nascimento.value = '';
-    telefone.value = '';
-    username.value = '';
-    tipo_user.value = '';
-    senha.value = '';
+    alert('Usuário cadastrado com sucesso', response.data)
   } catch (error) {
     console.error('Erro ao cadastrar usuário:', error)
     if (error.response) {
@@ -108,24 +76,24 @@ onMounted(() => {
 
       <form @submit.prevent="cadastrar" method="post">
         <label for="first_name">Nome:</label>
-        <input type="text" id="first_name" name="first_name" required>
+        <input type="text" id="first_name" name="first_name" v-model="first_name" required>
 
         <label for="last_name">Sobrenome:</label>
-        <input type="text" id="last_name" name="last_name" required>
+        <input type="text" id="last_name" name="last_name" v-model="last_name" required>
 
         <label for="telefone">Telefone:</label>
-        <input type="tel" name="telefone" id="telefone">
+        <input type="tel" name="telefone" id="telefone" v-model="telefone" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" v-model="email" required>
 
         <label for="data_nascimento">Data de Nascimento:</label>
-        <input type="date" id="data_nascimento" name="data_nascimento" required>
+        <input type="date" id="data_nascimento" name="data_nascimento" v-model="data_nascimento" required>
 
         <label for="username">Nome de Login:</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" id="username" name="username" v-model="username" required>
 
-        <select name="tipo_user" id="tipo_user" required>
+        <select name="tipo_user" id="tipo_user" v-model="tipo_user" required>
           <option disabled value="">
             Selecione o seu tipo de usuário
           </option>
@@ -136,7 +104,7 @@ onMounted(() => {
 
         <label for="senha">Senha:</label>
         <div class="campo-senha">
-          <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" required>
+          <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" v-model="senha" required>
           <span class="olho" @click="toggleSenha">
             {{ senhaVisivel ? '🙈' : '👁' }}
           </span>

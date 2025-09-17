@@ -16,7 +16,6 @@ const router = useRouter()
 
 function irParaCadastro(){
   router.push('/cadastro')
-  console.log('foi')
 }
 
 function toggleSenha() {
@@ -29,6 +28,8 @@ async function login() {
   const token = data.access
   const decoded_token = jwtDecode(token);
   tipo.value = decoded_token.tipo
+
+  router.push('/usuario')
 }
 
 </script>
