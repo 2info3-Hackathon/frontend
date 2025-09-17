@@ -1,8 +1,8 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import { useProdutosStore } from '@/stores/produtos';
+
 import { useCartStore } from '@/stores/cartStore'
-import cart from '@/components/cart.vue'
+import cart from '@/components/cartComponent.vue'
 
 import Agro1Component from '@/components/3Agro1Component.vue';
 import Agro2Component from '@/components/3Agro2Component.vue';
@@ -13,7 +13,7 @@ import Info3Component from '@/components/3Info3Component.vue';
 import QuimiComponent from '@/components/3QuimiComponent.vue';
 
 const cartStore = useCartStore()
-const produtosStore = useProdutosStore()
+
 const router = useRouter()
 
 function irPara3Agro1(){

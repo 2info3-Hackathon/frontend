@@ -12,7 +12,7 @@ console.log('Produtos carregados:', info1);
 <template>
 
 
-<img src="/public/info1.png" alt="info1" width="100%" height="500">
+
   <section class="produto">
     <div class="aviso" v-if="!info1 || info1.length === 0">Nenhum produto foi adicionado no momento  </div>
 
@@ -31,7 +31,7 @@ console.log('Produtos carregados:', info1);
       <li><p>{{ produto.descricao }}</p></li>
       </ul>
       </div>
-       
+
          <button class="reservar" @click="cartStore.addToCart(produto)">
         <span class="mdi mdi-cart"></span> Reservar
       </button>

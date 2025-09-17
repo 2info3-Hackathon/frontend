@@ -2,7 +2,7 @@
  import Info1Component from '@/components/3Info1Component.vue';
 import { useCartStore } from '@/stores/cartStore'
 import { useRouter } from 'vue-router'
-import Cart from '@/components/cart.vue'
+import Cart from '@/components/cartComponent.vue'
 
 const cartStore = useCartStore()
 const router = useRouter()

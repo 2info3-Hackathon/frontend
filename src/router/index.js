@@ -2,16 +2,13 @@
 import {createRouter , createWebHistory} from 'vue-router'
 
 const routes = [
+
     {
-        Path: '/',
+        path: '/terceirao',
         name: 'Vendas Terceirao',
         component: () => import('@/views/VendasTerceiraoView.vue'),
     },
-    {
-        path: '/turmasComponent',
-        name: 'turmas',
-        component: () => import('@/components/turmas.vue'),
-    },
+
     {
         path: '/3Agro1',
         name: '3Agro1',
@@ -57,7 +54,7 @@ const routes = [
         name: 'adicionarEventos',
         component: () => import('@/views/adicionarProdutosView.vue')
     },
-  
+
     {
         path: '/',
         name: 'Login',
@@ -185,7 +182,7 @@ const routes = [
     component: () => import('@/views/atestadosDeclaracoesView.vue'),
   },
   {
-     path: '/clifc', 
+     path: '/clifc',
      name: 'CLIFC',
     component: () => import('@/views/clifcView.vue'),
   },

@@ -1,8 +1,8 @@
 <script setup>
-import QuimiComponent from '@/components/3QuimiComponent.vue'; 
+import QuimiComponent from '@/components/3QuimiComponent.vue';
 import { useRouter } from 'vue-router'
 import { useCartStore } from '@/stores/cartStore'
-import Cart from '@/components/cart.vue'
+import Cart from '@/components/cartComponent.vue'
 
 const cartStore = useCartStore()
 const router = useRouter()

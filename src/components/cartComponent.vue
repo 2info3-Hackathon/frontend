@@ -4,8 +4,6 @@ import { useReservadosStore } from '@/stores/reservados'
 
 const cartStore = useCartStore()
 const reservadosStore = useReservadosStore()
-
-
 </script>
 
 <template>
