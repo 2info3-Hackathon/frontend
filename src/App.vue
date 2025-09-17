@@ -1,22 +1,10 @@
-j<script setup>
-import turmasComponent from './components/turmas.vue'
-//import exibicaoProdutosComponent from './components/exibicaoProdutos.vue'
-
+<script setup>
 </script>
 
 <template>
- <section>
     <main>
-        <turmasComponent />
-        <RouterView />
+      <RouterView/>
     </main>
- </section>
-
-
-
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
