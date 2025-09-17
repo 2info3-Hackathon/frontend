@@ -31,8 +31,8 @@ console.log('Produtos carregados:', info1);
       <li><p>{{ produto.descricao }}</p></li>
       </ul>
       </div>
-
-      <button class="reservar" @click="cartStore.addToCart(produto)">
+       
+         <button class="reservar" @click="cartStore.addToCart(produto)">
         <span class="mdi mdi-cart"></span> Reservar
       </button>
     </article>

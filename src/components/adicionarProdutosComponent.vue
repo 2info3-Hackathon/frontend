@@ -106,7 +106,7 @@ function enviarFormulario() {
           <label for="hora">Hora:</label>
           <input type="time" id="time" v-model="hora" />
 
-          <label for="desc">Descrição do Evento:</label>
+          <label for="desc">Descrição do Produto:</label>
           <textarea v-model="desc" id="desc" rows="5" cols="45"></textarea>
 
           <div class="botoes">
