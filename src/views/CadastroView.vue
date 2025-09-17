@@ -14,21 +14,45 @@ let data_nascimento = ref('');
 let username = ref('');
 let tipo_user = ref('');
 let senha = ref('');
-let telefone = ref('')
-
+let telefone = ref('');
+let senhaVisivel = ref(false);
 
 async function cadastrar() {
+  console.log({
+    first_name: first_name.value,
+    last_name: last_name.value,
+    email: email.value,
+    data_nascimento: data_nascimento.value,
+    telefone: telefone.value,
+    username: username.value,
+    tipo_user: tipo_user.value,
+    password: senha.value, // Corrigido para 'password'
+  });
+
   try {
-    const response = await axios.post('http://127.0.0.1:8000/api/usuario/', {
+    console.log(data_nascimento.value, username.value, tipo_user.value)
+
+    nome.value = `${first_name.value} ${last_name.value}`;
+    const response = await axios.post('http://127.0.0.1:8000/api/usuario/', /* {
       first_name: first_name.value,
       last_name: last_name.value,
-      nome: first_name.value + last_name.value,
+      nome: nome.value,
       email: email.value,
       data_nascimento: data_nascimento.value,
       telefone: telefone.value,
       username: username.value,
       tipo_user: tipo_user.value,
-      senha: senha.value,
+      password: senha.value,
+    },*/
+    {
+      first_name: "John",
+      last_name: "Doe",
+      email: "johndoe@example.com",
+      data_nascimento: "1990-01-01",
+      telefone: "1234567890",
+      username: "johndoe",
+      tipo_user: 2,  // Supondo que tipo_user seja o ID
+      password: "senha123"
     })
     console.log('Usuário cadastrado com sucesso', response.data)
     first_name.value = '';
@@ -55,21 +79,18 @@ async function cadastrar() {
   }
 }
 
-
 function voltar() {
   router.push('/')
 }
 
 function toggleSenha() {
-  const senha = document.getElementById("senha");
-  senha.type = senha.type === "password" ? "text" : "password";
+  senhaVisivel.value = !senhaVisivel.value;
 }
 
 async function carregarTiposUsuario() {
   try {
-    const response = await fetch('http://localhost:8000/api/tipo_usuario/')
-    const data = await response.json()
-    tiposUsuarios.value = data
+    const response = await axios.get('http://localhost:8000/api/tipo_usuario/')
+    tiposUsuarios.value = response.data
   } catch (error) {
     console.error('Erro ao carregar tipos de usuário:', error)
   }
@@ -78,7 +99,6 @@ async function carregarTiposUsuario() {
 onMounted(() => {
   carregarTiposUsuario()
 })
-
 </script>
 
 <template>
