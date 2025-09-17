@@ -6,7 +6,7 @@ const showDropdown = ref(false);
 const router = useRouter();
 
 function irParaInicio(){
-  router.push('/inicio')
+  router.push('/')
 }
 </script>
 
@@ -26,25 +26,18 @@ function irParaInicio(){
 
       <!-- Menu principal -->
       <ul class="menu">
-       
-        <!-- Dropdown -->
+        <i class="fas fa-user-circle"></i>
+
         <li class="dropdown" @click="showDropdown = !showDropdown">
-          <span>Serviços ▾</span>
+          <i class="fas fa-bars"></i>
           <ul v-if="showDropdown" class="submenu">
-            <li><RouterLink to="/desenvolvimento">Desenvolvimento</RouterLink></li>
-            <li><RouterLink to="/design">Design</RouterLink></li>
-            <li><RouterLink to="/marketing">Marketing</RouterLink></li>
+            <li><RouterLink to="/">Núcleos, Comitês e Comissões</RouterLink></li>
+            <li><RouterLink to="/">Informações Importantes</RouterLink></li>
+            <li><RouterLink to="/">Grupo de Estudos</RouterLink></li>
+            <li><RouterLink to="/">Vendas Terceirões</RouterLink></li>
+            <li><RouterLink to="/">Eventos</RouterLink></li>
           </ul>
         </li>
-      </ul>
-
-      <!-- Ícones -->
-      <ul class="icons">
-        <li @click="cartStore.showCart = !cartStore.showCart">
-          <span class="mdi mdi-cart"></span>
-        </li>
-        <li><span class="mdi mdi-heart"></span></li>
-        <li><span class="mdi mdi-account"></span></li>
       </ul>
     </nav>
   </header>
@@ -74,14 +67,14 @@ header nav {
 }
 
 .logo span{
-  padding: 0.4vw 0 0 1vw;
-  font-size: 1.2vw;
+  padding: 0.1vw 0 0 1vw;
+  font-size: 1vw;
 }
 
 input {
   width: 400px;
-  height: 40px;
-  border-radius: 5px;
+  height: 30px;
+  border-radius: 40px;
   font-size: 1rem;
   border: 0;
   background-color: #f1f1f1;
@@ -93,18 +86,18 @@ input {
   position: absolute;
   right: 0.75rem;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%);
   pointer-events: none;
 }
-  
+
 .barra {
-  padding-right: 2rem;
+  padding-left: 15vw;
 }
 
 .menu {
   display: flex;
   list-style: none;
-  margin: 0;
+  margin: 0 0 0 40vw;
   padding: 0;
 }
 
@@ -140,9 +133,21 @@ input {
 .submenu li a {
   color: #333;
   display: block;
+  text-decoration: none;
 }
 
 .submenu li a:hover {
   background: #f1f1f1;
+  color: black;
+}
+
+i.fas.fa-user-circle{
+  margin: 0 0 0 -10vw;
+  font-size: 2rem;
+}
+
+i.fas.fa-bars{
+  margin: 0 -5vw 0 2vw;
+  font-size: 2rem;
 }
 </style>
