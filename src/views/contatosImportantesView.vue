@@ -1,4 +1,5 @@
 <script setup>
+import FooterComponent from '@/components/FooterComponent.vue'
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -53,6 +54,7 @@ function voltarAoSumario() {
     <div v-if="!showSummary" class="voltar">
             <button @click="voltarAoSumario">← Voltar</button>
         </div>
+        <FooterComponent/>
 </template>
 
 <style scoped>
@@ -96,11 +98,20 @@ span:hover {
   text-decoration: underline;
 }
 .voltar button {
-    margin: 0 5vw 5vw 5vw;
-    background:#1c7ed4;
+     background-color: #1C72D3;
     color: white;
     border-radius: 5px;
+    padding: 10px 30px ;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: 3vw;
+    margin-bottom: -3vw;
+    cursor: pointer;
+    transition: transform 0.2s;
  }
+ button:hover {
+    transform: scale(1.05);
+}
 
 
 </style>

@@ -1,4 +1,5 @@
 <script setup>
+import FooterComponent from '@/components/FooterComponent.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -39,12 +40,16 @@ function irParaQuimica(){
 function irParaSociologia(){
   router.push('/SociologiaView')
 }
+
+function voltarAoInicial() {
+  router.push('/')
+}
 </script>
 
 <template>
   <main>
     <div class="imagem">
-      <img src="/public//imagem/banner.png" alt="banner" height="600" width="100%">
+      <img src="/imagem/banner.png" alt="banner" height="600" width="100%">
     </div>
 
   <h1>
@@ -57,31 +62,31 @@ function irParaSociologia(){
     <p>Há também regras dos grupos de estudos:</p>
     <ul>
       <li>
-        - Mantenha o local limpo;
+        Mantenha o local limpo;
       </li>
 
       <li>
-      - Janelas e cortinas abertas;
+       Janelas e cortinas abertas;
       </li>
 
       <li>
-      - Luzes acesas;
+       Luzes acesas;
       </li>
 
       <li>
-      - Não mexa nos móveis;
+       Não mexa nos móveis;
       </li>
 
       <li>
-      - Ao sair, desligue as luzes;
+       Ao sair, desligue as luzes;
       </li>
 
       <li>
-      - Sujou? Limpe;
+       Sujou? Limpe;
       </li>
 
       <li>
-      - Devolver a chave no SISAE até as 16h50.
+       Devolver a chave no SISAE até as 16h50.
       </li>
     </ul>
     <p>Para ver os horários livres dos laboratórios de informática, <a href="https://www.canva.com/design/DAGm-Zn1wkM/nityHiEms_2zAhY1L7DN1A/edit">clique aqui!</a>
@@ -99,7 +104,11 @@ function irParaSociologia(){
     <button @click="irParaMatematica">Matemática</button>
     <button @click="irParaSociologia">Sociologia</button>
   </section>
+  <div v-if="!showSummary" class="voltar">
+      <button @click="voltarAoInicial">← Voltar </button>
+  </div>
   </main>
+  <FooterComponent/>
 </template>
 
 <style scoped>
@@ -122,8 +131,8 @@ h1{
   background-size: cover; /* Para garantir que cubra toda a área da div */
   background-position: bottom; /* Ajusta a posição da onda para o fundo */
   background-repeat: no-repeat; /* Impede que a imagem de fundo se repita */
-  width: 95.995%;
-  height: 150vh; /* Ajuste conforme a necessidade */
+  width: 100%;
+  height: 170vh; /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;
   color: aliceblue;
@@ -189,4 +198,20 @@ a:hover{
   box-shadow: 0 6px 12px rgba(0,0,0,0.25);
   transform: scale(1.05);
 }
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.voltar button {
+    background:#1c7ed4;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 3vw 2vw 3vw 3vw;
+ }
 </style>

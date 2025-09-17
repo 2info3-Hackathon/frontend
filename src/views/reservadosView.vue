@@ -3,6 +3,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 import { useReservadosStore } from "@/stores/reservados";
+import FooterComponent from '@/components/FooterComponent.vue';
 
 const reservadosStore = useReservadosStore()
 
@@ -19,7 +20,7 @@ function voltar() {
 <button class="turmas" @click="voltar">← Voltar</button>
 
 
-
+<FooterComponent/>
 </template>
 
 

@@ -7,7 +7,7 @@ const router = useRouter();
 const produtosStore = useProdutosStore();
 
 function voltar() {
-    router.push('/')
+    router.push('/terceirao')
 }
 
 let nomeProduto = ref('');

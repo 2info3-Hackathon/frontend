@@ -42,10 +42,10 @@
                 <p>
                     <span>Diretor(a):</span>Fernando José Braz
                 </p>
-                <p class="bola">
-                    <span class="fa-solid fa-arrow-pointer"></span> www.araquari.ifc.edu.br
+                <p>
+                    <span>Site:</span> www.araquari.ifc.edu.br
                 </p>
-                <p class="insta">
+                <p>
                     <span class="fa-brands fa-instagram"></span> ifc.oficial.araquari
                 </p>
             </ul>
@@ -62,13 +62,12 @@ footer {
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
-    width: 102%;
+    width: 101%;
     height: 90%;
     background-color: #1C72D3;
     display: block;
     margin-left: -20px;
-    margin-bottom: -75px;
-    margin-top: 20vw;
+    margin-top: -17vw;
 }
 div.conteudo {
     display: flex;
@@ -86,6 +85,10 @@ ul{
 }
 li{
    list-style: none;
+   padding: 5px;
+}
+p{
+    padding: 5px 5px;
 }
 p.copyright {
    text-align: center;

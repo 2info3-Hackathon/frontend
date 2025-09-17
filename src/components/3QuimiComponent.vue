@@ -12,7 +12,7 @@ console.log('Produtos carregados:', quimi);
 <template>
 
 
-
+  <img src="/imagem/quimi.png" alt="quimi" height="450" width="100%">
   <section class="produto">
     <div class="aviso" v-if="!quimi || quimi.length === 0">Nenhum produto foi adicionado no momento  </div>
 

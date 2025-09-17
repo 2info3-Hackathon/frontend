@@ -11,6 +11,7 @@ import Info1Component from '@/components/3Info1Component.vue';
 import Info2Component from '@/components/3Info2Component.vue';
 import Info3Component from '@/components/3Info3Component.vue';
 import QuimiComponent from '@/components/3QuimiComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 
 const cartStore = useCartStore()
 
@@ -43,22 +44,25 @@ function irParaAdicionarProdutos() {
 function irParaReservados() {
   router.push('/reservados')
 }
-
+function voltar() {
+    router.push('/')
+}
 </script>
 
 <template>
+     
     <div class="minhas-compras">
         <button class="colorido" @click="irParaReservados">Suas reservas feitas </button>
 
-        <li class="carrinho-colorido" @click="cartStore.toggleCart">
-            <span class="mdi mdi-cart"></span>
-        </li>
+        <div class="carrinho-colorido" @click="cartStore.toggleCart">
+            <span class="mdi mdi-cart-outline"></span>
+        </div> 
     </div>
         <cart v-if="cartStore.showCart" />
 
         <div class="lista" v-else>
         <button class="colorido" @click="irParaAdicionarProdutos"> Adicionar Produtos </button>
-
+            
     <div class="tudo">
     <h1>
         Turmas
@@ -89,7 +93,9 @@ function irParaReservados() {
        <info2-component />
        <info3-component />
        <quimi-component />
+       <button class="turmas" @click="voltar">← Voltar</button>
         </div>
+        <FooterComponent/>
 </template>
 
 <style scoped>
@@ -106,7 +112,7 @@ h1 {
 
 div.tudo {
     background: linear-gradient(135deg, #1f68c7, #42a5f5);
-    margin: 4vw 10vw 4vw 10vw;
+    margin: 4vw 4vw 4vw 4vw;
     padding: 2vw 0 3vw 0;
     border-radius: 40px;
 }
@@ -136,13 +142,13 @@ section.turmas button:hover {
 
 section.turmas div.agro {
     background-color: white;
-    margin: 0 10vw 0 5vw;
+    margin: 0 11vw 0 1vw;
     border-radius: 50px;
 }
 
 section.turmas div.info {
     background-color: white;
-    margin: 0 10vw 0 0;
+    margin: 0 15vw 0 0;
     border-radius: 50px;
 }
 div.quimi {
@@ -210,5 +216,22 @@ div.quimi button:hover {
 
 .minhas-compras{
     display: flex;
+}
+button{
+    background-color: #1C72D3;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 30px ;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: 3vw;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-bottom: 3vw;
+    margin-top: 5vw;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
 </style>

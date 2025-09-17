@@ -51,29 +51,13 @@ const routes = [
     },
     {
         path: '/adicionarProdutos',
-        name: 'adicionarEventos',
+        name: 'adicionarVendas',
         component: () => import('@/views/adicionarProdutosView.vue')
     },
-
     {
-        path: '/',
+        path: '/login',
         name: 'Login',
         component: () => import('@/views/LoginView.vue'),
-    },
-    {
-        path: '/cadastro-discente',
-        name: 'Discente',
-        component: () => import('@/views/DiscenteView.vue'),
-    },
-    {
-        path: '/cadastro-docente',
-        name: 'Docente',
-        component: () => import('@/views/DocenteView.vue'),
-    },
-    {
-        path: '/cadastro-terceirao',
-        name: 'Terceirao',
-        component: () => import('@/views/TerceiraoView.vue'),
     },
      {
     path: '/grupo-estudos',
@@ -157,7 +141,7 @@ const routes = [
     component: () => import(`@/views/inicioView.vue`),
   },
   {
-    path: '/pag-inicial',
+    path: '/',
     name: 'inicial',
     component: () => import(`@/views/inicialView.vue`),
   },
