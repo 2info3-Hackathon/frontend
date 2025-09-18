@@ -6,9 +6,11 @@ import { jwtDecode } from "jwt-decode";
 
 
 const user = reactive({
-  username: 'admin',
-  password: 'admin'
+  username: '',
+  password: ''
 })
+
+const senhaVisivel = ref(false)
 
 const tipo = ref('não logado')
 
@@ -19,24 +21,50 @@ function irParaCadastro(){
 }
 
 function toggleSenha() {
-    const senha = document.getElementById("senha");
-    senha.type = senha.type === "password" ? "text" : "password";
+  senhaVisivel.value = !senhaVisivel.value
 }
 
-async function login() {
+/*async function login() {
   const {data } = await  axios.post('http://127.0.0.1:8000/api/token/', user)
   const token = data.access
   const decoded_token = jwtDecode(token);
   tipo.value = decoded_token.tipo
 
   router.push('/usuario')
-}
+}*/
 
+
+const erro = ref('')
+
+async function login() {
+  erro.value = ''
+  try {
+    const { data } = await axios.post('http://127.0.0.1:8000/api/token/', user)
+    const token = data.access
+    localStorage.setItem('token', token)
+
+    const decoded_token = jwtDecode(token)
+    tipo.value = decoded_token.tipo
+
+    const { data: userData } = await axios.get('http://127.0.0.1:8000/api/usuario/me/', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    localStorage.setItem('user_info', JSON.stringify(userData))
+
+    router.push('/usuario')
+  } catch (e) {
+    erro.value = 'Usuário ou senha inválidos'
+    console.error("Erro ao fazer login:", e);
+  }
+}
 </script>
 
 <template>
   <section>
-    {{ tipo }}
+    <p v-if="erro" style="color: red">{{ erro }}</p>
     <div class="principal">
       <form @submit.prevent="login">
         <div class="icone">

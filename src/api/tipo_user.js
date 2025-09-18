@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://127.0.0.1:8000/usuario/";
+const API_BASE_URL = "http://127.0.0.1:8000/api/tipo_usuario/";
 
 export default class Tipos_userAPI {
     async getTipo_userAll(){
