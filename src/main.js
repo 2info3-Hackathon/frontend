@@ -13,8 +13,6 @@ export const userAPI = new UserAPI();
 const pinia = createPinia()
 const app = createApp(App)
 
-createApp(App).mount('#app')
-
 app.use(router)
 app.use(pinia);
 app.mount('#app')

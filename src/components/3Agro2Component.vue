@@ -108,4 +108,11 @@ div.produtos li {
   white-space: normal;
   list-style: none;
 }
+p.nome {
+  font-size: 2rem;
+  margin: 0 0 3px 0;
+}
+p {
+  font-size: 1.3rem;
+}
 </style>

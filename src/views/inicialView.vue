@@ -6,7 +6,7 @@ import InicialComponent from '@/components/InicialComponent.vue';
 <template>
     <body>
         <main>
-            <InicialComponent />
+           <InicialComponent />
         </main>
     </body>
 </template>

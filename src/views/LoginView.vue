@@ -75,7 +75,7 @@ async function login() {
           <button type="submit">Enviar</button>
           <div>
             <p>
-              Caso ainda não possua cadastro?<a @click="irParaCadastro">Cadastre-se</a>
+              Caso ainda não possua cadastro?<a @click="irParaCadastro"> Cadastre-se</a>
             </p>
           </div>
         </form>

@@ -16,7 +16,7 @@ const routes = [
       path: '/usuario',
       name: 'Usuário',
       component: () => import('@/views/UserView.vue'),
-    }, 
+    },
     {
         path: '/terceirao',
         name: 'Vendas Terceirao',
@@ -63,7 +63,7 @@ const routes = [
         component: () => import('@/views/reservadosView.vue'),
     },
     {
-        path: '/adicionarProdutos',
+        path: '/adicionar-venda',
         name: 'adicionarVendas',
         component: () => import('@/views/adicionarProdutosView.vue')
     },
