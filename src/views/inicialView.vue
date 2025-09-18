@@ -1,7 +1,12 @@
 <script setup>
-import inicialComponents from '@/components/inicialComponents.vue';
+import InicialComponent from '@/components/InicialComponent.vue';
+
 </script>
 
 <template>
-    <inicialComponents />
+    <body>
+        <main>
+            <InicialComponent />
+        </main>
+    </body>
 </template>

@@ -15,12 +15,13 @@ function enviarFormulario() {
 }
 
 function voltar() {
-  router.push('/')
+  router.push('/grupo-estudos')
 }
 </script>
 
 <template>
-  <img src="/public//imagem/banner.png" alt="banner" height="600" width="100%">
+  <body>
+    <img src="/imagem/banner.png" alt="banner" height="600" width="100%">
 
   <div class="fundo">
     <h1>Adicionar Grupo de Estudos</h1>
@@ -67,6 +68,7 @@ function voltar() {
 
     <button @click="voltar">← Voltar</button>
   </div>
+  </body>
 </template>
 
 <style scoped>

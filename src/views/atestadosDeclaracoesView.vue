@@ -31,7 +31,7 @@ function voltarAoSumario() {
             <h1>Faltei, e agora?</h1>
             <p><span>Apresentar Justificativa ao SISAE</span> enviando sua documentação (atestados, declarações,
                 outros):</p>
-            <img src="/imagens/QrCode-Atestados_e_Declarações.png" alt="QrCode">
+            <img src="/imagem/QrCode-Atestados_e_Declarações.png" alt="QrCode">
             <a
                 href="https://docs.google.com/forms/d/e/1FAIpQLSeeUKe0cKL_MQkgGSqf9xZNKbeInX_6sRj4vfXM5o75R4JCTg/viewform">Clique
                 aqui!
@@ -43,11 +43,11 @@ function voltarAoSumario() {
             </div>
             <div v-if="textoAtivo === 'texto1'" class="texto">
                 <p>Preencha o formulário de pedido de uma nova avaliação:</p>
-                <img src="/imagens/QrCode-Nova_Avaliação.png" alt="QrCode">
+                <img src="/imagem/QrCode-Nova_Avaliação.png" alt="QrCode">
                 <a href="https://bit.ly/nova-avalia%C3%A7%C3%A3o?r=qr">Clique aqui!
                 </a>
                 <p>Faça o requerimento de nova avaliação, até 72h após a falta.</p>
-                <img src="/imagens/QrCode-Requerimento.png" alt="QrCode">
+                <img src="/imagem/QrCode-Requerimento.png" alt="QrCode">
                 <a href="https://bit.ly/requerimentos2025?r=qr">Clique aqui!
                 </a>
             </div>
@@ -63,10 +63,13 @@ function voltarAoSumario() {
 </template>
 
 <style scoped>
+body{
+    margin-bottom: -18vw;
+}
 main {
     background: linear-gradient(135deg, #1c7ed4, #42a5f5);
     border-radius: 5px;
-    margin: 0 15vw 8vw 15vw;
+    margin: 8vw 15vw 8vw 15vw;
     padding: 0 6vw 3vw 6vw;
 }
 
@@ -82,15 +85,16 @@ p {
     text-align: center;
     color: white;
     font-size: 1.5rem;
+    padding: 20px 0 20px 0;
 }
 
 span {
     font-weight: bold;
 }
-
 h2 {
     text-align: center;
     color: white;
+    font-size: 1.5rem;
 }
 
 .botoes {
@@ -139,9 +143,18 @@ img {
 }
 
 .voltar button {
-    margin: 0 5vw 5vw 5vw;
-    background:#1c7ed4;
+     background-color: #1C72D3;
     color: white;
     border-radius: 5px;
+    padding: 10px 30px ;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: 3vw;
+    margin-bottom: 3vw;
+    cursor: pointer;
+    transition: transform 0.2s;
  }
+ button:hover {
+    transform: scale(1.05);
+}
 </style>

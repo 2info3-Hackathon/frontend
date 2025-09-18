@@ -4,7 +4,6 @@ import { useRouter } from 'vue-router'
 import axios from 'axios'
 import { jwtDecode } from "jwt-decode";
 
-
 const user = reactive({
   username: '',
   password: ''
@@ -14,8 +13,6 @@ const senhaVisivel = ref(false)
 
 const tipo = ref('não logado')
 
-const router = useRouter()
-
 function irParaCadastro(){
   router.push('/cadastro')
 }
@@ -23,16 +20,6 @@ function irParaCadastro(){
 function toggleSenha() {
   senhaVisivel.value = !senhaVisivel.value
 }
-
-/*async function login() {
-  const {data } = await  axios.post('http://127.0.0.1:8000/api/token/', user)
-  const token = data.access
-  const decoded_token = jwtDecode(token);
-  tipo.value = decoded_token.tipo
-
-  router.push('/usuario')
-}*/
-
 
 const erro = ref('')
 
@@ -60,7 +47,7 @@ async function login() {
     console.error("Erro ao fazer login:", e);
   }
 }
-</script>
+
 
 <template>
   <section>
@@ -98,134 +85,118 @@ async function login() {
 </template>
 
 <style scoped>
-
 .principal{
-  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
-  margin: 50px 150px 50px 150px;
-  padding: 150px 140px 140px 140px;
-  border-radius: 20px;
+ background: linear-gradient(135deg, #1c7ed4, #42a5f5);
+ margin: 8vw 150px 0 150px;
+ padding: 150px 140px 140px 140px;
+ border-radius: 20px;
 }
 
 form {
-  background: white;
-  padding: 85px 105px 35px 105px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  display: flex;              
-  flex-direction: column;     
-  align-items: center;
+ background: white;
+ padding: 85px 105px 35px 105px;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ position: relative;
+ display: flex;             
+ flex-direction: column;    
+ align-items: center;
 }
+
 
 h2 {
-  font-weight: bolder;
-  font-size: calc(1.3rem);
-  padding: 15px 5px 15px 0;
-  text-align: center;
+ font-weight: bolder;
+ font-size: calc(1.3rem);
+ padding: 15px 5px 15px 0;
+ text-align: center;
 }
+
 
 label {
-  font-size: calc(1.5rem);
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  margin: 2vw 0 0.5vw -27vw ;
+ font-size: calc(1.5rem);
+ display: block;
+ margin-top: 10px;
+ font-weight: bold;
+ margin: 2vw 0 0.5vw -27vw ;
 }
+
 
 input {
-  font-size: calc(1.3rem);
-  width: 80%;
-  padding: 15px 5px 15px 0;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+ font-size: calc(1.3rem);
+ width: 80%;
+ padding: 15px 5px 15px 0;
+ margin-top: 5px;
+ border: 1px solid #ccc;
+ border-radius: 6px;
 }
+
 
 .campo-senha {
-  position: relative;
-  width: 80%;
+ position: relative;
+ width: 80%;
 }
+
 
 .campo-senha input {
-  font-size: calc(1.5rem);
-  width: 100%;
-  padding: 15px 5px 15px 0;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+ font-size: calc(1.5rem);
+ width: 100%;
+ padding: 15px 5px 15px 0;
+ margin-top: 5px;
+ border: 1px solid #ccc;
+ border-radius: 6px;
 }
+
 
 .campo-senha .olho {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 1.3rem;
-  user-select: none;
+ position: absolute;
+ right: 10px;
+ top: 50%;
+ transform: translateY(-50%);
+ cursor: pointer;
+ font-size: 1.3rem;
+ user-select: none;
 }
+
 
 form button {
-  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
-  color: white;
-  font-size: calc(1.3rem);
-  padding: 10px 25px 10px 25px;
-  margin: 60px 150px 30px 150px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s;
+ background: linear-gradient(135deg, #1c7ed4, #42a5f5);
+ color: white;
+ font-size: calc(1.3rem);
+ padding: 10px 25px 10px 25px;
+ margin: 60px 150px 30px 150px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: transform 0.2s;
 }
+
 
 button:hover {
-  background: linear-gradient(135deg, #02367a, #1e88e5);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  transform: scale(1.05);
+ background: linear-gradient(135deg, #02367a, #1e88e5);
+ box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+ transform: scale(1.05);
 }
-
-.cadastros{
-  display: flex;
-  text-align: justify;
-}
-
-.cadastros div{
-  margin: 0 9.5vw 5vw 9.5vw;
-}
-
-.cadastros p{
-  font-size: 1.2rem;
-  padding: 10px 0px 10px 0;
-  margin: 0 0 0 0.5vw;
-}
-
-.cadastros a{
-  margin: 0 0 0 3.7vw;
-  font-size: calc(1.2rem);
-  color:#338ff8;
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
 a:hover{
-  color: #063770;
-  text-decoration: underline;
+ color:#2c71c0;;
+ text-decoration: underline;
 }
+
 
 .icone {
-  position: absolute;
-  top: -90px; /* sobe a imagem */
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  border-radius: 50%;
-  padding: 8px;
+ position: absolute;
+ top: -90px;
+ left: 50%;
+ transform: translateX(-50%);
+ background: #fff;
+ border-radius: 50%;
+ padding: 8px;
+
 
 }
 
 .icone img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+ width: 150px;
+ height: 150px;
+ border-radius: 50%;
 }
 </style>

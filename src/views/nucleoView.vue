@@ -21,10 +21,8 @@ function voltarAoinicio() {
 </script>
 
 <template>
-  <main>
-    <section class="img">
-      <img src="/public/imagem/Rectangle 43.png" alt="imagem-if" height="700" width="1845">
-    </section>
+  <body>
+     <main>
     <section class="corpo">
       <h1>Conheça nosso Núcleos</h1>
       <div class="azul1">
@@ -54,12 +52,9 @@ function voltarAoinicio() {
 
           <li>Realizar intercâmbio com os demais campi, escolas públicas e privadas e outras instituições;</li>
 
-          <li>Propor políticas de acesso, permanência e êxito, de modo a atender, aconselhar e acompanhar, de forma
-            transversal e interdisciplinar, pessoas com deficiência e necessidades específicas <br> que se encontrem em
-            vulnerabilidade;</li>
+          <li>Propor políticas de acesso, permanência e êxito, de modo a atender, aconselhar e acompanhar, de forma transversal e interdisciplinar,<br> pessoas com deficiência e necessidades específicas  que se encontrem em vulnerabilidade;</li>
 
-          <li>Participar dos processos de construção dos Projetos Pedagógicos de Cursos (PPC) do IFC Araquari, a fim de
-            garantir que a temática da inclusão de pessoas com deficiência e necessidades específicas seja contemplada.
+          <li>Participar dos processos de construção dos Projetos Pedagógicos de Cursos (PPC) do IFC Araquari, a fim de garantir que a temática  <br>da inclusão de pessoas com deficiência e necessidades específicas seja contemplada.
           </li>
         </ul>
       </div>
@@ -83,7 +78,7 @@ function voltarAoinicio() {
           <li>Propor políticas de acesso, permanência e êxito, de modo a atender pessoas que se encontrem em
             vulnerabilidade social, cultural e/ou educacional;</li>
 
-          <li>Fazer intercâmbio com os demais campi e escolas da rede pública e privada, comunidades e povos
+          <li>Fazer intercâmbio com os demais campi e escolas da rede pública e privada,comunidades e povos
             tradicionais.</li>
         </ul>
       </div>
@@ -107,9 +102,14 @@ function voltarAoinicio() {
 
     </section>
   </main>
+  </body>
 </template>
 
 <style scoped>
+body{
+  margin-bottom: -18vw;
+}
+
 img {
   margin-left: -20px;
 }
@@ -122,8 +122,12 @@ section.corpo h1 {
 
 h2 {
   text-align: center;
+  font-size: 2rem;
+  padding: 10px 0 10px 0 ;
 }
-
+p{
+  padding: 20px 5px;
+}
 div.azul1 {
   background-image: url('data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%201440%20320%27%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20fill%3D%27%23ffffff%27%20d%3D%27M0%2C288L30%2C261.3C60%2C235%2C120%2C181%2C180%2C165.3C240%2C149%2C300%2C171%2C360%2C181.3C420%2C192%2C480%2C181%2C540%2C170.7C600%2C160%2C660%2C150%2C720%2C154.7C780%2C160%2C840%2C181%2C900%2C192C960%2C203%2C1020%2C213%2C1080%2C208C1140%2C203%2C1200%2C171%2C1260%2C181.3C1320%2C192%2C1380%2C235%2C1410%2C261.3L1440%2C288L1440%2C320L1410%2C320C1380%2C320%2C1320%2C320%2C1260%2C320C1200%2C320%2C1140%2C320%2C1080%2C320C1020%2C320%2C960%2C320%2C900%2C320C840%2C320%2C780%2C320%2C720%2C320C660%2C320%2C600%2C320%2C540%2C320C480%2C320%2C420%2C320%2C360%2C320C300%2C320%2C240%2C320%2C180%2C320C120%2C320%2C60%2C320%2C30%2C320L0%2C320Z%27%2F%3E%3C%2Fsvg%3E');
   background-size: cover;
@@ -132,8 +136,8 @@ div.azul1 {
   /* Ajusta a posição da onda para o fundo */
   background-repeat: no-repeat;
   /* Impede que a imagem de fundo se repita */
-  width: 100%;
-  height: 170vh;
+  width: 110%;
+  height: 190vh;
   /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;
@@ -152,8 +156,8 @@ div.azul2 {
   /* Ajusta a posição da onda para o fundo */
   background-repeat: no-repeat;
   /* Impede que a imagem de fundo se repita */
-  width: 100%;
-  height: 70vh;
+  width: 110%;
+  height: 60vh;
   /* Ajuste conforme a necessidade */
   background-color: #1C72D3;
   display: block;
@@ -167,7 +171,7 @@ div.azul2 {
 div.branco {
   font-size: 1.5rem;
   padding: 1vw 4vw 1vw 4vw;
-  margin-bottom: 3vw;
+  margin-bottom: 5vw;
 }
 
 div.branco2 {
@@ -192,14 +196,15 @@ div li {
 
 .voltar button {
   background-color: #1C72D3;
-  color: aliceblue;
+  color: white;
   border-radius: 5px;
   padding: 10px 30px;
   margin-left:2vw ;
   border: none;
-  font-size: 22px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-left: 3vw;
 }
 button:hover{
   transform: scale(1.05);

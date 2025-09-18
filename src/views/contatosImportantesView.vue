@@ -21,7 +21,8 @@ function voltarAoSumario() {
 </script>
 
 <template>
-
+<body>
+    
     <section>
         <h1>Contatos Importantes</h1>
         <div>
@@ -53,9 +54,13 @@ function voltarAoSumario() {
     <div v-if="!showSummary" class="voltar">
             <button @click="voltarAoSumario">← Voltar</button>
         </div>
+</body>
 </template>
 
 <style scoped>
+body{
+    margin-bottom: -24vw;
+}
 h1 {
     margin: 4vw 0 0 0;
     color: black;
@@ -96,11 +101,20 @@ span:hover {
   text-decoration: underline;
 }
 .voltar button {
-    margin: 0 5vw 5vw 5vw;
-    background:#1c7ed4;
+     background-color: #1C72D3;
     color: white;
     border-radius: 5px;
+    padding: 10px 30px ;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: 3vw;
+    margin-bottom: -3vw;
+    cursor: pointer;
+    transition: transform 0.2s;
  }
+ button:hover {
+    transform: scale(1.05);
+}
 
 
 </style>
