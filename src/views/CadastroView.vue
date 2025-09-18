@@ -48,7 +48,7 @@ async function cadastrar() {
 }
 
 function voltar() {
-  router.push('/')
+  router.push('/login')
 }
 
 function toggleSenha() {
@@ -70,7 +70,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <section>
+  <body>
+    <section>
     <div class="principal">
       <h1>Cadastro</h1>
 
@@ -90,9 +91,6 @@ onMounted(() => {
         <label for="data_nascimento">Data de Nascimento:</label>
         <input type="date" id="data_nascimento" name="data_nascimento" v-model="data_nascimento" required>
 
-        <label for="username">Nome de Login:</label>
-        <input type="text" id="username" name="username" v-model="username" required>
-
         <select name="tipo_user" id="tipo_user" v-model="tipo_user" required>
           <option disabled value="">
             Selecione o seu tipo de usuário
@@ -101,6 +99,9 @@ onMounted(() => {
             {{ tipo.descricao }}
           </option>
         </select>
+
+        <label for="username">Nome de Login:</label>
+        <input type="text" id="username" name="username" v-model="username" required>
 
         <label for="senha">Senha:</label>
         <div class="campo-senha">
@@ -119,15 +120,20 @@ onMounted(() => {
 
     <button class="voltar" @click="voltar">← Voltar</button>
   </section>
+  </body>
 </template>
 
 <style scoped>
+body{
+  margin-bottom: -15vw;
+}
 .principal {
   background: linear-gradient(135deg, #1c7ed4, #42a5f5);
   margin: 50px 150px 50px 150px;
   padding: 70px 140px 140px 140px;
   border-radius: 20px;
 }
+
 
 h1 {
   color: white;
@@ -136,6 +142,7 @@ h1 {
   text-align: center;
   margin-bottom: 3.5vw;
 }
+
 
 form {
   background: white;
@@ -147,11 +154,13 @@ form {
   flex-direction: column;
 }
 
+
 h2 {
   font-weight: bolder;
   font-size: 1.3rem;
   padding: 15px 5px 15px 0;
 }
+
 
 label {
   font-size: 1.5rem;
@@ -159,7 +168,9 @@ label {
   margin-top: 20px;
   font-weight: bold;
   margin: 0.7vw 0 0.7vw 6vw;
+  color:rgba(0, 0, 0, 0.897);
 }
+
 
 input {
   font-size: 1.3rem;
@@ -169,12 +180,15 @@ input {
   border: 1px solid #ccc;
   border-radius: 6px;
   margin: 0 0 0 6vw;
+  color:rgba(0, 0, 0, 0.897);
 }
+
 
 .campo-senha {
   position: relative;
   width: 80%;
 }
+
 
 .campo-senha input {
   font-size: calc(1.5rem);
@@ -184,6 +198,18 @@ input {
   border: 1px solid #ccc;
   border-radius: 6px;
 }
+
+
+select {
+  font-size: calc(1.5rem);
+  width: 80%;
+  padding: 15px 5px 15px 0;
+  margin-left: 6vw;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
 
 .campo-senha .olho {
   position: absolute;
@@ -195,9 +221,11 @@ input {
   user-select: none;
 }
 
+
 .botoes {
   display: flex;
 }
+
 
 .botoes button {
   background: linear-gradient(135deg, #1c7ed4, #42a5f5);
@@ -211,22 +239,23 @@ input {
   transition: transform 0.2s;
 }
 
+
 button:hover {
-  background: linear-gradient(135deg, #02367a, #1e88e5);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
   transform: scale(1.05);
 }
 
+
 .voltar {
-  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s;
-  border-radius: 5px;
-  padding: 20px 20px 20px 20px;
-  font-size: 1.2rem;
-  margin-left: 2vw;
-  margin-bottom: 2vw;
+   background-color: #1C72D3;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 30px ;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: 3vw;
+    margin-top: 5vw;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
+
 </style>
