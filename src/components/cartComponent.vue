@@ -63,7 +63,7 @@ const reservadosStore = useReservadosStore()
       </div>
 
      <button @click="cartStore.toggleCart" class="outlined">
-        ← Voltar
+        Fechar Carrinho!
       </button>
     </section>
 
@@ -172,20 +172,20 @@ button:hover {
 }
 
 .outlined{
-  background: linear-gradient(135deg, #1f68c7, #42a5f5);
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s;
-  border-radius: 5px;
-  padding: 20px 20px 20px 20px;
-  font-size: calc(1.2rem);
-  margin-left: 2vw;
+   background-color: #1C72D3;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 30px ;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: 2vw;
+    margin-top: 5vw;
+    cursor: pointer;
+    transition: transform 0.2s;
+
 }
 
 .outlined:hover {
-  background: linear-gradient(135deg, #02367a, #1e88e5);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  transform: scale(1.05);
+ transform: scale(1.05);
 }
 </style>

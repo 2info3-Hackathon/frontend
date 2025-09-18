@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue'
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -22,8 +21,8 @@ function voltarAoSumario() {
 </script>
 
 <template>
-    <div class="ondas"></div>
-<section>
+<body>
+    <section>
 
 <h1>CLIFC - Centro de Línguas</h1>
 
@@ -37,10 +36,13 @@ function voltarAoSumario() {
  <div v-if="!showSummary" class="voltar">
          <button @click="voltarAoSumario">← Voltar</button>
       </div>
-      <FooterComponent/>
+</body>
 </template>
 
 <style scoped>
+body{
+    margin-bottom: -18vw;
+}
 section{
     background: linear-gradient(135deg, #1c7ed4, #42a5f5);
     margin: 8vw 15vw 6vw 15vw;

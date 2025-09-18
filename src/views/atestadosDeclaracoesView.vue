@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue'
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -61,10 +60,12 @@ function voltarAoSumario() {
             <button @click="voltarAoSumario">← Voltar</button>
         </div>
     </body>
-    <FooterComponent/>
 </template>
 
 <style scoped>
+body{
+    margin-bottom: -18vw;
+}
 main {
     background: linear-gradient(135deg, #1c7ed4, #42a5f5);
     border-radius: 5px;

@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -47,7 +46,8 @@ function voltarAoInicial() {
 </script>
 
 <template>
-  <main>
+  <body>
+    <main>
     <div class="imagem">
       <img src="/imagem/banner.png" alt="banner" height="600" width="100%">
     </div>
@@ -108,10 +108,13 @@ function voltarAoInicial() {
       <button @click="voltarAoInicial">← Voltar </button>
   </div>
   </main>
-  <FooterComponent/>
+  </body>
 </template>
 
 <style scoped>
+body{
+  margin-bottom: -20vw;
+}
 main {
   margin: 0;
   padding: 0;
@@ -175,10 +178,10 @@ a:hover{
 
 .botoes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
-  gap: 100px; /* espaço entre os botões */
-  max-width: 1000px; /* opcional, controla a largura total */
-  margin: 0px auto; /* centraliza o grid */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
+  max-width: 1000px;
+  margin: 0px auto;
 }
 
 .botoes button {
@@ -212,6 +215,6 @@ button:hover {
     border: none;
     cursor: pointer;
     transition: transform 0.2s;
-    margin: 3vw 2vw 3vw 3vw;
+    margin: 8vw 2vw 3vw 3vw;
  }
 </style>

@@ -1,7 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
-import FooterComponent from '@/components/FooterComponent.vue';
 
 const router = useRouter()
 
@@ -21,7 +20,8 @@ function voltar() {
 </script>
 
 <template>
-  <img src="/imagem/banner.png" alt="banner" height="600" width="100%">
+  <body>
+    <img src="/imagem/banner.png" alt="banner" height="600" width="100%">
 
   <div class="fundo">
     <h1>Adicionar Grupo de Estudos</h1>
@@ -68,7 +68,7 @@ function voltar() {
 
     <button @click="voltar">← Voltar</button>
   </div>
-  <FooterComponent/>
+  </body>
 </template>
 
 <style scoped>

@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue';
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -10,7 +9,8 @@ function voltar() {
 </script>
 
 <template>
-  <img src="/imagem/banner.png" alt="banner" height="600" width="100%">
+  <body>
+    <img src="/imagem/banner.png" alt="banner" height="600" width="100%">
 
   <div class="fundo">
     <h1>Grupo de Estudos de Filosofia</h1>
@@ -31,10 +31,13 @@ function voltar() {
 
     <button @click="voltar">← Voltar</button>
   </div>
-  <FooterComponent/>
+  </body>
 </template>
 
 <style scoped>
+body{
+  margin-bottom: -15vw;
+}
 button{
   background: linear-gradient(135deg, #1f68c7, #42a5f5);
   color: white;
@@ -45,7 +48,7 @@ button{
    padding: 10px 30px;
   font-size: calc(1.2rem);
   margin-left: 3vw;
-  margin-bottom: 3vw;
+  margin-top: 5vw;
 }
 
 .fundo button:hover {

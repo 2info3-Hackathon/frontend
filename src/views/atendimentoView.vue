@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue'
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -24,9 +23,6 @@ function voltarAoSumario() {
 <template>
 
    <body>
-      <div class="ondas"></div>
-
-
       <section>
          <h1>Atendimentos</h1>
          <div class="listas">
@@ -87,10 +83,12 @@ function voltarAoSumario() {
          <button @click="voltarAoSumario">← Voltar</button>
       </div>
    </body>
-   <FooterComponent/>
 </template>
 
 <style scoped>
+body{
+   margin-bottom: -15vw;
+}
 section {
    max-width: 80%;
    background: linear-gradient(135deg, #1f68c7, #42a5f5);
@@ -165,7 +163,7 @@ section div.listas ul li a:hover {
    border: none;
    font-size: 1.2rem;
    margin-left: 3vw;
-   margin-top: 3vw;
+   margin-top: 8vw;
    cursor: pointer;
    transition: transform 0.2s;
 }

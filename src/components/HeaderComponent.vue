@@ -8,6 +8,9 @@ const router = useRouter();
 function irParaInicio(){
   router.push('/')
 }
+function irParaLogin(){
+  router.push('/login')
+}
 </script>
 
 <template>
@@ -23,19 +26,17 @@ function irParaInicio(){
       <div class="barra">
         <input type="text" class="search" placeholder="Buscar..." />
       </div>
-
-      <!-- Menu principal -->
       <ul class="menu">
-        <i class="fas fa-user-circle"></i>
+        <span class="mdi mdi-account" @click="irParaLogin"></span>
 
         <li class="dropdown" @click="showDropdown = !showDropdown">
-          <i class="fas fa-bars"></i>
+         <span class="mdi mdi-menu" ></span>
           <ul v-if="showDropdown" class="submenu">
-            <li><RouterLink to="/">Núcleos, Comitês e Comissões</RouterLink></li>
-            <li><RouterLink to="/">Informações Importantes</RouterLink></li>
-            <li><RouterLink to="/">Grupo de Estudos</RouterLink></li>
-            <li><RouterLink to="/">Vendas Terceirões</RouterLink></li>
-            <li><RouterLink to="/">Eventos</RouterLink></li>
+            <li><RouterLink to="/inicio">Núcleos, Comitês e Comissões</RouterLink></li>
+            <li><RouterLink to="/informacoes-importantes">Informações Importantes</RouterLink></li>
+            <li><RouterLink to="/grupo-estudos">Grupo de Estudos</RouterLink></li>
+            <li><RouterLink to="/terceirao">Vendas Terceirões</RouterLink></li>
+            <li><RouterLink to="/eventos">Eventos</RouterLink></li>
           </ul>
         </li>
       </ul>
@@ -141,13 +142,13 @@ input {
   color: black;
 }
 
-i.fas.fa-user-circle{
-  margin: 0 0 0 -10vw;
+span.mdi.mdi-account{
+  margin: 0 0 0 -20vw;
   font-size: 2rem;
 }
 
-i.fas.fa-bars{
-  margin: 0 -5vw 0 2vw;
+span.mdi.mdi-menu{
+  margin: 0 2vw 0 2vw;
   font-size: 2rem;
 }
 </style>

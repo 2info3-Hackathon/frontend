@@ -67,7 +67,6 @@ footer {
     background-color: #1C72D3;
     display: block;
     margin-left: -20px;
-    margin-top: -17vw;
 }
 div.conteudo {
     display: flex;
@@ -76,7 +75,7 @@ div.conteudo {
     justify-content: space-between;
     font-size: 1.2rem;
     margin: 4vw 10vw 2vw 20vw;
-    padding: 8vw 0 0 0;
+    padding: 15vw 0 0 0;
 }
 ul{
     margin-top: 30%;

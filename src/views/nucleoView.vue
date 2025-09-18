@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue'
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -22,7 +21,8 @@ function voltarAoinicio() {
 </script>
 
 <template>
-  <main>
+  <body>
+     <main>
     <section class="corpo">
       <h1>Conheça nosso Núcleos</h1>
       <div class="azul1">
@@ -102,10 +102,14 @@ function voltarAoinicio() {
 
     </section>
   </main>
-  <FooterComponent/>
+  </body>
 </template>
 
 <style scoped>
+body{
+  margin-bottom: -18vw;
+}
+
 img {
   margin-left: -20px;
 }

@@ -12,11 +12,15 @@ function toggleSenha() {
    const senha = document.getElementById("senha");
    senha.type = senha.type === "password" ? "text" : "password";
 }
+function irParaInicio(){
+  router.push('/')
+}
 </script>
 
 
 <template>
- <section>
+<body>
+   <section>
    <div class="principal">
      <form>
        <div class="icone">
@@ -35,7 +39,7 @@ function toggleSenha() {
          {{ senhaVisivel ? '🙈' : '👁' }}
          </span>
          </div>
-       <button type="submit">Enviar</button>
+       <button type="submit" @click="irParaInicio">Enviar</button>
         <p>
        Caso ainda não possua cadastro?  <a @click="irParaDiscente">Cadastre-se</a>
      </p>
@@ -44,19 +48,16 @@ function toggleSenha() {
    
    </div>
  </section>
+</body>
 </template>
 
-
 <style scoped>
-
-
 .principal{
  background: linear-gradient(135deg, #1c7ed4, #42a5f5);
- margin: 50px 150px 50px 150px;
+ margin: 8vw 150px 0 150px;
  padding: 150px 140px 140px 140px;
  border-radius: 20px;
 }
-
 
 form {
  background: white;
@@ -143,14 +144,14 @@ button:hover {
  transform: scale(1.05);
 }
 a:hover{
- color: #063770;
+ color:#2c71c0;;
  text-decoration: underline;
 }
 
 
 .icone {
  position: absolute;
- top: -90px; /* sobe a imagem */
+ top: -90px;
  left: 50%;
  transform: translateX(-50%);
  background: #fff;

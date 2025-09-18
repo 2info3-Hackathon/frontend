@@ -11,7 +11,6 @@ import Info1Component from '@/components/3Info1Component.vue';
 import Info2Component from '@/components/3Info2Component.vue';
 import Info3Component from '@/components/3Info3Component.vue';
 import QuimiComponent from '@/components/3QuimiComponent.vue';
-import FooterComponent from '@/components/FooterComponent.vue';
 
 const cartStore = useCartStore()
 
@@ -50,19 +49,19 @@ function voltar() {
 </script>
 
 <template>
-     
-    <div class="minhas-compras">
+    <body>
+        <div class="minhas-compras">
         <button class="colorido" @click="irParaReservados">Suas reservas feitas </button>
 
         <div class="carrinho-colorido" @click="cartStore.toggleCart">
-            <span class="mdi mdi-cart-outline"></span>
+            <span class="mdi mdi-cart-outline">Carrinho</span>
         </div> 
     </div>
         <cart v-if="cartStore.showCart" />
 
         <div class="lista" v-else>
         <button class="colorido" @click="irParaAdicionarProdutos"> Adicionar Produtos </button>
-            
+
     <div class="tudo">
     <h1>
         Turmas
@@ -93,12 +92,16 @@ function voltar() {
        <info2-component />
        <info3-component />
        <quimi-component />
-       <button class="turmas" @click="voltar">← Voltar</button>
         </div>
-        <FooterComponent/>
+        <button class="turmas" @click="voltar" >← Voltar</button>
+    </body>
 </template>
 
 <style scoped>
+body{
+    margin-top: 6vw;
+    margin-bottom: -18vw;
+}
 h1 {
     margin: 0 33vw 0 33vw;
     background-color: white;
@@ -217,21 +220,20 @@ div.quimi button:hover {
 .minhas-compras{
     display: flex;
 }
-button{
-    background-color: #1C72D3;
+
+button.turmas{
+   background-color: #1C72D3;
     color: white;
     border-radius: 5px;
     padding: 10px 30px ;
     border: none;
     font-size: 1.2rem;
-    margin-left: 3vw;
+    margin-left: 2vw;
+    margin-top: 5vw;
     cursor: pointer;
     transition: transform 0.2s;
-    margin-bottom: 3vw;
-    margin-top: 5vw;
 }
-
-button:hover {
-    transform: scale(1.05);
+button.turmas:hover{
+  transform: scale(1.05);
 }
 </style>

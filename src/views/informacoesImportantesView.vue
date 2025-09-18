@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue'
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -24,7 +23,6 @@ function voltarAoInicial() {
 <template>
 
   <body>
-    <div class="ondas"></div>
     <div>
       <main>
         <h1>Sumário</h1>
@@ -54,17 +52,19 @@ function voltarAoInicial() {
             </li>
           </ul>
         </div>
-      <div v-if="!showSummary" class="voltar">
-        <button @click="voltarAoInicial">← Voltar </button>
-      </div>
+        <div v-if="!showSummary" class="voltar">
+          <button @click="voltarAoInicial">← Voltar </button>
+        </div>
       </main>
       <router-view />
     </div>
-    <FooterComponent/>
   </body>
 </template>
 
 <style scoped>
+body{
+  margin-bottom: -39vw;
+}
 h1 {
   text-align: center;
   color: #1C72D3;
@@ -77,13 +77,12 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 4vw;
-  margin-bottom: -8vw;
 }
 
 ul {
   color: #1C72D3;
-  ;
-  margin: 2vw 2vw 6vw 2vw;
+  margin: 2vw 2vw 8vw 2vw;
+  margin-bottom: 4vw;
 }
 
 ul ::marker {
@@ -91,7 +90,7 @@ ul ::marker {
 }
 
 li {
-  margin: 3vw;
+  margin: 3vw 3vw 0 3vw;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -106,7 +105,6 @@ li {
 .link:hover {
   text-decoration: underline;
   color: #2c71c0;
-  text-decoration: underline;
 }
 
 button {
@@ -125,4 +123,5 @@ button {
 button:hover {
     transform: scale(1.05);
 }
+
 </style>

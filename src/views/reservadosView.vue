@@ -3,12 +3,11 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 import { useReservadosStore } from "@/stores/reservados";
-import FooterComponent from '@/components/FooterComponent.vue';
 
 const reservadosStore = useReservadosStore()
 
 function voltar() {
-    router.push('/')
+    router.push('/terceirao')
 }
 </script>
 
@@ -19,8 +18,6 @@ function voltar() {
 </li>
 <button class="turmas" @click="voltar">← Voltar</button>
 
-
-<FooterComponent/>
 </template>
 
 

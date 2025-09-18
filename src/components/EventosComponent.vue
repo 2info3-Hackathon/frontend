@@ -27,7 +27,8 @@ function voltarAoInicial() {
 </script>
 
 <template>
-    <section>
+    <body>
+        <section>
         <h1>
             Eventos
         </h1>
@@ -89,10 +90,13 @@ function voltarAoInicial() {
      <div v-if="!showSummary" class="voltar">
         <button @click="voltarAoInicial">← Voltar </button>
       </div>
-     <div class="girada"></div>
+    </body>
 </template>
 
 <style scoped>
+body{
+    margin-bottom: -25vw;
+}
 section {
     margin: 0 2vw;
     text-align: center;

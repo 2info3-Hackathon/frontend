@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue'
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -22,7 +21,8 @@ function voltarAoSumario() {
 </script>
 
 <template>
-
+<body>
+    
     <section>
         <h1>Contatos Importantes</h1>
         <div>
@@ -54,10 +54,13 @@ function voltarAoSumario() {
     <div v-if="!showSummary" class="voltar">
             <button @click="voltarAoSumario">← Voltar</button>
         </div>
-        <FooterComponent/>
+</body>
 </template>
 
 <style scoped>
+body{
+    margin-bottom: -24vw;
+}
 h1 {
     margin: 4vw 0 0 0;
     color: black;

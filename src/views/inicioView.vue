@@ -1,7 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import FooterComponent from '@/components/FooterComponent.vue';
 
 const showSummary = ref(true)
 const route = useRoute()
@@ -21,7 +20,8 @@ function voltarAoInicial() {
 </script>
 
 <template>
-    <div>
+  <body>
+     <div>
       <main>
         <h1>Sumário</h1>
         <div class="menu">
@@ -50,10 +50,14 @@ function voltarAoInicial() {
       </div>
       </main>
       <router-view/>
-       <FooterComponent />
     </div>
+  </body>
 </template>
 <style scoped>
+body{
+  margin-bottom: -35vw;
+}
+
 h1 {
   text-align: center;
   color: #2D86FB;
@@ -67,7 +71,6 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 4vw;
-  margin-bottom: -8vw;
 }
 
 ul {

@@ -1,5 +1,4 @@
 <script setup>
-import FooterComponent from '@/components/FooterComponent.vue';
 import InicialComponent from '@/components/InicialComponent.vue';
 
 </script>
@@ -9,6 +8,5 @@ import InicialComponent from '@/components/InicialComponent.vue';
         <main>
             <InicialComponent />
         </main>
-        <FooterComponent />
     </body>
 </template>

@@ -33,7 +33,7 @@ console.log('Produtos carregados:', quimi);
       </div>
 
       <button class="reservar" @click="cartStore.addToCart(produto)">
-        <span class="mdi mdi-cart"></span> Reservar
+        <span class="mdi mdi-cart"></span>Reservar
       </button>
     </article>
   </section>
