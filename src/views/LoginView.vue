@@ -1,54 +1,87 @@
 <script setup>
+import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import axios from 'axios'
+import { jwtDecode } from "jwt-decode";
 
+const user = reactive({
+  username: '',
+  password: ''
+})
 
-const router = useRouter()
+const senhaVisivel = ref(false)
 
+const tipo = ref('não logado')
 
-function irParaDiscente(){
- router.push('/cadastro-discente')
+function irParaCadastro(){
+  router.push('/cadastro')
 }
+
 function toggleSenha() {
-   const senha = document.getElementById("senha");
-   senha.type = senha.type === "password" ? "text" : "password";
+  senhaVisivel.value = !senhaVisivel.value
 }
-function irParaInicio(){
-  router.push('/')
+
+const erro = ref('')
+
+async function login() {
+  erro.value = ''
+  try {
+    const { data } = await axios.post('http://127.0.0.1:8000/api/token/', user)
+    const token = data.access
+    localStorage.setItem('token', token)
+
+    const decoded_token = jwtDecode(token)
+    tipo.value = decoded_token.tipo
+
+    const { data: userData } = await axios.get('http://127.0.0.1:8000/api/usuario/me/', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+
+    localStorage.setItem('user_info', JSON.stringify(userData))
+
+    router.push('/usuario')
+  } catch (e) {
+    erro.value = 'Usuário ou senha inválidos'
+    console.error("Erro ao fazer login:", e);
+  }
 }
-</script>
 
 
 <template>
-<body>
-   <section>
-   <div class="principal">
-     <form>
-       <div class="icone">
-         <img src="/imagem/Group 71.png" alt="avatar">
-       </div>
+  <section>
+    <p v-if="erro" style="color: red">{{ erro }}</p>
+    <div class="principal">
+      <form @submit.prevent="login">
+        <div class="icone">
+          <img src="/public/imagem/Group 71.png" alt="avatar">
+        </div>
 
+        <label for="user">Usuário:</label>
+        <input type="text" id="user" name="user" v-model="user.username"  required>
 
-       <label for="user">Usuário:</label>
-       <input type="text" id="user" name="user" required>
+        <label for="senha">Senha:</label>
+        <div class="campo-senha">
+          <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" v-model="user.password" required>
+          <span class="olho" @click="toggleSenha">
+          {{ senhaVisivel ? '🙈' : '👁' }}
+          </span>
+          </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
 
-
-       <label for="senha">Senha:</label>
-       <div class="campo-senha">
-         <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" required>
-         <span class="olho" @click="toggleSenha">
-         {{ senhaVisivel ? '🙈' : '👁' }}
-         </span>
-         </div>
-       <button type="submit" @click="irParaInicio">Enviar</button>
-        <p>
-       Caso ainda não possua cadastro?  <a @click="irParaDiscente">Cadastre-se</a>
-     </p>
-   
-     </form>
-   
-   </div>
- </section>
-</body>
+  <section class="cadastros">
+    <div>
+      <h2>Discente:</h2>
+      <p>
+        caso ainda não possua cadastro, clique no link abaixo.
+      </p>
+      <a @click="irParaCadastro">Cadastre-se</a>
+    </div>
+  </section>
 </template>
 
 <style scoped>

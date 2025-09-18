@@ -5,39 +5,39 @@ const router = useRouter()
 
 
 function irParaBiologia(){
-  router.push('/BiologiaView')
+  router.push('/biologia')
 }
 
 function irParaFilosofia(){
-  router.push('/FilosofiaView')
+  router.push('/filosofia')
 }
 
 function irParaFisica(){
-  router.push('/FisicaView')
+  router.push('/fisica')
 }
 
 function irParaGeografia(){
-  router.push('/GeografiaView')
+  router.push('/geografia')
 }
 
 function irParaHistoria(){
-  router.push('/HistoriaView')
+  router.push('/historia')
 }
 
 function irParaMatematica(){
-  router.push('/MatematicaView')
+  router.push('/matematica')
 }
 
 function irParaPortugues(){
-  router.push('/PortuguesView')
+  router.push('/portugues')
 }
 
 function irParaQuimica(){
-  router.push('/QuimicaView')
+  router.push('/quimica')
 }
 
 function irParaSociologia(){
-  router.push('/SociologiaView')
+  router.push('/sociologia')
 }
 
 function voltarAoInicial() {
