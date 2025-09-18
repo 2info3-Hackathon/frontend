@@ -9,9 +9,11 @@ const user = reactive({
   password: ''
 })
 
-const senhaVisivel = ref(false)
+let router = useRouter()
 
-const tipo = ref('não logado')
+let senhaVisivel = ref(false)
+
+let tipo = ref('não logado')
 
 function irParaCadastro(){
   router.push('/cadastro')
@@ -47,7 +49,7 @@ async function login() {
     console.error("Erro ao fazer login:", e);
   }
 }
-
+</script>
 
 <template>
   <section>
