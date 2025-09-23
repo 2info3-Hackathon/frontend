@@ -25,6 +25,14 @@ O nosso site visa ser um site informativo para o IFC Araquari, com o objetivo de
 - restframework simple jwt
 - decode jwt
 
+## Desenvolvedores 
+- Agatha Helena Schmidt de Oliveira
+- Ana Laura Simonato
+- Andressa Steffen
+- Gabriela (Yuri) Heloisa Ramos
+- Kauan dos Santos Luciano
+- Milena Kindlein da Rosa 
+
 ## Configuração do Projeto
 
 ```sh
