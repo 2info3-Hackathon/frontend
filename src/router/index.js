@@ -3,7 +3,7 @@ import {createRouter , createWebHistory} from 'vue-router'
 
 const routes = [
     {
-      path: '/',
+      path: '/login',
       name: 'Login',
       component: () => import('@/views/LoginView.vue'),
     },
@@ -14,7 +14,7 @@ const routes = [
     },
     {
       path: '/usuario',
-      name: 'Usuário',
+      name: 'Usuario',
       component: () => import('@/views/UserView.vue'),
     }, 
     {
@@ -71,11 +71,6 @@ const routes = [
         path: '/grupo-estudos',
         name: 'Grupo Estudos',
         component: () => import('@/views/GrupoEstudos.vue'),
-    },
-    {
-        path: '/header-component',
-        name: 'Header',
-        component: () => import('@/components/HeaderComponent.vue'),
     },
     {
         path: '/biologia',

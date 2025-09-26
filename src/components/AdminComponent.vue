@@ -1,4 +1,12 @@
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
+
+function logout() {
+  localStorage.removeItem('token')
+  localStorage.removeItem('user_info')
+  router.push('/') }
+
 </script>
 
 <template>
@@ -11,7 +19,7 @@
                     </RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/adicionar-eventos" class="link">
+                    <RouterLink to="/adicionar-evento" class="link">
                         Adicionar Evento
                     </RouterLink>
                 </li>
@@ -48,10 +56,11 @@
             </ul>
         </div>
         <div>
-
+            <button @click="logout">
+                Deslogar
+            </button>
         </div>
     </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

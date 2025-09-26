@@ -1,15 +1,33 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from 'vue-router'
 
 const showDropdown = ref(false);
 const router = useRouter();
 
+const userStorage = ref(localStorage.getItem("user_info"));
+
+const user = computed(() => {
+  try {
+    return JSON.parse(userStorage.value);
+  } catch {
+    return null;
+  }
+});
 function irParaInicio(){
   router.push('/')
 }
 function irParaLogin(){
-  router.push('/login')
+
+  if (user.value) 
+  {
+    router.push('/usuario');
+  }
+  else
+  {
+    router.push('/login');
+  }
+
 }
 </script>
 

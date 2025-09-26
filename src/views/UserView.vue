@@ -4,6 +4,9 @@ import AlunoComponent from '@/components/AlunoComponent.vue';
 import ProfessorComponent from '@/components/ProfessorComponent.vue';
 import TerceiraoComponent from '@/components/TerceiraoComponent.vue';
 import { ref, onMounted, computed } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const user = ref(null)
 
@@ -31,11 +34,11 @@ const currentComponent = computed(() => {
 })
 
 onMounted(() => {
-    const userData = localStorage.getItem('user_info')
-    if (userData) {
-        user.value = JSON.parse(userData)
-        console.log("Usuário carregado:", user.value)
-    }
+  const userData = localStorage.getItem('user_info')
+  if (userData) {
+    user.value = JSON.parse(userData)
+    console.log("Usuário carregado:", user.value)
+  }
 })
 
 
@@ -46,7 +49,6 @@ onMounted(() => {
     <section v-if="currentComponent">
         <component :is="currentComponent" />
     </section>
-    <p v-else>Carregando...</p>
 
 </template>
 
