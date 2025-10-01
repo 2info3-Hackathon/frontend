@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 
 let router = useRouter()
@@ -8,7 +8,6 @@ let tiposUsuarios = ref([])
 
 let first_name = ref('');
 let last_name = ref('');
-let nome = ref('');
 let email = ref('');
 let data_nascimento = ref('');
 let username = ref('');
@@ -20,7 +19,16 @@ let senhaVisivel = ref(false);
 
 async function cadastrar() {
   try {
-    nome.value = `${first_name.value} ${last_name.value}`;
+    if (senha.value.length < 6) {
+      alert('A senha deve ter pelo menos 6 caracteres.');
+      return;
+    }
+    if (!tipo_user.value) {
+      alert('Selecione um tipo de usuário.');
+      return;
+    }
+
+    const nome = computed(() => `${first_name.value} ${last_name.value}`);
     const response = await axios.post('http://127.0.0.1:8000/api/usuario/', {
       nome: nome.value,
       email: email.value,
@@ -31,9 +39,9 @@ async function cadastrar() {
       password: senha.value,
     },)
     console.log('Usuário cadastrado com sucesso', response.data)
-    alert('Usuário cadastrado com sucesso', response.data)
+    alert('Usuário cadastrado com sucesso:');
   } catch (error) {
-    console.error('Erro ao cadastrar usuário:', error)
+    console.error('Erro ao cadastrar usuário:', error);
     if (error.response) {
       console.error('Erro no servidor:', error.response.data);
       alert('Erro no servidor: ' + error.response.data.detail);
@@ -117,7 +125,7 @@ onMounted(() => {
       </form>
     </div>
 
-    <button class="voltar" @click="voltar">← Voltar</button>
+    <button type="button" class="voltar" @click="voltar">← Voltar</button>
   </section>
 </template>
 
@@ -173,7 +181,6 @@ input {
 
 .campo-senha {
   position: relative;
-  width: 80%;
 }
 
 .campo-senha input {
@@ -187,13 +194,11 @@ input {
 
 .campo-senha .olho {
   position: absolute;
-  left: 37vw;
-  top: 54%;
+  right: 10px;
+  top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
-  font-size: 1.3rem;
-  user-select: none;
 }
+
 
 .botoes {
   display: flex;

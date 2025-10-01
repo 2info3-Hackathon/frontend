@@ -19,7 +19,7 @@ const tipoUserMap = {
 
 const userType = computed(() => {
     if (!user.value || !user.value.tipo_user) return null
-    return tipoUserMap[user.value.tipo_user] || 'Aluno'
+    return tipoUserMap[user.value.tipo_user] || null
 })
 
 const currentComponent = computed(() => {
@@ -34,13 +34,19 @@ const currentComponent = computed(() => {
 })
 
 onMounted(() => {
-  const userData = localStorage.getItem('user_info')
-  if (userData) {
-    user.value = JSON.parse(userData)
-    console.log("Usuário carregado:", user.value)
+  try {
+    const userData = localStorage.getItem('user_info')
+    if (userData) {
+      user.value = JSON.parse(userData)
+      console.log("Usuário carregado:", user.value)
+    } else {
+      router.push('/login')
+    }
+  } catch (e) {
+    console.error("Erro ao carregar user_info:", e)
+    router.push('/login')
   }
 })
-
 
 </script>
 

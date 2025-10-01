@@ -30,7 +30,7 @@ async function login() {
   try {
     const { data } = await axios.post('http://127.0.0.1:8000/api/token/', user)
     const token = data.access
-    localStorage.setItem('token', token)
+    localStorage.setItem('auth_token', token)
 
     const decoded_token = jwtDecode(token)
     tipo.value = decoded_token.tipo
@@ -57,7 +57,7 @@ async function login() {
     <div class="principal">
       <form @submit.prevent="login">
       <div class="icone">
-        <img src="/public/imagem/Group 71.png" alt="avatar">
+        <img src="/imagem/Group 71.png" alt="avatar">
       </div>
 
       <label for="user">Usuário:</label>
@@ -65,7 +65,7 @@ async function login() {
 
         <label for="senha">Senha:</label>
         <div class="campo-senha">
-          <input type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" v-model="user.password" required>
+          <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" v-model="user.password" required>
           <span class="olho" @click="toggleSenha">
           {{ senhaVisivel? '🙈': '👁' }}
         </span>
@@ -81,7 +81,7 @@ async function login() {
       <p>
         caso ainda não possua cadastro, clique no link abaixo.
       </p>
-      <a @click="irParaCadastro">Cadastre-se</a>
+      <a @click="irParaCadastro" class="link-button">Cadastre-se</a>
   </div>
   </section >
 </template >
