@@ -17,6 +17,10 @@ export default class UserAPI {
         }
     }
 
+    getToken() {
+        return this.token;
+    }
+
     setAxiosToken(token) {
         this.api = axios.create({
             baseURL: API_BASE_URL
@@ -36,7 +40,6 @@ export default class UserAPI {
             localStorage.setItem(TOKEN_KEY, this.token);
             this.setAxiosToken(this.token);
 
-            // 🔥 Novo: busca os dados completos do usuário logado
             await this.getLoggedUser();
 
             return true;
@@ -48,17 +51,16 @@ export default class UserAPI {
 
     async getLoggedUser() {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/usuario/me/')
+            const response = await this.api.get('me/')
             this.userInfo = response.data
             localStorage.setItem('user_info', JSON.stringify(this.userInfo))
             return this.userInfo
         } catch (error) {
-            console.error('Erro ao obter usuário logado:', error)
-            this.userInfo = null
-            localStorage.removeItem('user_info')
+            console.warn('Erro ao buscar usuário logado (sem logout automático):', error)
             return null
         }
     }
+
 
     logout() {
         this.token = null;
@@ -69,15 +71,15 @@ export default class UserAPI {
     }
 
     async isLoggedIn() {
-    if (!this.token) return false;
+        if (!this.token) return false;
 
-    try {
-        await this.getLoggedUser(); // Se der erro, já trata
-        return true;
-    } catch {
-        return false;
+        try {
+            await this.getLoggedUser(); // Se der erro, já trata
+            return true;
+        } catch {
+            return false;
+        }
     }
-}
 
     getUserInfo() {
         return this.userInfo;

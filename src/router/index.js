@@ -65,7 +65,8 @@ const routes = [
     {
         path: '/adicionarProdutos',
         name: 'adicionarVendas',
-        component: () => import('@/views/adicionarProdutosView.vue')
+        component: () => import('@/views/adicionarProdutosView.vue'),
+        meta: { requiresAuth: true },
     },
     {
         path: '/grupo-estudos',
@@ -121,6 +122,7 @@ const routes = [
         path: '/adicionar-grupo',
         name: 'Adicionar Grupo',
         component: () => import('@/views/AdicionarGrupo.vue'),
+        meta: { requiresAuth: true },
     },
 
     {
@@ -181,7 +183,8 @@ const routes = [
     {
         path: '/adicionar-evento',
         name: 'Adicionar Evento',
-        component: () => import('@/views/adicionarEventoView.vue')
+        component: () => import('@/views/adicionarEventoView.vue'),
+        meta: { requiresAuth: true },
     }
 ];
 

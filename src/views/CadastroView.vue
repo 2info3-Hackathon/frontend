@@ -39,7 +39,8 @@ async function cadastrar() {
       password: senha.value,
     },)
     console.log('Usuário cadastrado com sucesso', response.data)
-    alert('Usuário cadastrado com sucesso:');
+    alert('Usuário cadastrado com sucesso');
+    router.push('/login')
   } catch (error) {
     console.error('Erro ao cadastrar usuário:', error);
     if (error.response) {

@@ -49,7 +49,7 @@ function logout() {
                     </RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/reservador" class="link">
+                    <RouterLink to="/reservados" class="link">
                         Verificar Reservas
                     </RouterLink>
                 </li>

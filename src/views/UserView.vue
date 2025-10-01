@@ -33,12 +33,20 @@ const currentComponent = computed(() => {
     }[userType.value]
 })
 
+const isValidTipoUser = tipo => [1, 2, 3, 4].includes(tipo)
+
 onMounted(() => {
   try {
     const userData = localStorage.getItem('user_info')
     if (userData) {
-      user.value = JSON.parse(userData)
-      console.log("Usuário carregado:", user.value)
+      const parsedUser = JSON.parse(userData)
+      if (isValidTipoUser(parsedUser.tipo_user)) {
+        user.value = parsedUser
+        console.log("Usuário carregado:", user.value)
+      } else {
+        console.warn("Tipo de usuário inválido:", parsedUser.tipo_user)
+        router.push('/login')
+      }
     } else {
       router.push('/login')
     }
