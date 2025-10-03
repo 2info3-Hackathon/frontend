@@ -19,7 +19,7 @@ function irParaInicio(){
 }
 function irParaLogin(){
 
-  if (user.value) 
+  if (user.value && user.value !== '') 
   {
     router.push('/usuario');
   }
