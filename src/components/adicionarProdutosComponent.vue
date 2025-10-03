@@ -5,6 +5,7 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
 let router = useRouter()
+let turmas = ref([])
 
 let nome = ref('');
 let data = ref('');
@@ -54,6 +55,25 @@ function voltar() {
   router.push('/login')
 }
 
+
+async function carregarTurma() {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/turma/', {
+      headers: {
+        Authorization: ''
+      }
+    })
+    turmas.value = response.data
+  } catch (error) {
+    console.error('Erro ao carregar turmas:', error)
+  }
+}
+
+
+onMounted(() => {
+  carregarTurma()
+})
+
 </script>
 
 <template>
@@ -64,20 +84,18 @@ function voltar() {
 
         <form @submit.prevent="addProduto">
           <div class="turmas">
-            <!--<p> Turmas </p>
+            <p> Turmas </p>
 
-          <select v-model="categoria" required>
-            <option value="">-- Selecione a turma --</option>
-            <option value="3Agro1">3Agro1</option>
-            <option value="3Agro2">3Agro2</option>
-            <option value="3Agro3">3Agro3</option>
-            <option value="3Info1">3Info1</option>
-            <option value="3Info2">3Info2</option>
-            <option value="3Info3">3Info3</option>
-            <option value="3Quimi">3Quimi</option>
-          </select>
+          <select name="turmas" id="turmas" v-model="turmas" required>
+          <option disabled value="">
+            Selecione o seu tipo de usuário
+          </option>
+          <option v-for="turma in turmas" v-bind:key="turma.id" :value="turma.id">
+            {{ turma.descricao }}
+          </option>
+        </select>
 
-          <label for="foto">Baixe uma capa:</label>
+          <!--<label for="foto">Baixe uma capa:</label>
           <input type="file" @change="onFileChange" accept="image/*" />
 
           <div v-if="imagemPreview">
@@ -107,7 +125,7 @@ function voltar() {
 
           <div class="botoes">
             <button type="reset">Limpar</button>
-            <button type="submit" @click="enviarFormulario">Enviar</button>
+            <button type="submit" @click="addProduto">Enviar</button>
           </div>
     </div>
     </form>

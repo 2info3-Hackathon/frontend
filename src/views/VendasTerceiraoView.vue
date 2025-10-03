@@ -15,7 +15,7 @@ import QuimiComponent from '@/components/3QuimiComponent.vue';
 const cartStore = useCartStore()
 
 function irPara3Agro1(){
-    router.push('/3Agro1')
+    router.push('/3Agro1')import { useRoute} from 'vue-router'
 }
 function irPara3Agro2(){
     router.push('/3Agro2')

@@ -1,11 +1,9 @@
 <script setup>
-import { useRoute} from 'vue-router'
 import { computed, ref } from 'vue'
 import router from '@/router'
 
-const route = useRoute()
-const pesquisa = ref("")
-const indexAtivo = ref(-1)
+const pesquisa = ref("");
+const indexAtivo = ref(-1);
 
 function irParaInicio(){
   router.push('/')
