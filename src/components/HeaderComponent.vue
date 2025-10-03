@@ -15,7 +15,7 @@ function irParaLogin(){
 }
 
 const navegacao = ref([
-  { id: "1", nome: "Informações importantes", rota: '/informacoes-importantesinformacoes' },
+  { id: "1", nome: "Informações importantes", rota: '/informacoes-importantes' },
   { id: "2", nome: "Grupo de estudos ", rota: '/grupo-estudos' },
   {id:"3", nome:"Vendas terceirão", rota:'/terceirao'},
   {id: "4", nome: "Biologia" , rota: '/biologia'},
