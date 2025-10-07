@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
 
-//import { useCartStore } from '@/stores/cartStore'
+import { useCartStore } from '@/stores/cartStore'
 //import cart from '@/components/cartComponent.vue'
 
 /*import Agro1Component from '@/components/3Agro1Component.vue';
@@ -11,9 +11,12 @@ import Info1Component from '@/components/3Info1Component.vue';
 import Info2Component from '@/components/3Info2Component.vue';
 import Info3Component from '@/components/3Info3Component.vue';
 import QuimiComponent from '@/components/3QuimiComponent.vue';
+*/
 
 const cartStore = useCartStore()
+const router = useRouter()
 
+/*
 function irPara3Agro1(){
     router.push('/3Agro1')
 }
@@ -36,12 +39,11 @@ function irPara3Quimi(){
     router.push('/3Quimi')
 }
 function irParaAdicionarProdutos() {
-    router.push('adicionarProdutos')
-}
+    router.push('/adicionarProdutos')
+}*/
 function irParaReservados() {
   router.push('/reservados')
-}*/
-const router = useRouter()
+}
 
 function voltar() {
   router.push('/')
@@ -64,8 +66,7 @@ onMounted(async () => {
 </script>
 
 <template>
-
-  <body>
+<main>
     <div class="minhas-compras">
       <button class="colorido" @click="irParaReservados">Suas reservas feitas </button>
 
@@ -135,11 +136,11 @@ onMounted(async () => {
        <quimi-component />
         </div>-->
     <button class="turmas" @click="voltar">← Voltar</button>
-  </body>
+      </main>
 </template>
 
 <style scoped>
-body {
+main {
   margin-top: 6vw;
   margin-bottom: -18vw;
 }
@@ -195,33 +196,6 @@ section.turmas div.info {
   background-color: white;
   margin: 0 15vw 0 0;
   border-radius: 50px;
-}
-
-div.quimi {
-  text-align: center;
-  background-color: white;
-  border-radius: 30px;
-  font-size: 30px;
-  margin: 0 30vw 0 30vw;
-
-}
-
-div.quimi button {
-  padding: 14px 60px 14px 60px;
-  margin: 20px 40px 20px 40px;
-  background-color: white;
-  color: #1C72D3;
-  border: 2px solid #1e88e5;
-  cursor: pointer;
-  transition: transform 0.2s;
-  border-radius: 8px;
-  font-size: calc(1.2rem)
-}
-
-div.quimi button:hover {
-  background: linear-gradient(135deg, #1f68c7, #42a5f5);
-  transform: scale(1.2);
-  color: white;
 }
 
 .colorido {
@@ -281,5 +255,48 @@ button.turmas {
 
 button.turmas:hover {
   transform: scale(1.05);
+}
+
+.produto{
+  margin: 5vw 5vw;
+  display: flex;
+}
+
+article{
+  flex: 0 1 220px;
+  box-sizing: border-box;
+  border: 1px solid #1e88e5;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.produto {
+  margin: 5vw 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+
+div.produtos ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+div.produtos li {
+  width: 100%;
+  padding: 2px 0;
+  white-space: normal;
+  list-style: none;
+}
+p.nome {
+  font-size: 2rem;
+  margin: 0 0 3px 0;
+}
+p {
+  font-size: 1.3rem;
 }
 </style>

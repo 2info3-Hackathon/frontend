@@ -1,9 +1,10 @@
 <script setup>
-import { useRoute} from 'vue-router'
+import { useRouter} from 'vue-router'
 import { computed, ref } from 'vue'
 import router from '@/router'
 
-const route = useRoute()
+const showDropdown = ref(false);
+const route = useRouter()
 const pesquisa = ref("")
 const indexAtivo = ref(-1)
 
@@ -34,6 +35,7 @@ const navegacao = ref([
   {id: "17", nome: "Contatos importantes" , rota: '/contatos-importantes'},
   {id: "18", nome: "Atestados e declações" , rota: '/atestados-declaracoes'},
   {id: "19", nome: "Clifc" , rota: '/clifc'},
+  {id: "20", nome: "Eventos" , rota: '/eventos'},
 ])
 
 const resultados = computed(() => {
@@ -50,6 +52,7 @@ function abrirNavegacao(navegacao){
   pesquisa.value = ""
   indexAtivo.value = -1
 }
+
 function navegar(e) {
   if (e.key === "ArrowDown") {
     e.preventDefault()
@@ -141,7 +144,7 @@ header nav {
   font-size: 1vw;
 }
 .pesquisa{
-margin-left:45vw;
+margin-left:35vw;
 margin-right:-17vw;
 }
 

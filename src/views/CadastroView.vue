@@ -213,7 +213,7 @@ select {
 
 .campo-senha .olho {
   position: absolute;
-  left: 37vw;
+  left: 41vw;
   top: 54%;
   transform: translateY(-50%);
   cursor: pointer;

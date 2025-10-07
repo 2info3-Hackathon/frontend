@@ -1,10 +1,10 @@
 <script setup>
+import InicialComponent from './InicialComponent.vue';
+
 </script>
 
 <template>
-    <section>
-
-    </section>
+    <InicialComponent />
 </template>
 
 <style scoped>

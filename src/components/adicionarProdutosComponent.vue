@@ -64,6 +64,7 @@ function voltar() {
 
         <form @submit.prevent="addProduto">
           <div class="turmas">
+           
             <!--<p> Turmas </p>
 
           <select v-model="categoria" required>
@@ -111,6 +112,7 @@ function voltar() {
           </div>
     </div>
     </form>
+    
 
     <div v-if="mostrarAviso" class="aviso">
         ✅ Produto adicionado com sucesso!
