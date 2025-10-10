@@ -15,11 +15,6 @@ watch(
 </script>
 
 <template>
-<header>
-        <nav>
-         
-        </nav>
-        </header>
         <main>
      <section class="imagem-if">
         <div class="banner">

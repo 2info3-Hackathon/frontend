@@ -14,7 +14,7 @@ const routes = [
     },
     {
       path: '/usuario',
-      name: 'Usuário',
+      name: 'Usuario',
       component: () => import('@/views/UserView.vue'),
     },
     {
@@ -65,17 +65,13 @@ const routes = [
     {
         path: '/adicionar-venda',
         name: 'adicionarVendas',
-        component: () => import('@/views/adicionarProdutosView.vue')
+        component: () => import('@/views/adicionarProdutosView.vue'),
+        meta: { requiresAuth: true },
     },
     {
         path: '/grupo-estudos',
         name: 'Grupo Estudos',
         component: () => import('@/views/GrupoEstudos.vue'),
-    },
-    {
-        path: '/header-component',
-        name: 'Header',
-        component: () => import('@/components/HeaderComponent.vue'),
     },
     {
         path: '/biologia',
@@ -126,6 +122,7 @@ const routes = [
         path: '/adicionar-grupo',
         name: 'Adicionar Grupo',
         component: () => import('@/views/AdicionarGrupo.vue'),
+        meta: { requiresAuth: true },
     },
 
     {
@@ -186,7 +183,8 @@ const routes = [
     {
         path: '/adicionar-evento',
         name: 'Adicionar Evento',
-        component: () => import('@/views/adicionarEventoView.vue')
+        component: () => import('@/views/adicionarEventoView.vue'),
+        meta: { requiresAuth: true },
     }
 ];
 

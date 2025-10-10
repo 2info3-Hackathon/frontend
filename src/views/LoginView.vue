@@ -2,14 +2,16 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import axios from 'axios'
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from 'jwt-decode';
 
 const user = reactive({
-  username: '',
-  password: ''
+  username: 'admin',
+  password: 'admin'
 })
 
-let router = useRouter()
+const router = useRouter()
+
+const senhaVisivel = ref(false)
 
 let senhaVisivel = ref(false)
 
@@ -30,7 +32,7 @@ async function login() {
   try {
     const { data } = await axios.post('http://127.0.0.1:8000/api/token/', user)
     const token = data.access
-    localStorage.setItem('token', token)
+    localStorage.setItem('auth_token', token)
 
     const decoded_token = jwtDecode(token)
     tipo.value = decoded_token.tipo
@@ -45,47 +47,54 @@ async function login() {
 
     router.push('/usuario')
   } catch (e) {
-    erro.value = 'Usuário ou senha inválidos'
+    if (e.response?.status === 401) {
+      erro.value = 'Usuário ou senha inválidos.'
+    } else {
+      erro.value = 'Erro ao conectar com o servidor. Tente novamente mais tarde.'
+    }
+
     console.error("Erro ao fazer login:", e);
   }
 }
 </script>
 
 <template>
+  <section>
+    <p v-if="erro" style="color: red">{{ erro }}</p>
+    <div class="principal">
+      <form @submit.prevent="login">
+        <div class="icone">
+          <img src="/imagem/Group 71.png" alt="avatar">
+        </div>
 
-  <body>
-    <section>
-      <p v-if="erro" style="color: red">{{ erro }}</p>
-      <div class="principal">
-        <form @submit.prevent="login">
-          <div class="icone">
-            <img src="/imagem/Group 71.png" alt="avatar">
-          </div>
+        <label for="user">Usuário:</label>
+        <input type="text" id="user" name="user" v-model="user.username" required>
 
-          <label for="user">Usuário:</label>
-          <input type="text" id="user" name="user" v-model="user.username" required>
+        <label for="senha">Senha:</label>
+        <div class="campo-senha">
+          <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" v-model="user.password" required>
+          <span class="olho" @click="toggleSenha">
+            {{ senhaVisivel ? '🙈' : '👁' }}
+          </span>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
 
-          <label for="senha">Senha:</label>
-          <div class="campo-senha">
-            <input :type="senhaVisivel ? 'text' : 'password'" id="senha" name="senha" v-model="user.password" required>
-            <span class="olho" @click="toggleSenha">
-              {{ senhaVisivel ? '🙈' : '👁' }}
-            </span>
-          </div>
-          <button type="submit">Enviar</button>
-          <div>
-            <p>
-              Caso ainda não possua cadastro?<a @click="irParaCadastro"> Cadastre-se</a>
-            </p>
-          </div>
-        </form>
-      </div>
-    </section>
-  </body>
+  <section class="cadastros">
+    <div>
+      <h2>Discente:</h2>
+      <p>
+        caso ainda não possua cadastro, clique no link abaixo.
+      </p>
+      <a @click="irParaCadastro" class="link-button">Cadastre-se</a>
+    </div>
+  </section>
 </template>
 
 <style scoped>
-body {
+template {
   margin-top: 8vw;
   margin-bottom: -4vw;
 }
@@ -106,6 +115,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 label {
@@ -115,6 +125,7 @@ label {
   font-weight: bold;
   margin: 2vw 0 0.5vw -27vw;
   color:rgba(0, 0, 0, 0.897);
+
 }
 
 input {
@@ -181,7 +192,6 @@ a:hover {
   background: #fff;
   border-radius: 50%;
   padding: 8px;
-
 }
 
 .icone img {
