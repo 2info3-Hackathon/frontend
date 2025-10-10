@@ -63,7 +63,7 @@ const routes = [
         component: () => import('@/views/reservadosView.vue'),
     },
     {
-        path: '/adicionarProdutos',
+        path: '/adicionar-venda',
         name: 'adicionarVendas',
         component: () => import('@/views/adicionarProdutosView.vue'),
         meta: { requiresAuth: true },
