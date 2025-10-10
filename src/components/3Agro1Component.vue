@@ -23,7 +23,7 @@ console.log('Produtos carregados:', agro1);
       <div class="produtos">
         <ul>
       <li><p class="nome"> {{ produto.nomeProduto }}</p> </li>
-      <li> <p class="preco">R$ {{ produto.preco }}</p></li>
+      <li> <p class="preco">Preço: R$ {{ produto.preco }}</p></li>
      <li> <p class="local">{{ produto.local }}</p></li>
      <li> <p class="horas">{{ produto.hora }}</p></li>
      <li> <p class="data">{{ produto.data }}</p></li>
@@ -106,4 +106,12 @@ div.produtos li {
   white-space: normal;
   list-style: none;
 }
+p.nome {
+  font-size: 2rem;
+  margin: 0 0 3px 0;
+}
+p {
+  font-size: 1.3rem;
+}
+
 </style>

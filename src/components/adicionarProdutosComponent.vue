@@ -1,67 +1,59 @@
 <script setup>
+
 import { useRouter } from 'vue-router'
-import { useProdutosStore } from '@/stores/produtos';
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
 
-const router = useRouter();
-const produtosStore = useProdutosStore();
+let router = useRouter()
 
-function voltar() {
-    router.push('/terceirao')
-}
-
-let nomeProduto = ref('');
-let preco = ref('');
-let local = ref('');
+let nome = ref('');
 let data = ref('');
 let hora = ref('');
-let categoria = ref('');
-let desc = ref('');
-let imagemFile = ref(null)
-let imagemPreview = ref(null)
+let local = ref('');
+let preco = ref('');
+let nome_produto = ref('');
+let user = ref(null)
 
-function onFileChange(e) {
-  const file = e.target.files[0]
-  if (file) {
-    imagemFile.value = file
-    imagemPreview.value = URL.createObjectURL(file)
+onMounted(() => {
+    const userData = localStorage.getItem('user_info')
+    if (userData) {
+        user.value = JSON.parse(userData)
+        console.log("Usuário carregado:", user.value)
+    }
+})
+
+async function addProduto() {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/vendas/', {
+      user: user.value?.id,
+      nome: nome.value,
+      data: data.value,
+      hora: hora.value,
+      local: local.value,
+      preco: preco.value,
+      nome_produto: nome_produto.value,
+    },)
+    console.log('Venda cadastrada com sucesso', response.data)
+    alert('Venda cadastrada com sucesso', response.data)
+  } catch (error) {
+    console.error('Erro ao cadastrar venda:', error)
+    if (error.response) {
+      console.error('Erro no servidor:', error.response.data);
+      alert('Erro no servidor: ' + error.response.data.detail);
+    } else if (error.request) {
+      console.error('Sem resposta do servidor:', error.request);
+      alert('Sem resposta do servidor. Tente novamente mais tarde.');
+    } else {
+      console.error('Erro de configuração:', error.message);
+      alert('Erro ao tentar enviar a requisição.');
+    }
   }
 }
 
-function addProduto() {
-  produtosStore.newProduto(
-    nomeProduto.value,
-    preco.value,
-    local.value,
-    data.value,
-    hora.value,
-    desc.value,
-    categoria.value,
-    imagemPreview.value 
-  );
-
-  nomeProduto.value = '';
-  preco.value = '';
-  local.value = '';
-  data.value = '';
-  hora.value = '';
-  desc.value = '';
-  categoria.value = '';
-  imagemFile.value = null;
-  imagemPreview.value = null;
-
-  router.push({ name: 'Agro1' });
-} 
-
-const mostrarAviso = ref(false);
-
-function enviarFormulario() {
-  mostrarAviso.value = true;
-
-  setTimeout(() => {
-    mostrarAviso.value = false;
-  }, 3000);
+function voltar() {
+  router.push('/login')
 }
+
 </script>
 
 <template>
@@ -72,7 +64,8 @@ function enviarFormulario() {
 
         <form @submit.prevent="addProduto">
           <div class="turmas">
-            <p> Turmas </p>
+           
+            <!--<p> Turmas </p>
 
           <select v-model="categoria" required>
             <option value="">-- Selecione a turma --</option>
@@ -90,10 +83,13 @@ function enviarFormulario() {
 
           <div v-if="imagemPreview">
             <img :src="imagemPreview" alt="Prévia" width="200" height="200"  class="w-32 h-32 object-cover mt-2"/>
-          </div>
+          </div> -->
 
-          <label for="nomeProduto">Nome do Produto:</label>
-          <input type="text" v-model="nomeProduto" id="nomeProduto">
+          <label for="nome">Nome do Vendedor:</label>
+          <input type="text" v-model="nome" id="nome">
+
+          <label for="nome_produto">Nome do Produto:</label>
+          <input type="text" v-model="nome_produto" id="nome_produto">
 
           <label for="preco">Preço:</label>
           <input type="number" v-model="preco" id="preco">
@@ -105,10 +101,10 @@ function enviarFormulario() {
           <input type="date" v-model="data" id="data">
 
           <label for="hora">Hora:</label>
-          <input type="time" id="time" v-model="hora" />
+          <input type="time" id="hora" v-model="hora" />
 
-          <label for="desc">Descrição do Produto:</label>
-          <textarea v-model="desc" id="desc" rows="5" cols="45"></textarea>
+          <!--<label for="desc">Descrição do Produto:</label>
+          <textarea v-model="desc" id="desc" rows="5" cols="45"></textarea> -->
 
           <div class="botoes">
             <button type="reset">Limpar</button>
@@ -116,6 +112,7 @@ function enviarFormulario() {
           </div>
     </div>
     </form>
+    
 
     <div v-if="mostrarAviso" class="aviso">
         ✅ Produto adicionado com sucesso!

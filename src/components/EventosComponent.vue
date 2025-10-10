@@ -39,7 +39,7 @@ function voltarAoInicial() {
                 <h2 class="name">
                     {{ evento.nomeEvento }}
                 </h2>
-                <ul>
+                <!--<ul>
                     <li>
                         <h2>
                             Organizador:
@@ -56,7 +56,7 @@ function voltarAoInicial() {
                             
                         </p>
                     </li>
-                </ul>
+                </ul>-->
                 <ul>
                     <li>
                         <h2>
@@ -142,6 +142,7 @@ section {
                 border-radius: 5px;
                 margin: 1.5vw 0 1.5vw 0;
                 display: inline-block;
+                font-size: 2rem;
             }
 
             & ul {
@@ -154,13 +155,13 @@ section {
                     & h2 {
                         display: inline-block;
                         color: #1c7ed4;
-                        margin: 1.5vw 0vw 1vw 0vw;
+                        margin: 1.5vw 0vw 1vw 3vw;
                     }
 
                     & p {
                         color: black;
-                        margin: 1.9vw 0 0 0;
-                        padding: 0.5vw 2vw;
+                        margin: 1vw 0 0 0;
+                        padding: 0.5vw 1vw;
                         border-radius: 5px;
                     }
                 }
@@ -177,8 +178,8 @@ section {
 
                 & p {
                     color: black;
-                    margin: 1.9vw 0 0 0;
-                    padding: 0.5vw 2vw;
+                    margin: 1vw 0 0 0;
+                    padding: 0.5vw 1vw;
                     border-radius: 5px;
                 }
             }

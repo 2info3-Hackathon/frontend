@@ -13,7 +13,9 @@ const router = useRouter()
 
 const senhaVisivel = ref(false)
 
-const tipo = ref('não logado')
+let senhaVisivel = ref(false)
+
+let tipo = ref('não logado')
 
 function irParaCadastro() {
   router.push('/cadastro')
@@ -92,9 +94,14 @@ async function login() {
 </template>
 
 <style scoped>
+template {
+  margin-top: 8vw;
+  margin-bottom: -4vw;
+}
+
 .principal {
   background: linear-gradient(135deg, #1c7ed4, #42a5f5);
-  margin: 8vw 150px 0 150px;
+  margin: 50px 150px 50px 150px;
   padding: 150px 140px 140px 140px;
   border-radius: 20px;
 }
@@ -108,16 +115,8 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
-
-
-h2 {
-  font-weight: bolder;
-  font-size: calc(1.3rem);
-  padding: 15px 5px 15px 0;
-  text-align: center;
-}
-
 
 label {
   font-size: calc(1.5rem);
@@ -125,8 +124,9 @@ label {
   margin-top: 10px;
   font-weight: bold;
   margin: 2vw 0 0.5vw -27vw;
-}
+  color:rgba(0, 0, 0, 0.897);
 
+}
 
 input {
   font-size: calc(1.3rem);
@@ -137,12 +137,10 @@ input {
   border-radius: 6px;
 }
 
-
 .campo-senha {
   position: relative;
   width: 80%;
 }
-
 
 .campo-senha input {
   font-size: calc(1.5rem);
@@ -153,7 +151,6 @@ input {
   border-radius: 6px;
 }
 
-
 .campo-senha .olho {
   position: absolute;
   right: 10px;
@@ -163,7 +160,6 @@ input {
   font-size: 1.3rem;
   user-select: none;
 }
-
 
 form button {
   background: linear-gradient(135deg, #1c7ed4, #42a5f5);
@@ -177,7 +173,6 @@ form button {
   transition: transform 0.2s;
 }
 
-
 button:hover {
   background: linear-gradient(135deg, #02367a, #1e88e5);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
@@ -186,7 +181,6 @@ button:hover {
 
 a:hover {
   color: #2c71c0;
-  ;
   text-decoration: underline;
 }
 
